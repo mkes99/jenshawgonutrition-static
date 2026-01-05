@@ -1,0 +1,64 @@
+	/*
+  	Flaticon icon font: Flaticon
+  	Creation date: 04/07/2018 08:55
+  	*/
+
+@font-face {
+  font-family: "Flaticon";
+  src: url("/wp-content/themes/psychare/assets/css/flaticon/Flaticon.eot");
+  src: url("/wp-content/themes/psychare/assets/css/flaticon/Flaticon.eot#iefix") format("embedded-opentype"),
+       url("/wp-content/themes/psychare/assets/css/flaticon/Flaticon.woff") format("woff"),
+       url("/wp-content/themes/psychare/assets/css/flaticon/Flaticon.svg#Flaticon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: "Flaticon";
+    src: url("/wp-content/themes/psychare/assets/css/flaticon/Flaticon.svg#Flaticon") format("svg");
+  }
+}
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before,
+[class^="flaticon-"]:after, [class*=" flaticon-"]:after {   
+  font-family: Flaticon; 
+  font-style: normal; 
+}
+
+.flaticon-001-wipes:before { content: "\f100"; }
+.flaticon-002-window:before { content: "\f101"; }
+.flaticon-003-wet-floor:before { content: "\f102"; }
+.flaticon-004-washing-machine:before { content: "\f103"; }
+.flaticon-005-washing-clothes:before { content: "\f104"; }
+.flaticon-006-wash:before { content: "\f105"; }
+.flaticon-007-vacuum-1:before { content: "\f106"; }
+.flaticon-008-trash-can:before { content: "\f107"; }
+.flaticon-009-towel:before { content: "\f108"; }
+.flaticon-010-toothbrush:before { content: "\f109"; }
+.flaticon-011-paper-roll:before { content: "\f10a"; }
+.flaticon-012-toilet:before { content: "\f10b"; }
+.flaticon-013-sponge:before { content: "\f10c"; }
+.flaticon-014-soap:before { content: "\f10d"; }
+.flaticon-015-plunger:before { content: "\f10e"; }
+.flaticon-016-mop:before { content: "\f10f"; }
+.flaticon-017-iron:before { content: "\f110"; }
+.flaticon-018-housekeeping:before { content: "\f111"; }
+.flaticon-019-hose:before { content: "\f112"; }
+.flaticon-020-hanger:before { content: "\f113"; }
+.flaticon-021-hand-wash:before { content: "\f114"; }
+.flaticon-022-vacuum:before { content: "\f115"; }
+.flaticon-023-gloves:before { content: "\f116"; }
+.flaticon-024-dustpan:before { content: "\f117"; }
+.flaticon-025-duster:before { content: "\f118"; }
+.flaticon-026-dry:before { content: "\f119"; }
+.flaticon-027-dishwasher:before { content: "\f11a"; }
+.flaticon-028-detergent:before { content: "\f11b"; }
+.flaticon-029-clothes:before { content: "\f11c"; }
+.flaticon-030-cleaning-spray:before { content: "\f11d"; }
+.flaticon-031-cleaning:before { content: "\f11e"; }
+.flaticon-032-cleaner:before { content: "\f11f"; }
+.flaticon-033-bucket:before { content: "\f120"; }
+.flaticon-034-brush:before { content: "\f121"; }
+.flaticon-035-broom:before { content: "\f122"; }
+.flaticon-036-bathtub:before { content: "\f123"; }

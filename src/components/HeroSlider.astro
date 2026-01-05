@@ -1,0 +1,190 @@
+---
+import { getEntry } from "astro:content";
+
+const entry = await getEntry("hero-slider", "slides");
+const slides = entry?.data ?? [];
+---
+
+<section class="rev-hero" data-hero-slider>
+  <div class="rev-hero__viewport">
+    <ul class="rev-hero__track" data-hero-slider-track>
+      {slides.map((s, idx) => (
+        <li
+          class="rev-hero__slide"
+          data-hero-slide
+          aria-hidden={idx === 0 ? "false" : "true"}
+        >
+          <div class="rev-hero__bg">
+            <img
+              src={s.image}
+              alt={s.imageAlt}
+              decoding="async"
+              fetchpriority={idx === 0 ? "high" : "auto"}
+              loading={idx === 0 ? "eager" : "lazy"}
+            />
+            <div class="rev-hero__overlay" aria-hidden="true"></div>
+          </div>
+
+          <div class="rev-hero__content">
+            <p class="rs-layer sub-heading single white font-800 rev-hero__kicker">
+              {s.subheading}
+            </p>
+
+            <h1 class="rs-layer font-headings rev-hero__title">
+              {s.heading}
+            </h1>
+
+            <p class="rs-layer rev-hero__body" style="font-family:'Mulish';">
+              {s.body}
+            </p>
+
+            <div class="rev-hero__ctas">
+            <div class="vc_btn3-container vc_btn3-inline">
+              <a
+                class="btn btn--lg font-700 btn--rounded btn--primary"
+                href={s.primaryCta.href}
+                target={s.primaryCta.target}
+                rel={s.primaryCta.target === "_blank" ? "noopener" : undefined}
+              >
+                {s.primaryCta.label}
+              </a>
+              </div>
+              <div class="vc_btn3-container vc_btn3-inline">
+                <a
+                    class=" btn btn--lg font-700 btn--rounded btn--secondary btn--ghost"
+                    href={s.secondaryCta.href}
+                    target={s.secondaryCta.target}
+                >
+                    {s.secondaryCta.label}
+                </a>
+              </div>  
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
+
+    <button class="rev-hero__nav rev-hero__nav--prev" type="button" aria-label="Previous slide" data-hero-prev> </button>
+    <button class="rev-hero__nav rev-hero__nav--next" type="button" aria-label="Next slide" data-hero-next></button>
+
+    <!-- <div class="rev-hero__dots" aria-label="Slide navigation" data-hero-dots></div> -->
+  </div>
+</section>
+
+<script is:inline src="/assets/hero-slider.js"></script>
+
+<style is:inline>
+  /* Minimal layout CSS – leaves your theme typography/button styles intact */
+  .rev-hero { position: relative; }
+  .rev-hero__viewport { position: relative; overflow: hidden; }
+  .rev-hero__track {
+    display: flex;
+    padding: 0; margin: 0;
+    list-style: none;
+    transition: transform 600ms ease;
+    will-change: transform;
+  }
+  .rev-hero__slide {
+    position: relative;
+    min-width: 100%;
+    height: clamp(420px, 56vw, 720px);
+  }
+  .rev-hero__bg { position:absolute; inset:0; }
+  .rev-hero__bg img { width:100%; height:100%; object-fit:cover; display:block; }
+  .rev-hero__overlay {
+    position:absolute; inset:0;
+    background: linear-gradient(90deg, rgba(21,17,16,1) 0%, rgba(21,17,16,0.4) 100%);
+  }
+  .rev-hero__content {
+    position: relative;
+    z-index: 2;
+    padding: 120px 16px 40px;
+    max-width: 600px;
+    left: 17%
+  }
+   .rev-hero__content p, .rev-hero__content h1 {
+     color: #fff;
+     text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+   }
+  .rev-hero__kicker { margin: 0 0 8px; font-size: 18px; }
+  .rev-hero__title { margin: 12px 0 16px; }
+  .rev-hero__ctas { display:flex; gap: 70px; margin-top: 18px; flex-wrap: wrap; }
+
+    .rev-hero__ctas .btn--primary {
+        background: #574142!important;
+        color: #ffffff!important;
+        border-color: #574142!important;
+    }
+   
+    .rev-hero__ctas .btn--primary:hover {
+        background: #A80226!important;
+    }
+
+
+    .rev-hero__ctas .btn--secondary {   
+        border-color: #574142!important;
+        background: #fffcf1!important;
+        color: #574142!important;
+    }
+  .rev-hero__ctas .btn--secondary:hover {
+    background: #ea8c98!important;
+    color: #000000!important;
+    border-color: #ea8c98!important;
+  }
+
+  .rev-hero__nav {
+    position:absolute; top:50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    border: 0;
+    background: transparent;
+
+  }
+  .rev-hero__nav--prev { left: 12px; }
+  .rev-hero__nav--next { right: 12px; }
+
+.rev-hero__nav--prev:before{
+    content:"\f104";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    font-size: 30px;
+    color: #ffffff;
+    display: block;
+    line-height: 50px;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+
+.rev-hero__nav--next:before{
+    content:"\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+    font-size: 30px;
+    color: #ffffff;
+    display: block;
+    line-height: 50px;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+
+  .rev-hero__dots {
+    position:absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 14px;
+    display:flex;
+    gap: 10px;
+    z-index: 6;
+  }
+  .rev-hero__dot {
+    width: 10px; height: 10px;
+    border-radius: 999px;
+    border: 0;
+    background: rgba(255,255,255,0.6);
+    cursor: pointer;
+  }
+  .rev-hero__dot[aria-current="true"] { background: rgba(255,255,255,1); }
+</style>

@@ -1,0 +1,654 @@
+/*
+Theme Name: Psychare Child
+Theme URI: http://slashcreative.co
+Author: SlashCreative 
+Template: psychare
+Author URI: https://themeforest.net/user/slashcreative
+Description: A premium niche theme designed for businesses operating in the house cleaning and any other services related to the cleaning industry.
+License: Themeforest Split Licence
+License URI: - 
+Text Domain: psychare
+Version: 2.0.0
+Domain Path: /languages
+*/ 
+
+::selection {
+	background: #a80226 !important; /* WebKit/Blink Browsers */
+  }
+  ::-moz-selection {
+	background: #a80226 !important; /* Gecko Browsers */
+  }
+
+div input.subscribe-btn {
+	background: #EA8C98 !important;
+    color: #000000 !important;
+}
+
+div .btn--primary:hover {
+	background: #A80226;
+}
+
+div.footer__main .custom_menu li:before {
+	background: #ffffff;
+	opacity: 0.6;
+}
+
+div .slcr-sidebar h3.title:after,
+div .sub-heading.single:before {
+	background: #574142;
+}
+
+.sub-heading.pink:before {
+    background: #A80226 !important;
+}
+
+div .pricing__06 .pricing-header {
+    background: #574142;
+}
+
+div .pricing__06 .pricing-header h4{
+	color: #ffffff;
+}
+
+section aside.slcr-sidebar .menu li a{
+	background-color: #ede7df;
+}
+
+div .bg-default{
+	background-color: #ede7df;
+}
+
+div.vc_custom_1606115183424 {
+    margin-top: -350px !important;
+}
+
+footer .footer__main {
+    padding: 100px 0 60px 0;
+}
+
+footer .footer__bottom{
+	border-top: none;
+	padding: 1px 0 40px;
+}
+
+footer .footer__logo img {
+    height: auto;
+    width: 100%;
+}
+
+footer.footer__cont .widget-title:before,
+footer.footer__cont .title:before, 
+footer.footer__cont h3.title:before,
+footer.footer__cont .footer__social li a{
+	background-color: #EDE7DF;
+}
+
+footer.footer__cont .footer__social li a i,
+footer.footer__cont .footer__social li a:hover i{
+	color: #000000 !important;
+}
+
+footer.slcr-sidebar .footer__main ul {
+	padding: 0 0 0 20px;
+	list-style-type: initial 
+}
+
+a.btn.btn--lg.font-800.btn--rounded.btn--footer{
+	background-color: #EDE7DF;
+	display: block;
+    margin-bottom: 20px;
+}
+
+a.btn.btn--lg.font-800.btn--rounded.btn--footer span{
+	color: #000000;
+}
+
+a.btn.btn--lg.font-800.btn--rounded.btn--footer:hover,
+.footer__cont .footer__social li a:hover{
+	background-color: #EA8C98;
+}
+
+footer .footer__contact i{
+	color: #EDE7DF;
+}
+
+footer.footer__cont .widget__area a:hover,
+footer.footer__cont .widget__area a:hover i,
+footer.footer__cont .widget__area a:hover p{
+	color: #ea8c98 !important;
+}
+
+footer.footer__cont .widget__area a:hover p .font-700{
+	color: #EDE7DF;
+}
+
+footer.footer__cont .copyright__text{
+	background: none;
+	padding: 0 15px;
+	color: #ffffff !important;
+	top: 0;
+}
+
+[data-footer-scheme=dark] a, 
+[data-footer-scheme=dark] .footer__desc p,
+[data-footer-scheme=dark] .footer__contact p {
+	opacity: 1;
+}
+
+.disclaimer {
+	font-size: 12px;
+}
+
+
+.disclaimer span{
+	font-weight: 700;
+}
+
+rs-slide a,
+rs-slide a:hover,
+rs-slide a:active{
+	color: inherit;
+}
+
+.image-after-image .vc_single_image-wrapper:after {
+    background: url('//jenshawgonutrition2024.sfo3.digitaloceanspaces.com/wp-content/uploads/2024/05/22143518/5.jpg') !important;
+	opacity: .5;
+}
+
+.custom-footer-menu{
+	display: inline-flex;
+}
+
+.custom-footer-menu li{
+	padding: 0 15px;
+}
+
+aside .nav__section .nav__module_side {
+    padding: 40px 40px 0 40px;
+}
+
+aside .nav__section .sec__links{
+	display: none;
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+    .footer__main .widget__area {
+        width: 50% !important;
+		height: 335px;
+    }
+
+	.vc_btn3-container a{
+		margin-right: 0px !important;
+	}
+}
+
+@media (max-width: 1199px) {
+	footer .footer__logo img {
+		height: inherit;
+		width: 280px;
+	}
+
+	a.btn.btn--lg.font-800.btn--rounded.btn--footer{
+		width: 180px;
+	}
+
+	#block-9 p.text-center{
+		text-align: left !important;
+	}
+
+	footer .footer__main{
+		padding: 80px 0 0 0;
+	}
+
+	div.home-mobile-padding{
+		padding-bottom: 0px !important;
+	}
+}
+
+@media (max-width: 430px) {
+	footer.footer__cont .copyright__text{
+		padding: 0;
+		text-align: left;
+	}
+
+	.disclaimer {
+		text-align: left;
+		padding: 0;
+		margin-bottom: 25px;
+	}
+
+	footer .footer__main{
+		padding: 80px 0 10px 0;
+	}
+
+	.about_center_background:before {
+		background: #000000 !important;
+		opacity: 0.75;
+	}
+
+	.custom-footer-menu{
+		display: inherit;
+		margin-bottom: 20px;
+		
+	}
+
+	.custom-footer-menu:before {
+		content: "";
+        width: 100%;
+        height: 1px;
+        background: rgb(255 255 255 / 10%);
+        display: block;
+        margin: 20px 0;
+	}
+	
+	.custom-footer-menu li{
+		padding-left: 20px;
+    	margin-bottom: 8px;
+		position: relative;
+	}
+
+	.custom-footer-menu li:before {
+		content: "";
+		position: absolute;
+		width: 8px;
+		height: 8px;
+		left: 0;
+		top: 10px;
+		border-radius: 10px;
+		background: #fff;
+		opacity: .6;
+	}
+
+	div.about-mobile-padding {
+        padding-bottom: 0px !important;
+		padding-top: 0px !important;
+    }
+
+	div.lets-talk-mobile-padding {
+        padding-bottom: 50px !important;
+		padding-top: 50px !important;
+    }
+
+	div.services-mobile-padding,
+	div.faqs-mobile-padding,
+	div.contact-mobile-padding{
+		padding-top: 0px !important;
+	}
+
+	div.pricing-mobile-padding{
+		margin-top: -50px;
+	}
+
+	body main.main__content, 
+	body .woo_main_content{
+		padding-top: 50px;
+	}
+}
+
+.home main.main__content{
+	padding-top: 0px;
+}
+
+div .owl-theme .owl-controls .owl-nav .owl-prev{
+	left: 42%;
+}
+
+div .owl-theme .owl-controls .owl-nav .owl-next{
+	left: inherit !important;
+	right: 42% !important;
+}
+
+/* div .owl-carousel.certifications{
+	height: 164.5px
+}
+
+div .owl-carousel.certifications .owl-item img {
+    max-height: 164.5px;
+}
+
+@media (max-width: 1199px) and (min-width: 768px) {
+	div .owl-carousel.certifications{
+		height: 133px
+	}
+	div .owl-carousel.certifications .owl-item img {
+    	max-height: 133px;
+	}
+} */
+
+div .privacy__text {
+    margin-right: 5px;
+}
+
+div.privacy__bar a{
+	font-weight: 600;
+}
+
+.legal-heading h2{
+	font-size: 1.6em;
+}
+
+div.icon-text-custom {
+    max-width: 340px;
+}
+
+
+form div.wpcf7-validation-errors, 
+form div.wpcf7-acceptance-missing, 
+form div.wpcf7-mail-sent-ok, 
+form div.wpcf7-response-output{
+	color: #000000;
+	background: #fff;
+}
+
+form span.wpcf7-not-valid-tip{
+	color: #a80226;
+	background: #fff;
+	padding: 4px;
+}
+
+div .dotted-overlay:before {
+    background-image: url(https://jenshawgonutrition2024.sfo3.digitaloceanspaces.com/wp-content/uploads/2024/06/13085104/dotted-pattern-large.png);
+}
+
+.wpcf7 textarea {
+	line-height: 38px !important;
+}
+
+.wpcf7-response-output {
+    margin-top: 5px !important;
+}
+
+.grecaptcha-badge { 
+	visibility: hidden; 
+}
+
+div .text-dimmer{
+	opacity: 1;
+}
+
+.label-hidden{
+	visibility: hidden;
+	height: 0px;
+	display: block;
+}
+
+
+form.submitting .wpcf7-spinner {
+	height: 24px !important;
+}
+.wpcf7-spinner {
+	height: 0px !important;
+	display: block !important;
+}
+
+.textwidget .wpcf7 .wpcf7-spinner {
+	height: 24px !important;
+}
+
+.textwidget .wpcf7 input[type=email]{
+    margin-bottom: 10px !important;
+}
+
+.menu-hide,
+.content-hide {
+	display: none !important;
+}
+
+/* -------------------------- */
+
+div.gform-theme input,
+div.gform-theme textarea {
+    outline: none !important;
+}
+
+div.gform-theme input[type="text"], 
+div.gform-theme input[type="email"], 
+div.gform-theme input[type="url"], 
+div.gform-theme input[type="tel"], 
+div.gform-theme input[type="number"], 
+div.gform-theme input[type="date"], 
+div.gform-theme textarea, 
+div.gform-theme select {
+    background-color: #ffffff;
+    color: #5f5f5f;
+    width: 100%;
+    border: 1px solid #eeeeee !important;
+    border-radius: 5px;
+    height: 56px;
+    line-height: 56px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 15px;
+    transition: all ease .3s;
+    -webkit-transition: all ease .3s;
+}
+
+div.gform-theme textarea {
+    height: 200px;
+}
+
+div.gform-theme input[type="text"]:focus, 
+div.gform-theme input[type="email"]:focus, 
+div.gform-theme input[type="url"]:focus, 
+div.gform-theme input[type="tel"]:focus, 
+div.gform-theme input[type="number"]:focus, 
+div.gform-theme input[type="date"]:focus, 
+div.gform-theme textarea:focus, 
+div.gform-theme select:focus {
+    border-color: #574142;
+}
+
+body .gform_wrapper ::placeholder,
+body .gform_wrapper ::-webkit-input-placeholder{
+  color: #d6d6d6;
+}
+
+div.gform-theme p {
+    margin-bottom: 0;
+}
+
+div.gform-theme input[type="submit"] {
+  	padding: 17px 20px;
+	background: #574142 !important;
+	border-width: 0;
+	border-color: #332324 !important;
+	border-style: solid;
+	border-radius: 4px !important;
+	color: #fff !important;
+	transition: all ease .3s !important;
+	-webkit-transition: all ease .3s !important;
+	width: 100%;
+	font-size: 15px !important;
+	text-transform: uppercase !important;
+	font-weight: 700 !important;
+	margin-top: 20px !important;
+	min-height: 52px !important;
+	letter-spacing: 1.2px !important;
+}
+
+	
+
+div.gform-theme .subscribe-form input[type="submit"]{
+	top: 5px;
+	right: 0;
+	height: 56px !important;
+	position: absolute;
+	background: #ea8c98 !important;
+	color: #000 !important;
+	border-top-left-radius: 0 !important;
+	border-bottom-left-radius: 0 !important;
+	margin-bottom: 0;
+	max-width: 29%;
+	min-width: 133px !important;
+	white-space: nowrap;
+	touch-action: manipulation;
+	-webkit-user-select: none;
+	border-color: transparent;
+	margin-top: 0 !important;
+}
+
+div.gform-theme input[type="submit"]:hover {
+    background: #a80226 !important;
+    border-color: #332324 !important;
+    color: #ffffff !important;
+    opacity: .9 !important;
+}
+
+div.gform-theme .subscribe-form input[type="submit"]:hover{
+	background: #ea8c98 !important;
+	color: #000 !important;
+}
+
+.gfield_label.gform-field-label.gfield_label_before_complex {
+	font-weight: 700;
+	font-size: 15px;
+}
+
+div.gform-theme label{
+	margin-right: 15px;
+	margin-left: 0 !important;
+	font-weight: 700 !important;
+	font-size: 15px !important;
+	width: 100%;
+	margin-bottom: 0;
+}
+
+div.gform-theme--foundation .gform_fields {
+  grid-row-gap: 20px !important;
+}
+
+div.gform-theme--foundation .gform_footer, 
+div.gform-theme--foundation .gform_page_footer{
+	margin-top: 0px;
+}
+
+.gform_required_legend{
+	display: none;
+}
+
+.subscribe-form_wrapper{
+	position: relative;
+}
+
+.subscribe-form_wrapper input{
+	border: none !important;
+}
+
+.subscribe-form_wrapper #gform_confirmation_message_2 {
+color: #fffff;
+}
+
+.subscribe-form_wrapper #gform_2_validation_container{
+	display: none;
+}
+
+.gfield_validation_message {
+	color: #a80226;
+	background: #fff;
+	padding: 4px;
+}
+
+div.widget .gform-theme .subscribe-form input[type="submit"]{
+	position: initial;
+	background: #574142 !important;
+	color: #fff !important;
+	margin-top: 20px !important;
+	border-radius: 4px !important;
+	max-width: 100% !important;
+	border-color: #332324 !important;
+	margin-bottom: 20px !important;
+}
+
+div.widget .gform-theme .subscribe-form input[type="submit"]:hover {
+    background: #a80226 !important;
+    border-color: #332324 !important;
+    color: #ffffff !important;
+    opacity: .9 !important;
+}
+
+div.gform-theme #gform_confirmation_message_1 {
+	text-align: center;
+}
+
+.subscribe-form_wrapper #gform_confirmation_message_2{
+	color: #ffffff;
+}
+
+div.widget .gform-theme .subscribe-form  #gform_confirmation_message_2{
+	color: #000000;
+}
+
+.pinned_blog img{
+	border-radius: 50%;
+}
+
+.pinned_blog .excerpt{
+	text-align: center;
+}
+
+.pinned_blog .vc_btn3-container{
+	text-align: center;
+	width: 100%;
+}
+
+.pinned_blog .read-more{
+	margin-top: 10%;
+}
+
+.subscribe-section {
+	float: left;
+	width: 100%;
+	background-color: #3a3636;
+	padding: 50px 0;
+	margin-bottom: 50px;
+}
+
+section.subscribe-section .main__icon{
+	display: inline-block;
+	color: #ffffff;
+	border-radius: 50%;
+	border: 1px solid rgba(0,0,0,0.01);
+	background: rgba(255,255,255,0.01);
+	height: 48px;
+	width: 48px;
+	line-height: 48px;
+	font-size: 48px;
+	transition: all ease .3s;
+}
+
+section.archive__header .social-links,
+.newsletter-social-links {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	margin-block-start: 0px;
+	padding-inline-start: 0px;
+}
+
+section.archive__header .social-links li,
+.newsletter-social-links li {
+	display: inline-block;
+	padding: 0 7px;
+}
+
+section.archive__header .social-links li a,
+.newsletter-social-links li a {
+	font-size: 17px;
+	color: #574142 !important;
+}
+
+.newsletter-creds,
+.newsletter-social-links{
+	float: left;
+}
+
+.pull-up-a-chair-blog{
+	width: 100%;
+}
+
+ @media only screen and (max-width: 768px) {
+	.link-tree{
+		padding-left: 5px !important;
+		padding-right: 5px !important;
+	}
+}

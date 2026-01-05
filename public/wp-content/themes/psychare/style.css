@@ -1,0 +1,378 @@
+/*
+Theme Name: Psychare
+Theme URI: http://slashcreative.co
+Author: SlashCreative 
+Author URI: https://themeforest.net/user/slashcreative
+Description: Psychare is a beautiful niche WordPress theme, specially designed for Psychologists, Life Coaches, and other Medical Professionals.
+License: Themeforest Split Licence
+License URI: - https://themeforest.net/licenses/standard
+Text Domain: psychare
+Version: 1.3.2
+Domain Path: /languages
+*/
+
+.alignnone {
+   margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+   display: block;
+   margin: 5px auto 5px auto;
+}
+
+.alignright {
+   float: right;
+   margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+   float: left;
+   margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+   float: right;
+   margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+   margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+   float: left;
+   margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+   display: block;
+   margin-left: auto;
+   margin-right: auto;
+}
+
+.wp-caption {
+   border: 1px solid #ddd;
+   border-radius: 3px;
+   padding: 6px 3px;
+   max-width: 100% !important;
+   text-align: center;
+}
+
+.wp-caption.aligncenter {
+   margin: auto;
+   border: none;
+   margin-bottom: 10px;
+}
+
+.wp-caption.alignnone {
+   margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+   margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+   margin: 5px 0 20px 20px;
+}
+
+.alignfull {
+   margin-bottom: calc(2 * 1rem);
+}
+
+.wp-caption img {
+   border: 0 none;
+   height: auto;
+   margin: 0 0 8px 0;
+   max-width: 98.5%;
+   padding: 0;
+   width: auto;
+}
+
+.wp-caption figcaption {
+   font-style: italic;
+   font-size: 14px;
+}
+
+.wp-caption p.wp-caption-text {
+   font-size: 11px;
+   line-height: 17px;
+   margin: 0;
+   padding: 0 4px 5px;
+}
+
+
+/* Text meant only for screen readers. */
+
+.screen-reader-text {
+   border: 0;
+   clip: rect(1px, 1px, 1px, 1px);
+   clip-path: inset(50%);
+   height: 1px;
+   margin: -1px;
+   overflow: hidden;
+   padding: 0;
+   position: absolute !important;
+   width: 1px;
+   word-wrap: normal !important;
+   /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+   background-color: #eee;
+   clip: auto !important;
+   clip-path: none;
+   color: #444;
+   display: block;
+   font-size: 1em;
+   height: auto;
+   left: 5px;
+   line-height: normal;
+   padding: 15px 23px 14px;
+   text-decoration: none;
+   top: 5px;
+   width: auto;
+   z-index: 100000;
+   /* Above WP toolbar. */
+}
+
+
+/*.allow-gutenberg .alignwide,
+.allow-gutenberg .alignfull {
+  margin: 32px calc(50% - 50vw);
+  max-width: 100vw;
+  width: 100vw;
+}
+
+@media (min-width: 920px) {
+  .allow-gutenberg .alignwide {
+    margin: 32px calc( ( 767px - 920px ) / 2 );
+    max-width: 920px;
+    width: 920px;
+  }
+}
+*/
+
+.allow-gutenberg .gallery:after {
+   content: "";
+   display: table;
+   clear: both;
+}
+
+img.aligncenter,
+div.aligncenter,
+figure.aligncenter,
+img.wp-post-image {
+   display: block;
+   margin: 1em auto;
+}
+
+img.alignright,
+div.alignright,
+figure.alignright {
+   float: right;
+   margin: 1em 0 1em 2em;
+}
+
+img.alignleft,
+div.alignleft,
+figure.alignleft,
+img.wp-post-image.attachment-thumb {
+   float: left;
+   margin: 0 1em 2em 0;
+}
+
+.allow-gutenberg figure {
+   max-width: 100%;
+   height: auto;
+}
+
+p img.alignright,
+p img.alignleft {
+   margin-top: 0;
+}
+
+.allow-gutenberg .gallery figure {
+   float: left;
+   margin: 0 2% 1em 0;
+}
+
+.allow-gutenberg .gallery.gallery-columns-1 figure {
+   width: 100%;
+   margin: 0 0 1em 0;
+   float: none;
+}
+
+.allow-gutenberg .gallery.gallery-columns-3 figure {
+   width: 32%;
+}
+
+.allow-gutenberg .gallery.gallery-columns-3 figure:nth-of-type(3n+3) {
+   margin-right: 0;
+}
+
+.allow-gutenberg .gallery.gallery-columns-3 figure:nth-of-type(3n+4) {
+   clear: left;
+}
+
+.allow-gutenberg .gallery.gallery-columns-2 figure {
+   width: 49%;
+}
+
+.allow-gutenberg .gallery.gallery-columns-2 figure:nth-of-type(even) {
+   margin-right: 0;
+}
+
+.allow-gutenberg .gallery.gallery-columns-2 figure:nth-of-type(odd) {
+   clear: left;
+}
+
+.allow-gutenberg .gallery.gallery-columns-4 figure {
+   width: 23.25%;
+}
+
+.allow-gutenberg .gallery.gallery-columns-4 figure:nth-of-type(4n+4) {
+   margin-right: 0;
+}
+
+.allow-gutenberg .gallery.gallery-columns-4 figure:nth-of-type(4n+5) {
+   clear: left;
+}
+
+.allow-gutenberg .gallery.gallery-columns-5 figure {
+   width: 18%;
+}
+
+.allow-gutenberg .gallery.gallery-columns-5 figure:nth-of-type(5n+5) {
+   margin-right: 0;
+}
+
+.allow-gutenberg .gallery.gallery-columns-5 figure:nth-of-type(5n+6) {
+   clear: left;
+}
+
+.allow-gutenberg .gallery.gallery-columns-6 figure {
+   width: 14.2%;
+}
+
+.allow-gutenberg .gallery.gallery-columns-6 figure:nth-of-type(6n+6) {
+   margin-right: 0;
+}
+
+.allow-gutenberg .gallery.gallery-columns-6 figure:nth-of-type(6n+7) {
+   clear: left;
+}
+
+.allow-gutenberg .gallery.gallery-columns-7 figure {
+   width: 12%;
+}
+
+.allow-gutenberg .gallery.gallery-columns-7 figure:nth-of-type(7n+7) {
+   margin-right: 0;
+}
+
+.allow-gutenberg .gallery.gallery-columns-7 figure:nth-of-type(7n+8) {
+   clear: left;
+}
+
+.allow-gutenberg .gallery.gallery-columns-8 figure {
+   width: 10.2%;
+}
+
+.allow-gutenberg .gallery.gallery-columns-8 figure:nth-of-type(8n+8) {
+   margin-right: 0;
+}
+
+.allow-gutenberg .gallery.gallery-columns-8 figure:nth-of-type(8n+9) {
+   clear: left;
+}
+
+.allow-gutenberg .gallery.gallery-columns-9 figure {
+   width: 8.85%;
+}
+
+.allow-gutenberg .gallery.gallery-columns-9 figure:nth-of-type(9n+9) {
+   margin-right: 0;
+}
+
+.allow-gutenberg .gallery.gallery-columns-9 figure:nth-of-type(9n+10) {
+   clear: left;
+}
+
+@media (max-width:767px) {
+   s .allow-gutenberg .gallery.gallery-columns-4 figure,
+   .allow-gutenberg .gallery.gallery-columns-5 figure,
+   .allow-gutenberg .gallery.gallery-columns-6 figure,
+   .allow-gutenberg .gallery.gallery-columns-7 figure,
+   .allow-gutenberg .gallery.gallery-columns-8 figure,
+   .allow-gutenberg .gallery.gallery-columns-9 figure {
+      width: 100%;
+      margin: 0 0 1em 0;
+      float: none;
+   }
+}
+
+.allow-gutenberg .gallery-caption {
+   display: block;
+   margin: 8px 0;
+   font-size: 14px;
+}
+
+.commentlist .bypostauthor {
+   display: block;
+}
+
+.commentlist li ul.children li.bypostauthor {
+   display: block;
+}
+
+@media (max-width: 767px) {
+   body.logged-in {
+      margin-top: -46px;
+      padding-top: 46px;
+   }
+}
+
+.wp-block-quote p {
+   font-size: 23px;
+   font-style: italic;
+}
+
+.wp-block-quote cite {
+   font-style: normal;
+   font-size: 16px;
+}
+
+.wp-block-image figcaption {
+   margin-top: .5em;
+   margin-bottom: 1em;
+   font-size: 14px;
+   text-align: center;
+}
+
+.wp-block-button {
+   margin-bottom: 15px;
+}
+
+.is-style-squared .wp-block-button__link {
+   border-radius: 0;
+}
+
+.wp-block-cover p:not(.has-text-color) {
+   color: #fff;
+}
+
+.wp-block-image .alignright {
+   float: right;
+   margin: 20px 0 50px 1em;
+}
+
+img.alignright,
+figure.alignright {
+   clear: both;
+   display: block;
+   float: right;
+   margin-bottom: 50px;
+   margin-left: 20px;
+}

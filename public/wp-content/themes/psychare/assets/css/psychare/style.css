@@ -1,0 +1,323 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('/wp-content/themes/psychare/assets/css/psychare/icomoon.ttf?i1gf0a') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-fist:before {
+  content: "\e900";
+}
+.icon-muscle:before {
+  content: "\e901";
+}
+.icon-thumb-up:before {
+  content: "\e902";
+}
+.icon-motivation:before {
+  content: "\e903";
+}
+.icon-motivational:before {
+  content: "\e904";
+}
+.icon-trophy:before {
+  content: "\e905";
+}
+.icon-top:before {
+  content: "\e906";
+}
+.icon-ribbon:before {
+  content: "\e907";
+}
+.icon-smile:before {
+  content: "\e908";
+}
+.icon-win:before {
+  content: "\e909";
+}
+.icon-super:before {
+  content: "\e90a";
+}
+.icon-thumb-up-1:before {
+  content: "\e90b";
+}
+.icon-idea:before {
+  content: "\e90c";
+}
+.icon-target:before {
+  content: "\e90d";
+}
+.icon-talent:before {
+  content: "\e90e";
+}
+.icon-laurel:before {
+  content: "\e90f";
+}
+.icon-goal:before {
+  content: "\e910";
+}
+.icon-medal:before {
+  content: "\e911";
+}
+.icon-flag:before {
+  content: "\e912";
+}
+.icon-finish-line:before {
+  content: "\e913";
+}
+.icon-podium:before {
+  content: "\e914";
+}
+.icon-happy:before {
+  content: "\e915";
+}
+.icon-success:before {
+  content: "\e916";
+}
+.icon-steps:before {
+  content: "\e917";
+}
+.icon-fame:before {
+  content: "\e918";
+}
+.icon-motivational-speech:before {
+  content: "\e919";
+}
+.icon-finish-flag:before {
+  content: "\e91a";
+}
+.icon-finish-line-1:before {
+  content: "\e91b";
+}
+.icon-support:before {
+  content: "\e91c";
+}
+.icon-passion:before {
+  content: "\e91d";
+}
+.icon-mindset:before {
+  content: "\e91e";
+}
+.icon-progress:before {
+  content: "\e91f";
+}
+.icon-progress-1:before {
+  content: "\e920";
+}
+.icon-creativity:before {
+  content: "\e921";
+}
+.icon-passion-1:before {
+  content: "\e922";
+}
+.icon-passion-2:before {
+  content: "\e923";
+}
+.icon-fist-1:before {
+  content: "\e924";
+}
+.icon-victory:before {
+  content: "\e925";
+}
+.icon-positive:before {
+  content: "\e926";
+}
+.icon-talent-1:before {
+  content: "\e927";
+}
+.icon-prize:before {
+  content: "\e928";
+}
+.icon-courage:before {
+  content: "\e929";
+}
+.icon-performance:before {
+  content: "\e92a";
+}
+.icon-motivated:before {
+  content: "\e92b";
+}
+.icon-heart-eyes:before {
+  content: "\e92c";
+}
+.icon-growth:before {
+  content: "\e92d";
+}
+.icon-motivational-speech-1:before {
+  content: "\e92e";
+}
+.icon-skill:before {
+  content: "\e92f";
+}
+.icon-focus:before {
+  content: "\e930";
+}
+.icon-loudspeaker:before {
+  content: "\e931";
+}
+.icon-send-mail:before {
+  content: "\e932";
+}
+.icon-message:before {
+  content: "\e933";
+}
+.icon-mail-4:before {
+  content: "\e934";
+}
+.icon-mail-3:before {
+  content: "\e935";
+}
+.icon-telephone-2:before {
+  content: "\e936";
+}
+.icon-home-message:before {
+  content: "\e937";
+}
+.icon-mail-2:before {
+  content: "\e938";
+}
+.icon-mobile-phone:before {
+  content: "\e939";
+}
+.icon-phone-3:before {
+  content: "\e93a";
+}
+.icon-mail-1:before {
+  content: "\e93b";
+}
+.icon-web:before {
+  content: "\e93c";
+}
+.icon-mouse:before {
+  content: "\e93d";
+}
+.icon-sending-call:before {
+  content: "\e93e";
+}
+.icon-online-question:before {
+  content: "\e93f";
+}
+.icon-mail:before {
+  content: "\e940";
+}
+.icon-send-1:before {
+  content: "\e941";
+}
+.icon-telephone-1:before {
+  content: "\e942";
+}
+.icon-telephone:before {
+  content: "\e943";
+}
+.icon-video-chat:before {
+  content: "\e944";
+}
+.icon-template:before {
+  content: "\e945";
+}
+.icon-mailbox:before {
+  content: "\e946";
+}
+.icon-send:before {
+  content: "\e947";
+}
+.icon-contact:before {
+  content: "\e948";
+}
+.icon-globe:before {
+  content: "\e949";
+}
+.icon-world:before {
+  content: "\e94a";
+}
+.icon-email-5:before {
+  content: "\e94b";
+}
+.icon-email-4:before {
+  content: "\e94c";
+}
+.icon-phone-2:before {
+  content: "\e94d";
+}
+.icon-write-letter:before {
+  content: "\e94e";
+}
+.icon-email-3:before {
+  content: "\e94f";
+}
+.icon-time-call-1:before {
+  content: "\e950";
+}
+.icon-time-call:before {
+  content: "\e951";
+}
+.icon-telephone-book:before {
+  content: "\e952";
+}
+.icon-schedule:before {
+  content: "\e953";
+}
+.icon-website:before {
+  content: "\e954";
+}
+.icon-calendar:before {
+  content: "\e955";
+}
+.icon-address:before {
+  content: "\e956";
+}
+.icon-email-2:before {
+  content: "\e957";
+}
+.icon-home:before {
+  content: "\e958";
+}
+.icon-profile:before {
+  content: "\e959";
+}
+.icon-text:before {
+  content: "\e95a";
+}
+.icon-phone-1:before {
+  content: "\e95b";
+}
+.icon-email-1:before {
+  content: "\e95c";
+}
+.icon-call-1:before {
+  content: "\e95d";
+}
+.icon-call:before {
+  content: "\e95e";
+}
+.icon-chat-1:before {
+  content: "\e95f";
+}
+.icon-location:before {
+  content: "\e960";
+}
+.icon-email:before {
+  content: "\e961";
+}
+.icon-chat:before {
+  content: "\e962";
+}
+.icon-phone:before {
+  content: "\e963";
+}

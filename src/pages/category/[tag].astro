@@ -1,0 +1,36 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  const tags = new Set<string>();
+  posts.forEach((p) => (p.data.tags ?? []).forEach((t) => tags.add(t)));
+  return Array.from(tags).map((tag) => ({ params: { tag } }));
+}
+
+const { tag } = Astro.params;
+const posts = (await getCollection("blog"))
+  .filter((p) => (p.data.tags ?? []).includes(tag!))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title={`Category: ${tag} | Jen Shawgo Nutrition`}>
+  <main class="main__content">
+    <section class="col-md-12">
+      <div class="container blog__wrap">
+        <h1>{tag}</h1>
+        <div class="row">
+          {posts.map((post) => (
+            <div class="col-md-6">
+              <article class="blog-card">
+                {post.data.heroImage && <a href={`/${post.slug}/`}><img src={post.data.heroImage} alt={post.data.title} loading="lazy" /></a>}
+                <h2><a href={`/${post.slug}/`}>{post.data.title}</a></h2>
+              </article>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

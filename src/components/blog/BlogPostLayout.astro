@@ -1,0 +1,30 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import BlogNav from "@/components/blog/BlogNav.astro";
+import RelatedPosts from "@/components/blog/RelatedPosts.astro";
+
+const { entry, allEntries } = Astro.props;
+const { Content, data, slug } = entry;
+---
+
+<BaseLayout title={`${data.title} | Jen Shawgo Nutrition`} description={data.description}>
+  <main class="main__content blog__post">
+    <section class="col-md-12 blog-featured">
+      <div class="container">
+        <h1>{data.title}</h1>
+        {data.heroImage && (
+          <img class="blog-hero-image" src={data.heroImage} alt={data.title} loading="eager" />
+        )}
+      </div>
+    </section>
+
+    <section class="col-md-12">
+      <div class="container blog-post-content">
+        <Content />
+      </div>
+    </section>
+
+    <BlogNav entry={entry} allEntries={allEntries} />
+    <RelatedPosts entry={entry} allEntries={allEntries} />
+  </main>
+</BaseLayout>
