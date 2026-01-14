@@ -7,12 +7,12 @@ tags:
   - Nutrition
   - Wellness
   - Foundations
-heroImage: "/assets/img/blog/jen-with-dachshund-poppy.jpg"
+heroImage: " /wp-content/uploads/2025/08/jen-with-dachshund-poppy.jpg"
 ---
 
 ## Hi friends, and welcome! I’m so glad you’re here.
 
-![Jen with dachshund Poppy](/assets/img/blog/jen-with-dachshund-poppy.jpg)
+![Jen with dachshund Poppy]( /wp-content/uploads/2025/08/jen-with-dachshund-poppy.jpg)
 
 If you’ve ever felt overwhelmed by the overabundance of conflicting health and wellness advice out there—one day a food is “super,” and the next it’s “toxic” and to be avoided at all costs (insert eyeroll here!)—you’re not alone. My goal with this blog is to help you cut through the noise and get back to the basics: evidence-based, trustworthy nutrition information that actually makes sense for real life.
 
@@ -34,11 +34,6 @@ I can’t wait to share ideas, answer your questions, and connect with you along
 
 Make sure you check out [How to Build Balanced Meals for Health](/how-to-build-balanced-meals-for-health). This will provide you with a solid foundation for understanding how to assemble meals that truly nourish your body and support your health goals. Think of it as our starting point—the basics we’ll keep building on as we explore more topics together!
 
-![Jen lifestyle image](/assets/img/blog/jen-lifestyle.jpg)
+![Jen lifestyle image]( /wp-content/uploads/2025/08/jen-lifestyle.jpg)
 
 Here’s to good food, good health, and good conversation.
-
-**Health & Hugs,**  
-Jen
-
-![Jen signature](/assets/img/blog/jen-signature.png)
