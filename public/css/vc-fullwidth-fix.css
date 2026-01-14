@@ -1,0 +1,30 @@
+/*
+  WPBakery (VC) full-width rows in WordPress rely on JS that injects inline styles like:
+  left:-214px; width:1599px; padding-left:214px; padding-right:214px
+  In a static Astro build we don't run that JS, so those values can be wrong.
+
+  This CSS re-creates the intended effect:
+  - row stretches full browser width
+  - content inside stays aligned to the .container max-width
+*/
+
+.vc_row[data-vc-full-width="true"],
+.wpb_row[data-vc-full-width="true"]{
+  position:relative !important;
+  left:50% !important;
+  right:auto !important;
+  width:100vw !important;
+  max-width:100vw !important;
+  transform:translateX(-50%) !important;
+  box-sizing:border-box !important;
+  padding-left:calc((100vw - min(1170px, 100vw))/2) !important;
+  padding-right:calc((100vw - min(1170px, 100vw))/2) !important;
+}
+
+@media (max-width:1199px){
+  .vc_row[data-vc-full-width="true"],
+  .wpb_row[data-vc-full-width="true"]{
+    padding-left:15px !important;
+    padding-right:15px !important;
+  }
+}

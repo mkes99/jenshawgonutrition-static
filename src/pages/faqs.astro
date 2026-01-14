@@ -1,299 +1,664 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import CtaBarBooking from "../components/CtaBarBooking.astro";
+import ProcessSection from "../components/ProcessSection.astro";
 ---
 
-<BaseLayout title="Faqs | Jen Shawgo Nutrition">
+<BaseLayout>
+  <title slot="head">FAQs | Jen Shawgo Nutrition</title>
+  <PageHero
+    title="Frequently Asked Questions"
+    subtitle="“Finding the right answers begins with the right questions.” Frank Sonnenberg"
+    image="/wp-content/uploads/2024/06/FAQ-header-scaled.jpg"
+  />
   <main class="main__content">
-
-<section class="col-md-12 col-sm-12 col-xs-12 allow-gutenberg">
-<div class="row">
-<div class="container">
-<div class="wpb-content-wrapper"><p><style></style></p><div class="vc_row wpb_row vc_row-fluid faqs-mobile-padding content-dark data-bg-color-695968689e70a vc_custom_1717865264472 vc_row-has-fill vc_row-o-equal-height vc_row-o-content-middle vc_row-flex row-z-index-695968689e70a" data-vc-full-width="true" data-vc-full-width-init="false"><style></style><div class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-695968689e91f">
-<div class="vc_column-inner vc_custom_1606274026269">
-<div class="wpb_wrapper">
-</div>
-</div>
-</div><style></style><div class="wpb_column vc_column_container content-dark vc_col-sm-8 column-z-index-695968689e9f1">
-<div class="vc_column-inner vc_custom_1606285280894">
-<div class="wpb_wrapper"><style>#slcr_custom_heading_695968689eedd{ font-size: 14px;color: #a80226;line-height: 1.2;text-align: left;  }</style><p class="vc_custom_heading sub-heading single pink font-800" id="slcr_custom_heading_695968689eedd">General Questions</p><ul class="accordion m_accordion695968689fc6f accordion__03 one-tab"><style>.mh_accordion695968689fad0.accordion-header::before {  } .mh_accordion695968689fad0.accordion-header h5{ } #mhp_accordion695968689fad0.accordion-content p{ }</style>
-<li>
-<div class="accordion-header mh_accordion695968689fad0">
-<h5 class="gap-0 mb-0">What is integrative nutrition counseling?</h5>
-</div>
-<div class="accordion-content" id="mhp_accordion695968689fad0">
-<p>Integrative nutrition counseling is a customized approach to nutrition and lifestyle that aims to promote optimal health and overall well-being for each individual. It focuses on the root cause and takes into account the whole person to help prevent and combat chronic and metabolic illnesses.</p>
-</div>
-</li><style>.mh_accordion695968689fb38.accordion-header::before {  } .mh_accordion695968689fb38.accordion-header h5{ } #mhp_accordion695968689fb38.accordion-content p{ }</style>
-<li>
-<div class="accordion-header mh_accordion695968689fb38">
-<h5 class="gap-0 mb-0">How do I get started?</h5>
-</div>
-<div class="accordion-content" id="mhp_accordion695968689fb38">
-<p>Start with a free 15-minute discovery call to talk through your goals, coverage options, and next steps. Be sure to check out the FAQs first to learn more about what to expect. If everything aligns, we'll move forward with scheduling your initial consultation.</p>
-</div>
-</li><style>.mh_accordion695968689fb64.accordion-header::before {  } .mh_accordion695968689fb64.accordion-header h5{ } #mhp_accordion695968689fb64.accordion-content p{ }</style>
-<li>
-<div class="accordion-header mh_accordion695968689fb64">
-<h5 class="gap-0 mb-0">Can I meet with you in person for my sessions?</h5>
-</div>
-<div class="accordion-content" id="mhp_accordion695968689fb64">
-<p>At this time all sessions are conducted virtually using a HIPAA-secure telehealth platform that provides a convenient and safe way to connect, so you can feel comfortable and confident during our sessions.</p>
-</div>
-</li><style>.mh_accordion695968689fb8b.accordion-header::before {  } .mh_accordion695968689fb8b.accordion-header h5{ } #mhp_accordion695968689fb8b.accordion-content p{ }</style>
-<li>
-<div class="accordion-header mh_accordion695968689fb8b">
-<h5 class="gap-0 mb-0">What ages do you work with?</h5>
-</div>
-<div class="accordion-content" id="mhp_accordion695968689fb8b">
-<p>Anyone 18 and over is invited to work with me.</p>
-</div>
-</li><style>.mh_accordion695968689fbf5.accordion-header::before {  } .mh_accordion695968689fbf5.accordion-header h5{ } #mhp_accordion695968689fbf5.accordion-content p{ }</style>
-<li>
-<div class="accordion-header mh_accordion695968689fbf5">
-<h5 class="gap-0 mb-0">What are your credentials?</h5>
-</div>
-<div class="accordion-content" id="mhp_accordion695968689fbf5">
-<p>I hold a Master of Science in Clinical Nutrition and am a board-certified Nutrition Specialist® (CNS®), licensed dietitian nutritionist (LDN), certified health and wellness coach, with specialized training in nutritional genomics from the American Nutrition Association (ANA).</p>
-</div>
-</li><style>.mh_accordion695968689fc1d.accordion-header::before {  } .mh_accordion695968689fc1d.accordion-header h5{ } #mhp_accordion695968689fc1d.accordion-content p{ }</style>
-<li>
-<div class="accordion-header mh_accordion695968689fc1d">
-<h5 class="gap-0 mb-0">What is a Certified Nutrition Specialist®?</h5>
-</div>
-<div class="accordion-content" id="mhp_accordion695968689fc1d">
-<p>The Certified Nutrition Specialist® credential (CNS®) is the most advanced certification for personalized nutrition practitioners. Certified Nutrition Specialists practice science-based personalized nutrition therapy to power people to health. This credential requires a Master of Science degree in nutrition, completion of 1,000 hours of supervised practice experience, and passing a rigorous board examination to demonstrate their education, experience, and training. They are also required to re-certify every 5 years by completing at least 75 hours of continuing education.</p>
-</div>
-</li></ul><style> .m_accordion695968689fc6f .accordion-header {     } .m_accordion695968689fc6f.accordion__02 li.active .accordion-header {  }   .m_accordion695968689fc6f.accordion__02 li.active .accordion-header::before {   } .m_accordion695968689fc6f.accordion__02 li.active .accordion-header h5 {  } .m_accordion695968689fc6f .accordion-header::before {   }   .m_accordion695968689fc6f.accordion__03 li:hover .accordion-header h5 { } .m_accordion695968689fc6f.accordion__03 li.active .accordion-header h5 { } .m_accordion695968689fc6f.accordion__03 .active .accordion-header::before {} .accordion__02 li.active .accordion-header::before { color: #fff; }</style>
-</div>
-</div>
-</div><style></style><div class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-695968689fd3e">
-<div class="vc_column-inner vc_custom_1606274032217">
-<div class="wpb_wrapper">
-</div>
-</div>
-</div></div>
-<div class="vc_row-full-width vc_clearfix"></div>
-<style></style><div class="vc_row wpb_row vc_row-fluid content-dark data-bg-color-695968689fe83 vc_custom_1715874124661 vc_row-has-fill vc_row-o-equal-height vc_row-o-content-middle vc_row-flex row-z-index-695968689fe83" data-vc-full-width="true" data-vc-full-width-init="false"><style></style><div class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-695968689fee9">
-<div class="vc_column-inner vc_custom_1606274026269">
-<div class="wpb_wrapper">
-</div>
-</div>
-</div><style></style><div class="wpb_column vc_column_container content-dark vc_col-sm-8 column-z-index-695968689ff3d">
-<div class="vc_column-inner vc_custom_1606285280894">
-<div class="wpb_wrapper"><style>#slcr_custom_heading_69596868a003b{ font-size: 14px;color: #a80226;line-height: 1.2;text-align: left;  }</style><p class="vc_custom_heading sub-heading single pink font-800" id="slcr_custom_heading_69596868a003b">Sessions &amp; Packages</p><ul class="accordion m_accordion69596868a0271 accordion__03 one-tab"><style>.mh_accordion69596868a0196.accordion-header::before {  } .mh_accordion69596868a0196.accordion-header h5{ } #mhp_accordion69596868a0196.accordion-content p{ }</style>
-<li>
-<div class="accordion-header mh_accordion69596868a0196">
-<h5 class="gap-0 mb-0">What is a Discovery Session?</h5>
-</div>
-<div class="accordion-content" id="mhp_accordion69596868a0196">
-<p>During this free 15-minute session, we’ll talk about your current health concerns and wellness goals, and explore how nutrition counseling may support you. It’s also a great time to ask questions about my process, available packages, or what working together looks like. We’ll review your insurance coverage and discuss payment options so you know exactly what to expect. Most importantly, this call helps us both ensure it's the right fit to support your success.</p>
-</div>
-</li><style>.mh_accordion69596868a01cf.accordion-header::before {  } .mh_accordion69596868a01cf.accordion-header h5{ } #mhp_accordion69596868a01cf.accordion-content p{ }</style>
-<li>
-<div class="accordion-header mh_accordion69596868a01cf">
-<h5 class="gap-0 mb-0">What is an Initial Consultation?</h5>
-</div>
-<div class="accordion-content" id="mhp_accordion69596868a01cf">
-<p>This session is an in-depth assessment of your nutritional health. During our initial consultation, you will have my undivided attention as you share your unique health history, concerns, and personal goals. This will include a comprehensive nutritional assessment of your food preferences, intolerances or allergies, daily food intake, personal diet history, and relationship with food. Additionally, we will review any current lab work and/or notes from your physician. This will help me gain a deeper understanding of your individual needs and preferences, enabling me to begin creating the foundation of a personalized plan tailored specifically to your needs and goals.</p>
-</div>
-</li><style>.mh_accordion69596868a01f4.accordion-header::before {  } .mh_accordion69596868a01f4.accordion-header h5{ } #mhp_accordion69596868a01f4.accordion-content p{ }</style>
-<li>
-<div class="accordion-header mh_accordion69596868a01f4">
-<h5 class="gap-0 mb-0">How do I prepare for my initial consultation?</h5>
-</div>
-<div class="accordion-content" id="mhp_accordion69596868a01f4">
-<p>Once your initial consultation is booked, be sure to add the appointment to your calendar and keep an eye on your inbox for important next steps. You may receive messages from Healthie or Berry Street, my HIPAA-compliant telehealth and billing partners. These emails may include forms, insurance updates, or portal access details. To prepare for your session, please have a full list of current medications and supplements ready, and upload any recent lab work you'd like reviewed before our meeting.</p>
-</div>
-</li><style>.mh_accordion69596868a0226.accordion-header::before {  } .mh_accordion69596868a0226.accordion-header h5{ } #mhp_accordion69596868a0226.accordion-content p{ }</style>
-<li>
-<div class="accordion-header mh_accordion69596868a0226">
-<h5 class="gap-0 mb-0">Do I need follow-up sessions?</h5>
-</div>
-<div class="accordion-content" id="mhp_accordion69596868a0226">
-<p>Follow-up sessions are essential to your ultimate success! Developing new eating and lifestyle habits requires time, motivation, and coaching to create lifelong change. During follow-up sessions, our focus will be on reassessing your lifestyle and nutrition choices, celebrating your successes, and equipping you with the necessary tools to tackle any obstacles that may arise. Together, we will refine your plan and goals through personalized education on nutrition and lifestyle. We can make modifications to the plan as necessary and help you stay on track.</p>
-</div>
-</li><style>.mh_accordion69596868a023f.accordion-header::before {  } .mh_accordion69596868a023f.accordion-header h5{ } #mhp_accordion69596868a023f.accordion-content p{ }</style>
-<li>
-<div class="accordion-header mh_accordion69596868a023f">
-<h5 class="gap-0 mb-0">How often will I need a follow-up session?</h5>
-</div>
-<div class="accordion-content" id="mhp_accordion69596868a023f">
-<p>Creating sustainable diet and lifestyle changes takes time, support, and space to ask questions as they arise. Regular check-ins—either weekly or biweekly—tend to be the most effective way to build momentum and see lasting results. We’ll work together to personalize your follow-up schedule in a way that fits your goals, lifestyle, and necessary level of support.</p>
-</div>
-</li></ul><style> .m_accordion69596868a0271 .accordion-header {     } .m_accordion69596868a0271.accordion__02 li.active .accordion-header {  }   .m_accordion69596868a0271.accordion__02 li.active .accordion-header::before {   } .m_accordion69596868a0271.accordion__02 li.active .accordion-header h5 {  } .m_accordion69596868a0271 .accordion-header::before {   }   .m_accordion69596868a0271.accordion__03 li:hover .accordion-header h5 { } .m_accordion69596868a0271.accordion__03 li.active .accordion-header h5 { } .m_accordion69596868a0271.accordion__03 .active .accordion-header::before {} .accordion__02 li.active .accordion-header::before { color: #fff; }</style>
-</div>
-</div>
-</div><style></style><div class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-69596868a02fe">
-<div class="vc_column-inner vc_custom_1606274032217">
-<div class="wpb_wrapper">
-</div>
-</div>
-</div></div>
-<div class="vc_row-full-width vc_clearfix"></div>
-<style></style><div class="vc_row wpb_row vc_row-fluid content-dark data-bg-color-69596868a0424 vc_custom_1715874132230 vc_row-has-fill vc_row-o-equal-height vc_row-o-content-middle vc_row-flex row-z-index-69596868a0424" data-vc-full-width="true" data-vc-full-width-init="false"><style></style><div class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-69596868a0481">
-<div class="vc_column-inner vc_custom_1606274026269">
-<div class="wpb_wrapper">
-</div>
-</div>
-</div><style></style><div class="wpb_column vc_column_container content-dark vc_col-sm-8 column-z-index-69596868a0554">
-<div class="vc_column-inner vc_custom_1606285280894">
-<div class="wpb_wrapper"><style>#slcr_custom_heading_69596868a0660{ font-size: 14px;color: #a80226;line-height: 1.2;text-align: left;  }</style><p class="vc_custom_heading sub-heading single pink font-800" id="slcr_custom_heading_69596868a0660">Supplements and Testing</p><ul class="accordion m_accordion69596868a084b accordion__03 one-tab"><style>.mh_accordion69596868a077a.accordion-header::before {  } .mh_accordion69596868a077a.accordion-header h5{ } #mhp_accordion69596868a077a.accordion-content p{ }</style>
-<li>
-<div class="accordion-header mh_accordion69596868a077a">
-<h5 class="gap-0 mb-0">Do you offer laboratory testing?</h5>
-</div>
-<div class="accordion-content" id="mhp_accordion69596868a077a">
-<p>Yes, nutritionally-focused laboratory testing is available at an additional upfront cost, and availability may vary by state of residence. Nutrigenomic testing can also be added at any time during your care. Clients often have 'normal' conventional lab results, yet they still feel 'off'. Using functional lab ranges and tests to see how the body is utilizing (or reacting to) nutrients, hormones, and other compounds helps direct the course of your wellness plan and can keep us from wasting time (and money) on guesswork.</p>
-</div>
-</li><style>.mh_accordion69596868a07a4.accordion-header::before {  } .mh_accordion69596868a07a4.accordion-header h5{ } #mhp_accordion69596868a07a4.accordion-content p{ }</style>
-<li>
-<div class="accordion-header mh_accordion69596868a07a4">
-<h5 class="gap-0 mb-0">How do I keep my other healthcare providers aware of the work we are doing together?</h5>
-</div>
-<div class="accordion-content" id="mhp_accordion69596868a07a4">
-<p>With your signed consent, communication can be sent about your personalized plan to your other healthcare providers inviting collaboration to ensure you receive comprehensive care.</p>
-</div>
-</li><style>.mh_accordion69596868a07c1.accordion-header::before {  } .mh_accordion69596868a07c1.accordion-header h5{ } #mhp_accordion69596868a07c1.accordion-content p{ }</style>
-<li>
-<div class="accordion-header mh_accordion69596868a07c1">
-<h5 class="gap-0 mb-0">Do you recommend supplements?</h5>
-</div>
-<div class="accordion-content" id="mhp_accordion69596868a07c1">
-<p>Although I believe in a food-first approach, most of the time nutritional supplements are part of your plan. It can be challenging to get all the nutrients you need through diet alone, especially when trying to establish healthy eating patterns. Even with a healthy diet, you may still require additional supplements to help you feel your best and help support any chronic conditions you may have.</p>
-</div>
-</li><style>.mh_accordion69596868a07da.accordion-header::before {  } .mh_accordion69596868a07da.accordion-header h5{ } #mhp_accordion69596868a07da.accordion-content p{ }</style>
-<li>
-<div class="accordion-header mh_accordion69596868a07da">
-<h5 class="gap-0 mb-0">How much will my supplements cost?</h5>
-</div>
-<div class="accordion-content" id="mhp_accordion69596868a07da">
-<p>Since each plan is individualized, the exact cost is not predetermined. Discounts are offered on all professional-grade supplements to anyone who orders through my online dispensary. This provides a lower cost than what you are likely to find if you were to search for the same quality products on your own.</p>
-</div>
-</li><style>.mh_accordion69596868a07f0.accordion-header::before {  } .mh_accordion69596868a07f0.accordion-header h5{ } #mhp_accordion69596868a07f0.accordion-content p{ }</style>
-<li>
-<div class="accordion-header mh_accordion69596868a07f0">
-<h5 class="gap-0 mb-0">Where do I order my supplements?</h5>
-</div>
-<div class="accordion-content" id="mhp_accordion69596868a07f0">
-<p>Supplements are shipped directly to you through my online dispensary supported by Fullscript. To access online ordering go to: https://us.fullscript.com/welcome/jshawgo or use the link at the bottom of the page.</p>
-</div>
-</li></ul><style> .m_accordion69596868a084b .accordion-header {     } .m_accordion69596868a084b.accordion__02 li.active .accordion-header {  }   .m_accordion69596868a084b.accordion__02 li.active .accordion-header::before {   } .m_accordion69596868a084b.accordion__02 li.active .accordion-header h5 {  } .m_accordion69596868a084b .accordion-header::before {   }   .m_accordion69596868a084b.accordion__03 li:hover .accordion-header h5 { } .m_accordion69596868a084b.accordion__03 li.active .accordion-header h5 { } .m_accordion69596868a084b.accordion__03 .active .accordion-header::before {} .accordion__02 li.active .accordion-header::before { color: #fff; }</style>
-</div>
-</div>
-</div><style></style><div class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-69596868a0912">
-<div class="vc_column-inner vc_custom_1606274032217">
-<div class="wpb_wrapper">
-</div>
-</div>
-</div></div>
-<div class="vc_row-full-width vc_clearfix"></div>
-<style></style><div class="vc_row wpb_row vc_row-fluid content-dark data-bg-color-69596868a0a0b vc_custom_1717831809119 vc_row-has-fill vc_row-o-equal-height vc_row-o-content-middle vc_row-flex row-z-index-69596868a0a0b" data-vc-full-width="true" data-vc-full-width-init="false"><style></style><div class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-69596868a0a86">
-<div class="vc_column-inner vc_custom_1606274026269">
-<div class="wpb_wrapper">
-</div>
-</div>
-</div><style></style><div class="wpb_column vc_column_container content-dark vc_col-sm-8 column-z-index-69596868a0af3">
-<div class="vc_column-inner vc_custom_1606285280894">
-<div class="wpb_wrapper"><style>#slcr_custom_heading_69596868a0bf7{ font-size: 14px;color: #a80226;line-height: 1.2;text-align: left;  }</style><p class="vc_custom_heading sub-heading single pink font-800" id="slcr_custom_heading_69596868a0bf7">Billing &amp; Payments</p><ul class="accordion m_accordion69596868a0d6a accordion__03 one-tab"><style>.mh_accordion69596868a0cd0.accordion-header::before {  } .mh_accordion69596868a0cd0.accordion-header h5{ } #mhp_accordion69596868a0cd0.accordion-content p{ }</style>
-<li>
-<div class="accordion-header mh_accordion69596868a0cd0">
-<h5 class="gap-0 mb-0">Do you take insurance?</h5>
-</div>
-<div class="accordion-content" id="mhp_accordion69596868a0cd0">
-<p>Yes! I’m currently in-network with Aetna, BCBS, and United Healthcare. Most clients with coverage pay $0 out of pocket for preventive nutrition care; however, coverage varies by plan and state of residence. I work with insurance in the following states: Arizona, Arkansas, California, Colorado, Connecticut, Illinois, Maryland, Massachusetts, Michigan, New Jersey, New York, Texas, Virginia, and Washington.</p>
-</div>
-</li><style>.mh_accordion69596868a0d04.accordion-header::before {  } .mh_accordion69596868a0d04.accordion-header h5{ } #mhp_accordion69596868a0d04.accordion-content p{ }</style>
-<li>
-<div class="accordion-header mh_accordion69596868a0d04">
-<h5 class="gap-0 mb-0">How does billing and insurance work?</h5>
-</div>
-<div class="accordion-content" id="mhp_accordion69596868a0d04">
-<p>All of my billing and insurance is managed through Berry Street, my trusted billing and telehealth portal partner. They handle verification of benefits, claims, payment processing, and any questions about coverage or payments. Of course, I’m always here to help guide you through the process or connect you with the right support.</p>
-</div>
-</li><style>.mh_accordion69596868a0d2c.accordion-header::before {  } .mh_accordion69596868a0d2c.accordion-header h5{ } #mhp_accordion69596868a0d2c.accordion-content p{ }</style>
-<li>
-<div class="accordion-header mh_accordion69596868a0d2c">
-<h5 class="gap-0 mb-0">What forms of payment do you accept?</h5>
-</div>
-<div class="accordion-content" id="mhp_accordion69596868a0d2c">
-<p>All major credit cards, debit cards, and HSA/FSA cards are accepted forms of payment. Please check with your HSA/FSA provider to confirm coverage of nutritional consultations and follow-up sessions.</p>
-</div>
-</li></ul><style> .m_accordion69596868a0d6a .accordion-header {     } .m_accordion69596868a0d6a.accordion__02 li.active .accordion-header {  }   .m_accordion69596868a0d6a.accordion__02 li.active .accordion-header::before {   } .m_accordion69596868a0d6a.accordion__02 li.active .accordion-header h5 {  } .m_accordion69596868a0d6a .accordion-header::before {   }   .m_accordion69596868a0d6a.accordion__03 li:hover .accordion-header h5 { } .m_accordion69596868a0d6a.accordion__03 li.active .accordion-header h5 { } .m_accordion69596868a0d6a.accordion__03 .active .accordion-header::before {} .accordion__02 li.active .accordion-header::before { color: #fff; }</style>
-</div>
-</div>
-</div><style></style><div class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-69596868a0dc1">
-<div class="vc_column-inner vc_custom_1606274032217">
-<div class="wpb_wrapper">
-</div>
-</div>
-</div></div>
-<div class="vc_row-full-width vc_clearfix"></div>
-<style></style><div class="vc_row wpb_row vc_row-fluid content-dark data-bg-color-69596868a0ec8 vc_custom_1717831925972 vc_row-has-fill vc_row-o-equal-height vc_row-o-content-middle vc_row-flex row-z-index-69596868a0ec8" data-vc-full-width="true" data-vc-full-width-init="false"><style></style><div class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-69596868a0f48">
-<div class="vc_column-inner vc_custom_1606274026269">
-<div class="wpb_wrapper">
-</div>
-</div>
-</div><style></style><div class="wpb_column vc_column_container content-dark vc_col-sm-8 column-z-index-69596868a0ff0">
-<div class="vc_column-inner vc_custom_1606285280894">
-<div class="wpb_wrapper"><div class="wpb_text_column wpb_content_element vc_custom_1717832143703">
-<div class="wpb_wrapper">
-<h5 style="font-weight: 600; line-height: 33px;">Still have questions? <a href="/contact/">Contact Us</a></h5>
-</div>
-</div>
-</div>
-</div>
-</div><style></style><div class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-69596868a1113">
-<div class="vc_column-inner vc_custom_1606274032217">
-<div class="wpb_wrapper">
-</div>
-</div>
-</div></div>
-<div class="vc_row-full-width vc_clearfix"></div>
-<style></style><div class="vc_row wpb_row vc_row-fluid content-dark data-bg-color-69596868a11ae vc_custom_1718303311683 row-z-index-69596868a11ae"><style></style><div class="wpb_column vc_column_container content-dark vc_col-sm-12 column-z-index-69596868a1278">
-<div class="vc_column-inner">
-<div class="wpb_wrapper"><div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1717621887751 vc_row-has-fill"><div class="wpb_column vc_column_container vc_col-sm-1"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div><style>#slcr_icon_text_last69596868a1675.main__icon { display: block; text-align: center; color: #574142 !important; border-radius: 50%; border-color: #f9f5f2 !important; background: #f9f5f2 !important;  height: 64px; width: 64px; line-height: 64px; font-size: 32px; transition: all ease .3s; -webkit-transition: all ease .3s; } [data-hover-target="box"]:hover #slcr_icon_text_last69596868a1675.main__icon, [data-hover-target="icon"] #slcr_icon_text_last69596868a1675.main__icon:hover { background: #f9f5f2 !important; border-color: #f9f5f2 !important; color: #332324 !important; } #slcr_icon_text_content69596868a1675{  } #slcr_icon_text_img69596868a1675{  height: auto; width: 60px;   border-radius: 0px;  }</style><div class="wpb_column vc_column_container vc_col-sm-5"><div class="vc_column-inner"><div class="wpb_wrapper">
-<div class="icons__text icon-center-mobile" data-hover-target="box" data-icon-align="left" data-reset-responsive="false" data-vertical-align="top">
-<div class="icons_wrap">
-<div class="icon__container">
-<i class="main__icon far fa-calendar-check" id="slcr_icon_text_last69596868a1675"></i>
-</div>
-</div>
-<div class="text__content" id="slcr_icon_text_content69596868a1675">
-<h4 style="font-size: 23px;font-weight: bold;margin-top: 0;margin-bottom: 0px">Now taking new clients</h4>
-<p>Get started by booking your free Discovery session today!</p>
-</div>
-</div></div></div></div><div class="text-right center-xs wpb_column vc_column_container vc_col-sm-5"><div class="vc_column-inner"><div class="wpb_wrapper"><style>#btn_slcr_69596868a188b{ font-size: 14px; text-transform: uppercase;}  #btn_slcr_69596868a188b:hover{ }</style><div class="vc_btn3-container vc_btn3-inline">
-<a class="btn vc_custom_1749514609087 left-xs btn--lg font-800 btn--rounded btn--primary" href="https://booking.jenshawgonutrition.com/" id="btn_slcr_69596868a188b" target="_blank" title="BOOK NOW">
-<span>BOOK NOW</span>
-</a> </div><style>#btn_slcr_69596868a1a20{ font-size: 14px; text-transform: uppercase; } #btn_slcr_69596868a1a20:hover{ }</style><div class="vc_btn3-container vc_btn3-inline">
-<a class="btn vc_custom_1716247633387 left-xs btn--lg font-800 btn--rounded btn--primary btn--ghost" href="/pricing/" id="btn_slcr_69596868a1a20" title="Pricing">
-<span>CHECK PRICING</span>
-</a> </div></div></div></div><div class="wpb_column vc_column_container vc_col-sm-1"><div class="vc_column-inner"><div class="wpb_wrapper"></div></div></div></div>
-</div>
-</div>
-</div></div><style></style><div class="vc_row wpb_row vc_row-fluid content-dark data-bg-color-69596868a1bf8 vc_custom_1717098812996 vc_row-has-fill row-z-index-69596868a1bf8" data-vc-full-width="true" data-vc-full-width-init="false"><style></style><div class="wpb_column vc_column_container content-dark vc_col-sm-12 column-z-index-69596868a1cbe">
-<div class="vc_column-inner">
-<div class="wpb_wrapper"><style>#slcr_custom_heading_69596868a1e3a{ font-size: 33px;line-height: 43px;text-align: center;  }</style><h2 class="vc_custom_heading vc_custom_1717102808997 font-700" id="slcr_custom_heading_69596868a1e3a">The Process</h2><div class="vc_separator wpb_content_element vc_separator_align_center vc_sep_width_10 vc_sep_border_width_2 vc_sep_pos_align_center vc_separator_no_text wpb_content_element wpb_content_element"><span class="vc_sep_holder vc_sep_holder_l"><span class="vc_sep_line" style="border-color:#a80226;"></span></span><span class="vc_sep_holder vc_sep_holder_r"><span class="vc_sep_line" style="border-color:#a80226;"></span></span>
-</div><div class="vc_row wpb_row vc_inner vc_row-fluid"><style> #slcr_icon_last69596868a27c5.main__icon { text-align: center; color: #574142 !important; border-radius: 50%; border-color: #ffffff !important; background: #ffffff !important;  height: 80px; width: 80px; line-height: 80px; font-size: 40px; transition: all ease .3s; -webkit-transition: all ease .3s; } #slcr_icon_last69596868a27c5.main__icon:hover { background: #ffffff !important; border-color: #ffffff !important; color: #332324 !important; }</style><div class="wpb_column vc_column_container vc_col-sm-3"><div class="vc_column-inner"><div class="wpb_wrapper">
-<div class="icon__container" data-hover-target="icon" data-icon-align="center">
-<i class="main__icon fas fa-landmark" id="slcr_icon_last69596868a27c5"></i>
-</div><style>#slcr_custom_heading_69596868a2897{ font-size: 19px;text-align: center;  }</style><h4 class="vc_custom_heading vc_custom_1715726427078 font-700" id="slcr_custom_heading_69596868a2897">Review FAQ and Policies</h4><style>#slcr_custom_heading_69596868a2950{ text-align: center;  }</style><p class="vc_custom_heading font-400" id="slcr_custom_heading_69596868a2950">Learn about what to expect when working with me.</p></div></div></div><style> #slcr_icon_last69596868a2a23.main__icon { text-align: center; color: #574142 !important; border-radius: 50%; border-color: #ffffff !important; background: #ffffff !important;  height: 80px; width: 80px; line-height: 80px; font-size: 40px; transition: all ease .3s; -webkit-transition: all ease .3s; } #slcr_icon_last69596868a2a23.main__icon:hover { background: #ffffff !important; border-color: #ffffff !important; color: #332324 !important; }</style><div class="wpb_column vc_column_container vc_col-sm-3"><div class="vc_column-inner"><div class="wpb_wrapper">
-<div class="icon__container" data-hover-target="icon" data-icon-align="center">
-<i class="main__icon fas fa-phone" id="slcr_icon_last69596868a2a23"></i>
-</div><style>#slcr_custom_heading_69596868a2c25{ font-size: 19px;text-align: center;  }</style><h4 class="vc_custom_heading vc_custom_1715726506041 font-700" id="slcr_custom_heading_69596868a2c25">Discovery Session</h4><style>#slcr_custom_heading_69596868a2cae{ text-align: center;  }</style><p class="vc_custom_heading font-400" id="slcr_custom_heading_69596868a2cae">Let’s chat to determine if I’m the right nutritionist for you.</p></div></div></div><style> #slcr_icon_last69596868a2da7.main__icon { text-align: center; color: #574142 !important; border-radius: 50%; border-color: #ffffff !important; background: #ffffff !important;  height: 80px; width: 80px; line-height: 80px; font-size: 40px; transition: all ease .3s; -webkit-transition: all ease .3s; } #slcr_icon_last69596868a2da7.main__icon:hover { background: #ffffff !important; border-color: #ffffff !important; color: #332324 !important; }</style><div class="wpb_column vc_column_container vc_col-sm-3"><div class="vc_column-inner"><div class="wpb_wrapper">
-<div class="icon__container" data-hover-target="icon" data-icon-align="center">
-<i class="main__icon vc-material vc-material-headset_mic" id="slcr_icon_last69596868a2da7"></i>
-</div><style>#slcr_custom_heading_69596868a2e61{ font-size: 19px;text-align: center;  }</style><h4 class="vc_custom_heading vc_custom_1715726582459 font-700" id="slcr_custom_heading_69596868a2e61">Initial Consultation</h4><style>#slcr_custom_heading_69596868a2ef0{ text-align: center;  }</style><p class="vc_custom_heading font-400" id="slcr_custom_heading_69596868a2ef0">An in-depth assessment of your nutritional health.</p></div></div></div><style> #slcr_icon_last69596868a2fda.main__icon { text-align: center; color: #574142 !important; border-radius: 50%; border-color: #ffffff !important; background: #ffffff !important;  height: 80px; width: 80px; line-height: 80px; font-size: 40px; transition: all ease .3s; -webkit-transition: all ease .3s; } #slcr_icon_last69596868a2fda.main__icon:hover { background: #ffffff !important; border-color: #ffffff !important; color: #332324 !important; }</style><div class="wpb_column vc_column_container vc_col-sm-3"><div class="vc_column-inner"><div class="wpb_wrapper">
-<div class="icon__container" data-hover-target="icon" data-icon-align="center">
-<i class="main__icon far fa-calendar-alt" id="slcr_icon_last69596868a2fda"></i>
-</div><style>#slcr_custom_heading_69596868a30b2{ font-size: 19px;text-align: center;  }</style><h4 class="vc_custom_heading vc_custom_1715726655400 font-700" id="slcr_custom_heading_69596868a30b2">Follow Up Sessions</h4><style>#slcr_custom_heading_69596868a313b{ text-align: center;  }</style><p class="vc_custom_heading font-400" id="slcr_custom_heading_69596868a313b">Ongoing support and monitoring to set you up for success.</p></div></div></div></div>
-</div>
-</div>
-</div></div>
-<div class="vc_row-full-width vc_clearfix"></div>
-</div> </div>
-</div>
-</section>
-
+    <section class="col-md-12 col-sm-12 col-xs-12 allow-gutenberg">
+      <div class="row">
+        <div class="container">
+          <div class="wpb-content-wrapper">
+              <div
+                class="vc_row wpb_row vc_row-fluid faqs-mobile-padding content-dark data-bg-color-6961884f5b47e vc_custom_1717865264472 vc_row-has-fill vc_row-o-equal-height vc_row-o-content-middle vc_row-flex row-z-index-6961884f5b47e"
+                data-vc-full-width="true"
+                data-vc-full-width-init="false"
+              >
+                <div
+                  class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-6961884f5b585"
+                >
+                  <div class="vc_column-inner vc_custom_1606274026269">
+                    <div class="wpb_wrapper"></div>
+                  </div>
+                </div><div
+                  class="wpb_column vc_column_container content-dark vc_col-sm-8 column-z-index-6961884f5b637"
+                >
+                  <div class="vc_column-inner vc_custom_1606285280894">
+                    <div class="wpb_wrapper">
+                      <p
+                        class="vc_custom_heading sub-heading single pink font-800"
+                        id="slcr_custom_heading_6961884f5ba38"
+                      >
+                        General Questions
+                      </p><ul
+                        class="accordion m_accordion6961884f5bd7d accordion__03 one-tab"
+                      >
+                        <li>
+                          <div
+                            class="accordion-header mh_accordion6961884f5bc92"
+                          >
+                            <h5 class="gap-0 mb-0">
+                              What is integrative nutrition counseling?
+                            </h5>
+                          </div>
+                          <div
+                            class="accordion-content"
+                            id="mhp_accordion6961884f5bc92"
+                          >
+                            <p>
+                              Integrative nutrition counseling is a customized
+                              approach to nutrition and lifestyle that aims to
+                              promote optimal health and overall well-being for
+                              each individual. It focuses on the root cause and
+                              takes into account the whole person to help
+                              prevent and combat chronic and metabolic
+                              illnesses.
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div
+                            class="accordion-header mh_accordion6961884f5bcd9"
+                          >
+                            <h5 class="gap-0 mb-0">How do I get started?</h5>
+                          </div>
+                          <div
+                            class="accordion-content"
+                            id="mhp_accordion6961884f5bcd9"
+                          >
+                            <p>
+                              Start with a free 15-minute discovery call to talk
+                              through your goals, coverage options, and next
+                              steps. Be sure to check out the FAQs first to
+                              learn more about what to expect. If everything
+                              aligns, we'll move forward with scheduling your
+                              initial consultation.
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div
+                            class="accordion-header mh_accordion6961884f5bcf8"
+                          >
+                            <h5 class="gap-0 mb-0">
+                              Can I meet with you in person for my sessions?
+                            </h5>
+                          </div>
+                          <div
+                            class="accordion-content"
+                            id="mhp_accordion6961884f5bcf8"
+                          >
+                            <p>
+                              At this time all sessions are conducted virtually
+                              using a HIPAA-secure telehealth platform that
+                              provides a convenient and safe way to connect, so
+                              you can feel comfortable and confident during our
+                              sessions.
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div
+                            class="accordion-header mh_accordion6961884f5bd11"
+                          >
+                            <h5 class="gap-0 mb-0">
+                              What ages do you work with?
+                            </h5>
+                          </div>
+                          <div
+                            class="accordion-content"
+                            id="mhp_accordion6961884f5bd11"
+                          >
+                            <p>
+                              Anyone 18 and over is invited to work with me.
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div
+                            class="accordion-header mh_accordion6961884f5bd28"
+                          >
+                            <h5 class="gap-0 mb-0">
+                              What are your credentials?
+                            </h5>
+                          </div>
+                          <div
+                            class="accordion-content"
+                            id="mhp_accordion6961884f5bd28"
+                          >
+                            <p>
+                              I hold a Master of Science in Clinical Nutrition
+                              and am a board-certified Nutrition Specialist®
+                              (CNS®), licensed dietitian nutritionist (LDN),
+                              certified health and wellness coach, with
+                              specialized training in nutritional genomics from
+                              the American Nutrition Association (ANA).
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div
+                            class="accordion-header mh_accordion6961884f5bd41"
+                          >
+                            <h5 class="gap-0 mb-0">
+                              What is a Certified Nutrition Specialist®?
+                            </h5>
+                          </div>
+                          <div
+                            class="accordion-content"
+                            id="mhp_accordion6961884f5bd41"
+                          >
+                            <p>
+                              The Certified Nutrition Specialist® credential
+                              (CNS®) is the most advanced certification for
+                              personalized nutrition practitioners. Certified
+                              Nutrition Specialists practice science-based
+                              personalized nutrition therapy to power people to
+                              health. This credential requires a Master of
+                              Science degree in nutrition, completion of 1,000
+                              hours of supervised practice experience, and
+                              passing a rigorous board examination to
+                              demonstrate their education, experience, and
+                              training. They are also required to re-certify
+                              every 5 years by completing at least 75 hours of
+                              continuing education.
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div><div
+                  class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-6961884f5be1d"
+                >
+                  <div class="vc_column-inner vc_custom_1606274032217">
+                    <div class="wpb_wrapper"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="vc_row-full-width vc_clearfix"></div>
+              <div
+                class="vc_row wpb_row vc_row-fluid content-dark data-bg-color-6961884f5bfda vc_custom_1715874124661 vc_row-has-fill vc_row-o-equal-height vc_row-o-content-middle vc_row-flex row-z-index-6961884f5bfda"
+                data-vc-full-width="true"
+                data-vc-full-width-init="false"
+              >
+                <div
+                  class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-6961884f5c053"
+                >
+                  <div class="vc_column-inner vc_custom_1606274026269">
+                    <div class="wpb_wrapper"></div>
+                  </div>
+                </div><div
+                  class="wpb_column vc_column_container content-dark vc_col-sm-8 column-z-index-6961884f5c0b8"
+                >
+                  <div class="vc_column-inner vc_custom_1606285280894">
+                    <div class="wpb_wrapper">
+                    <p
+                        class="vc_custom_heading sub-heading single pink font-800"
+                        id="slcr_custom_heading_6961884f5c1e3"
+                      >
+                        Sessions &amp; Packages
+                      </p><ul
+                        class="accordion m_accordion6961884f5c41c accordion__03 one-tab"
+                      >
+                        <li>
+                          <div
+                            class="accordion-header mh_accordion6961884f5c323"
+                          >
+                            <h5 class="gap-0 mb-0">
+                              What is a Discovery Session?
+                            </h5>
+                          </div>
+                          <div
+                            class="accordion-content"
+                            id="mhp_accordion6961884f5c323"
+                          >
+                            <p>
+                              During this free 15-minute session, we’ll talk
+                              about your current health concerns and wellness
+                              goals, and explore how nutrition counseling may
+                              support you. It’s also a great time to ask
+                              questions about my process, available packages, or
+                              what working together looks like. We’ll review
+                              your insurance coverage and discuss payment
+                              options so you know exactly what to expect. Most
+                              importantly, this call helps us both ensure it's
+                              the right fit to support your success.
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div
+                            class="accordion-header mh_accordion6961884f5c36c"
+                          >
+                            <h5 class="gap-0 mb-0">
+                              What is an Initial Consultation?
+                            </h5>
+                          </div>
+                          <div
+                            class="accordion-content"
+                            id="mhp_accordion6961884f5c36c"
+                          >
+                            <p>
+                              This session is an in-depth assessment of your
+                              nutritional health. During our initial
+                              consultation, you will have my undivided attention
+                              as you share your unique health history, concerns,
+                              and personal goals. This will include a
+                              comprehensive nutritional assessment of your food
+                              preferences, intolerances or allergies, daily food
+                              intake, personal diet history, and relationship
+                              with food. Additionally, we will review any
+                              current lab work and/or notes from your physician.
+                              This will help me gain a deeper understanding of
+                              your individual needs and preferences, enabling me
+                              to begin creating the foundation of a personalized
+                              plan tailored specifically to your needs and
+                              goals.
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div
+                            class="accordion-header mh_accordion6961884f5c394"
+                          >
+                            <h5 class="gap-0 mb-0">
+                              How do I prepare for my initial consultation?
+                            </h5>
+                          </div>
+                          <div
+                            class="accordion-content"
+                            id="mhp_accordion6961884f5c394"
+                          >
+                            <p>
+                              Once your initial consultation is booked, be sure
+                              to add the appointment to your calendar and keep
+                              an eye on your inbox for important next steps. You
+                              may receive messages from Healthie or Berry
+                              Street, my HIPAA-compliant telehealth and billing
+                              partners. These emails may include forms,
+                              insurance updates, or portal access details. To
+                              prepare for your session, please have a full list
+                              of current medications and supplements ready, and
+                              upload any recent lab work you'd like reviewed
+                              before our meeting.
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div
+                            class="accordion-header mh_accordion6961884f5c3bf"
+                          >
+                            <h5 class="gap-0 mb-0">
+                              Do I need follow-up sessions?
+                            </h5>
+                          </div>
+                          <div
+                            class="accordion-content"
+                            id="mhp_accordion6961884f5c3bf"
+                          >
+                            <p>
+                              Follow-up sessions are essential to your ultimate
+                              success! Developing new eating and lifestyle
+                              habits requires time, motivation, and coaching to
+                              create lifelong change. During follow-up sessions,
+                              our focus will be on reassessing your lifestyle
+                              and nutrition choices, celebrating your successes,
+                              and equipping you with the necessary tools to
+                              tackle any obstacles that may arise. Together, we
+                              will refine your plan and goals through
+                              personalized education on nutrition and lifestyle.
+                              We can make modifications to the plan as necessary
+                              and help you stay on track.
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div
+                            class="accordion-header mh_accordion6961884f5c3e2"
+                          >
+                            <h5 class="gap-0 mb-0">
+                              How often will I need a follow-up session?
+                            </h5>
+                          </div>
+                          <div
+                            class="accordion-content"
+                            id="mhp_accordion6961884f5c3e2"
+                          >
+                            <p>
+                              Creating sustainable diet and lifestyle changes
+                              takes time, support, and space to ask questions as
+                              they arise. Regular check-ins—either weekly or
+                              biweekly—tend to be the most effective way to
+                              build momentum and see lasting results. We’ll work
+                              together to personalize your follow-up schedule in
+                              a way that fits your goals, lifestyle, and
+                              necessary level of support.
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div><div
+                  class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-6961884f5c49b"
+                >
+                  <div class="vc_column-inner vc_custom_1606274032217">
+                    <div class="wpb_wrapper"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="vc_row-full-width vc_clearfix"></div>
+              <div
+                class="vc_row wpb_row vc_row-fluid content-dark data-bg-color-6961884f5c594 vc_custom_1715874132230 vc_row-has-fill vc_row-o-equal-height vc_row-o-content-middle vc_row-flex row-z-index-6961884f5c594"
+                data-vc-full-width="true"
+                data-vc-full-width-init="false"
+              >
+                <div
+                  class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-6961884f5c613"
+                >
+                  <div class="vc_column-inner vc_custom_1606274026269">
+                    <div class="wpb_wrapper"></div>
+                  </div>
+                </div><div
+                  class="wpb_column vc_column_container content-dark vc_col-sm-8 column-z-index-6961884f5c6d2"
+                >
+                  <div class="vc_column-inner vc_custom_1606285280894">
+                    <div class="wpb_wrapper">
+                      <p
+                        class="vc_custom_heading sub-heading single pink font-800"
+                        id="slcr_custom_heading_6961884f5c80a"
+                      >
+                        Supplements and Testing
+                      </p><ul
+                        class="accordion m_accordion6961884f5c9cc accordion__03 one-tab"
+                      >
+                        <li>
+                          <div
+                            class="accordion-header mh_accordion6961884f5c919"
+                          >
+                            <h5 class="gap-0 mb-0">
+                              Do you offer laboratory testing?
+                            </h5>
+                          </div>
+                          <div
+                            class="accordion-content"
+                            id="mhp_accordion6961884f5c919"
+                          >
+                            <p>
+                              Yes, nutritionally-focused laboratory testing is
+                              available at an additional upfront cost, and
+                              availability may vary by state of residence.
+                              Nutrigenomic testing can also be added at any time
+                              during your care. Clients often have 'normal'
+                              conventional lab results, yet they still feel
+                              'off'. Using functional lab ranges and tests to
+                              see how the body is utilizing (or reacting to)
+                              nutrients, hormones, and other compounds helps
+                              direct the course of your wellness plan and can
+                              keep us from wasting time (and money) on
+                              guesswork.
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div
+                            class="accordion-header mh_accordion6961884f5c948"
+                          >
+                            <h5 class="gap-0 mb-0">
+                              How do I keep my other healthcare providers aware
+                              of the work we are doing together?
+                            </h5>
+                          </div>
+                          <div
+                            class="accordion-content"
+                            id="mhp_accordion6961884f5c948"
+                          >
+                            <p>
+                              With your signed consent, communication can be
+                              sent about your personalized plan to your other
+                              healthcare providers inviting collaboration to
+                              ensure you receive comprehensive care.
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div
+                            class="accordion-header mh_accordion6961884f5c965"
+                          >
+                            <h5 class="gap-0 mb-0">
+                              Do you recommend supplements?
+                            </h5>
+                          </div>
+                          <div
+                            class="accordion-content"
+                            id="mhp_accordion6961884f5c965"
+                          >
+                            <p>
+                              Although I believe in a food-first approach, most
+                              of the time nutritional supplements are part of
+                              your plan. It can be challenging to get all the
+                              nutrients you need through diet alone, especially
+                              when trying to establish healthy eating patterns.
+                              Even with a healthy diet, you may still require
+                              additional supplements to help you feel your best
+                              and help support any chronic conditions you may
+                              have.
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div
+                            class="accordion-header mh_accordion6961884f5c97e"
+                          >
+                            <h5 class="gap-0 mb-0">
+                              How much will my supplements cost?
+                            </h5>
+                          </div>
+                          <div
+                            class="accordion-content"
+                            id="mhp_accordion6961884f5c97e"
+                          >
+                            <p>
+                              Since each plan is individualized, the exact cost
+                              is not predetermined. Discounts are offered on all
+                              professional-grade supplements to anyone who
+                              orders through my online dispensary. This provides
+                              a lower cost than what you are likely to find if
+                              you were to search for the same quality products
+                              on your own.
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div
+                            class="accordion-header mh_accordion6961884f5c995"
+                          >
+                            <h5 class="gap-0 mb-0">
+                              Where do I order my supplements?
+                            </h5>
+                          </div>
+                          <div
+                            class="accordion-content"
+                            id="mhp_accordion6961884f5c995"
+                          >
+                            <p>
+                              Supplements are shipped directly to you through my
+                              online dispensary supported by Fullscript. To
+                              access online ordering go to:
+                              https://us.fullscript.com/welcome/jshawgo or use
+                              the link at the bottom of the page.
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div><div
+                  class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-6961884f5ca51"
+                >
+                  <div class="vc_column-inner vc_custom_1606274032217">
+                    <div class="wpb_wrapper"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="vc_row-full-width vc_clearfix"></div>
+              <div
+                class="vc_row wpb_row vc_row-fluid content-dark data-bg-color-6961884f5cb2d vc_custom_1717831809119 vc_row-has-fill vc_row-o-equal-height vc_row-o-content-middle vc_row-flex row-z-index-6961884f5cb2d"
+                data-vc-full-width="true"
+                data-vc-full-width-init="false"
+              >
+                <div
+                  class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-6961884f5cb84"
+                >
+                  <div class="vc_column-inner vc_custom_1606274026269">
+                    <div class="wpb_wrapper"></div>
+                  </div>
+                </div><div
+                  class="wpb_column vc_column_container content-dark vc_col-sm-8 column-z-index-6961884f5cbd0"
+                >
+                  <div class="vc_column-inner vc_custom_1606285280894">
+                    <div class="wpb_wrapper">
+                      <p
+                        class="vc_custom_heading sub-heading single pink font-800"
+                        id="slcr_custom_heading_6961884f5cca4"
+                      >
+                        Billing &amp; Payments
+                      </p><ul
+                        class="accordion m_accordion6961884f5cfb4 accordion__03 one-tab"
+                      >
+                        <li>
+                          <div
+                            class="accordion-header mh_accordion6961884f5ce99"
+                          >
+                            <h5 class="gap-0 mb-0">Do you take insurance?</h5>
+                          </div>
+                          <div
+                            class="accordion-content"
+                            id="mhp_accordion6961884f5ce99"
+                          >
+                            <p>
+                              Yes! I’m currently in-network with Aetna, BCBS,
+                              and United Healthcare. Most clients with coverage
+                              pay $0 out of pocket for preventive nutrition
+                              care; however, coverage varies by plan and state
+                              of residence. I work with insurance in the
+                              following states: Arizona, Arkansas, California,
+                              Colorado, Connecticut, Illinois, Maryland,
+                              Massachusetts, Michigan, New Jersey, New York,
+                              Texas, Virginia, and Washington.
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div
+                            class="accordion-header mh_accordion6961884f5cf0a"
+                          >
+                            <h5 class="gap-0 mb-0">
+                              How does billing and insurance work?
+                            </h5>
+                          </div>
+                          <div
+                            class="accordion-content"
+                            id="mhp_accordion6961884f5cf0a"
+                          >
+                            <p>
+                              All of my billing and insurance is managed through
+                              Berry Street, my trusted billing and telehealth
+                              portal partner. They handle verification of
+                              benefits, claims, payment processing, and any
+                              questions about coverage or payments. Of course,
+                              I’m always here to help guide you through the
+                              process or connect you with the right support.
+                            </p>
+                          </div>
+                        </li>
+                        <li>
+                          <div
+                            class="accordion-header mh_accordion6961884f5cf54"
+                          >
+                            <h5 class="gap-0 mb-0">
+                              What forms of payment do you accept?
+                            </h5>
+                          </div>
+                          <div
+                            class="accordion-content"
+                            id="mhp_accordion6961884f5cf54"
+                          >
+                            <p>
+                              All major credit cards, debit cards, and HSA/FSA
+                              cards are accepted forms of payment. Please check
+                              with your HSA/FSA provider to confirm coverage of
+                              nutritional consultations and follow-up sessions.
+                            </p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-6961884f5d023"
+                >
+                  <div class="vc_column-inner vc_custom_1606274032217">
+                    <div class="wpb_wrapper"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="vc_row-full-width vc_clearfix"></div>
+              <div
+                class="vc_row wpb_row vc_row-fluid content-dark data-bg-color-6961884f5d14d vc_custom_1717831925972 vc_row-has-fill vc_row-o-equal-height vc_row-o-content-middle vc_row-flex row-z-index-6961884f5d14d"
+                data-vc-full-width="true"
+                data-vc-full-width-init="false"
+              >
+                <div
+                  class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-6961884f5d1b7"
+                >
+                  <div class="vc_column-inner vc_custom_1606274026269">
+                    <div class="wpb_wrapper"></div>
+                  </div>
+                </div><div
+                  class="wpb_column vc_column_container content-dark vc_col-sm-8 column-z-index-6961884f5d20c"
+                >
+                  <div class="vc_column-inner vc_custom_1606285280894">
+                    <div class="wpb_wrapper">
+                      <div
+                        class="wpb_text_column wpb_content_element vc_custom_1717832143703"
+                      >
+                        <div class="wpb_wrapper">
+                          <h5 style="font-weight: 600; line-height: 33px;">
+                            Still have questions? <a
+                              href="/contact/">Contact Us</a
+                            >
+                          </h5>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  class="wpb_column vc_column_container content-dark vc_col-sm-2 column-z-index-6961884f5d35c"
+                >
+                  <div class="vc_column-inner vc_custom_1606274032217">
+                    <div class="wpb_wrapper"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="vc_row-full-width vc_clearfix"></div>
+              <CtaBarBooking />
+              <ProcessSection />
+              <div class="vc_row-full-width vc_clearfix"></div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 </BaseLayout>

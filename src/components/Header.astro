@@ -1,19 +1,11 @@
-<header
-    class="header__nav shadow__lg"
-    data-header-fixed="none"
-    data-header-scheme="light"
-    data-header-shadow="small"
-    data-hover-border="simple"
-    data-menu-align="right"
-    data-mobile-fixed="none"
-    data-mobile-nav="simple"
-    data-mobile-scroll="true"
-    data-nav-container="true"
-    data-nav-layout="first"
-    data-sidebar-direction="right-to-left"
-    data-sticky-scheme="light"
-    data-sticky-scroll="true"
->
+---
+const BOOKING_URL = "https://booking.jenshawgonutrition.com/";
+const EMAIL_URL = "mailto:info@jenshawgonutrition.com";
+const INSTAGRAM_URL = "https://www.instagram.com/jenshawgonutrition/";  
+const FACEBOOK_URL = "https://www.facebook.com/jenshawgonutrition/";
+---
+
+<header class="header__nav shadow__lg" data-nav-layout="first" data-menu-align="right" data-nav-container="true" data-mobile-nav="simple" data-sidebar-direction="right-to-left" data-header-scheme="light" data-sticky-scheme="light" data-header-shadow="small" data-hover-border="simple" data-header-fixed="none" data-mobile-fixed="none" data-sticky-scroll="true" data-mobile-scroll="true" >
     <div class="header__primary">
         <div class="wrap">
             <div class="container">
@@ -21,14 +13,14 @@
                 <div class="nav__logo">
                     <a href="/">
                         <img
+                            src="/wp-content/uploads/2024/05/logo_horizontal_transparent_background.png"
                             alt="logo"
                             class="main__logo"
-                            src="/wp-content/uploads/2024/05/logo_horizontal_transparent_background.png"
                         />
                         <img
+                            src="/wp-content/uploads/2024/05/logo_horizontal_transparent_background.png"
                             alt="logo"
                             class="sticky__logo"
-                            src="/wp-content/uploads/2024/05/logo_horizontal_transparent_background.png"
                         />
                         <!-- LOGO FOR LIGHT HEADER -->
                     </a>
@@ -39,36 +31,37 @@
                         <nav class="hidden-xs hidden-sm">
                             <ul class="nav__list">
                                 <li
-                                    class="nav__item menu-item menu-item-type-custom menu-item-object-custom menu-item-914"
                                     id="menu-item-914"
+                                    class="nav__item menu-item menu-item-type-custom menu-item-object-custom menu-item-914"
                                 >
                                     <a
-                                        class="btn button__nav_1"
-                                        href="https://booking.jenshawgonutrition.com/"
-                                        target="_blank">BOOK NOW</a>
+                                        target="_blank"
+                                        href={BOOKING_URL}
+                                        class="btn button__nav_1">BOOK NOW</a>
                                 </li>
                             </ul>
                         </nav>
                     </div>
+
                     <div class="nav__module">
                         <ul class="nav__social-links">
                             <li>
                                 <a
-                                    href="https://www.facebook.com/jenshawgonutrition/"
+                                    href={FACEBOOK_URL}
                                     target="_blank"
                                     ><i class="socicon-facebook"></i></a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="https://www.instagram.com/jenshawgonutrition"
+                                    href={INSTAGRAM_URL}
                                     target="_blank"
                                     ><i class="socicon-instagram"></i></a
                                 >
                             </li>
                             <li>
                                 <a
-                                    href="/cdn-cgi/l/email-protection#6801060e0728020d061b00091f0f07061d1c1a011c010706460b0705"
+                                    href={EMAIL_URL}
                                     ><i class="socicon-mail"></i></a
                                 >
                             </li>
@@ -79,17 +72,17 @@
                         <div class="mob__toggle">
                             <i class="svg__icon">
                                 <svg
-                                    aria-label="mobile nav icon"
                                     class="svg__ham"
-                                    height="60px"
-                                    viewbox="0 0 30 30"
-                                    width="60px"
                                     xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 30 30"
+                                    width="60px"
+                                    height="60px"
+                                    aria-label="mobile nav icon"
                                 >
                                     <path
                                         class="svg__fill"
-                                        d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"
                                         style="line-height:normal;text-indent:0;text-align:start;text-decoration-line:none;text-decoration-style:solid;text-decoration-color:#000;text-transform:none;block-progression:tb;isolation:auto;mix-blend-mode:normal"
+                                        d="M 3 7 A 1.0001 1.0001 0 1 0 3 9 L 27 9 A 1.0001 1.0001 0 1 0 27 7 L 3 7 z M 3 14 A 1.0001 1.0001 0 1 0 3 16 L 27 16 A 1.0001 1.0001 0 1 0 27 14 L 3 14 z M 3 21 A 1.0001 1.0001 0 1 0 3 23 L 27 23 A 1.0001 1.0001 0 1 0 27 21 L 3 21 z"
                                     ></path>
                                 </svg>
                             </i>
@@ -101,32 +94,32 @@
                     <nav class="nav__container hidden-xs hidden-sm">
                         <ul class="nav__list">
                             <li
-                                class="nav__item menu-item menu-item-type-post_type menu-item-object-page menu-item-967"
                                 id="menu-item-967"
+                                class="nav__item menu-item menu-item-type-post_type menu-item-object-page menu-item-967"
                             >
                                 <a href="/about/">About</a>
                             </li>
                             <li
-                                class="nav__item menu-item menu-item-type-post_type menu-item-object-page menu-item-1091"
                                 id="menu-item-1091"
+                                class="nav__item menu-item menu-item-type-post_type menu-item-object-page menu-item-1091"
                             >
                                 <a href="/faqs/">Faq’s</a>
                             </li>
                             <li
-                                class="nav__item menu-item menu-item-type-post_type menu-item-object-page menu-item-1290"
                                 id="menu-item-1290"
+                                class="nav__item menu-item menu-item-type-post_type menu-item-object-page menu-item-1290"
                             >
                                 <a href="/pricing/">Pricing</a>
                             </li>
                             <li
-                                class="nav__item menu-item menu-item-type-post_type menu-item-object-page menu-item-969"
                                 id="menu-item-969"
+                                class="nav__item menu-item menu-item-type-post_type menu-item-object-page menu-item-969"
                             >
                                 <a href="/contact/">Contact</a>
                             </li>
                             <li
-                                class="nav__item menu-item menu-item-type-post_type menu-item-object-page menu-item-1845"
                                 id="menu-item-1845"
+                                class="nav__item menu-item menu-item-type-post_type menu-item-object-page menu-item-1845"
                             >
                                 <a href="/the-table/">The Table</a>
                             </li>
@@ -149,41 +142,40 @@
         </div>
     </div>
     <!-- SEARCH -->
-    <div class="header__search" id="search">
+    <div id="search" class="header__search">
         <div class="search__wrap">
             <div class="container search__cont">
                 <form
-                    action="/"
-                    id="searchform_page"
-                    method="get"
                     role="search"
+                    method="get"
+                    id="searchform_page"
+                    action="/index.html"
                 >
                     <i class="search__icon">
                         <svg
-                            aria-label="search icon"
-                            class="svg__size"
-                            enable-background="new 0 0 512 512"
-                            version="1.1"
-                            viewbox="0 0 512 512"
                             xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink"
+                            version="1.1"
+                            viewBox="0 0 512 512"
+                            enable-background="new 0 0 512 512"
+                            class="svg__size"
+                            aria-label="search icon"
                         >
                             <g>
                                 <path
-                                    class="svg__fill"
                                     d="M495,466.2L377.2,348.4c29.2-35.6,46.8-81.2,46.8-130.9C424,103.5,331.5,11,217.5,11C103.4,11,11,103.5,11,217.5   S103.4,424,217.5,424c49.7,0,95.2-17.5,130.8-46.7L466.1,495c8,8,20.9,8,28.9,0C503,487.1,503,474.1,495,466.2z M217.5,382.9   C126.2,382.9,52,308.7,52,217.5S126.2,52,217.5,52C308.7,52,383,126.3,383,217.5S308.7,382.9,217.5,382.9z"
-                                ></path>
+                                    class="svg__fill"></path>
                             </g>
                         </svg>
                     </i>
                     <span class="search__title">What are you looking for?</span>
                     <input
-                        class="search__input"
-                        id="s_page"
-                        name="s"
-                        placeholder="Search"
                         type="text"
+                        class="search__input"
+                        placeholder="Search"
                         value=""
+                        name="s"
+                        id="s_page"
                     />
                 </form>
                 <div class="search__close_btn"><i class="icon_close"></i></div>
@@ -201,42 +193,43 @@
                 <!-- Level 1 -->
                 <ul class="nav__mobile_list">
                     <li
-                        class="nav__mobile_item parent__menu"
                         id="mobile-menu-item-967"
+                        class="nav__mobile_item parent__menu"
                     >
                         <a href="/about/">About</a>
                     </li>
                     <li
-                        class="nav__mobile_item parent__menu"
                         id="mobile-menu-item-1091"
+                        class="nav__mobile_item parent__menu"
                     >
                         <a href="/faqs/">Faq’s</a>
                     </li>
                     <li
-                        class="nav__mobile_item parent__menu"
                         id="mobile-menu-item-1290"
+                        class="nav__mobile_item parent__menu"
                     >
                         <a href="/pricing/">Pricing</a>
                     </li>
                     <li
-                        class="nav__mobile_item parent__menu"
                         id="mobile-menu-item-969"
+                        class="nav__mobile_item parent__menu"
                     >
                         <a href="/contact/">Contact</a>
                     </li>
                     <li
-                        class="nav__mobile_item parent__menu"
                         id="mobile-menu-item-1845"
+                        class="nav__mobile_item parent__menu"
                     >
                         <a href="/the-table/">The Table</a>
                     </li>
                     <li
-                        class="nav__mobile_item parent__menu"
                         id="mobile-menu-item-914"
+                        class="nav__mobile_item parent__menu"
                     >
                         <a
-                            href="https://booking.jenshawgonutrition.com/"
-                            target="_blank">BOOK NOW</a>
+                            target="_blank"
+                            href={BOOKING_URL}
+                            >BOOK NOW</a>
                     </li>
                 </ul>
             </div>
@@ -249,19 +242,19 @@
                 <ul class="social__side_mob">
                     <li>
                         <a
-                            href="https://www.facebook.com/jenshawgonutrition/"
+                            href={FACEBOOK_URL}
                             target="_blank"><i class="socicon-facebook"></i></a
                         >
                     </li>
                     <li>
                         <a
-                            href="https://www.instagram.com/jenshawgonutrition"
+                            href={INSTAGRAM_URL}
                             target="_blank"><i class="socicon-instagram"></i></a
                         >
                     </li>
                     <li>
                         <a
-                            href="/cdn-cgi/l/email-protection#01686f676e416b646f72696076666e6f7475736875686e6f2f626e6c"
+                            href={EMAIL_URL}
                             ><i class="socicon-mail"></i></a
                         >
                     </li>

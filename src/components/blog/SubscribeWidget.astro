@@ -1,0 +1,81 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  action?: string;
+}
+
+const {
+  title = "Pull up a Chair!",
+  description = "Join our email community and receive Table Talk, our monthly newsletter with practice updates, wellness insights, and exclusive content.",
+  action = "/api/subscribe",
+} = Astro.props as Props;
+---
+
+<div class="widget widget_text">
+  <h3 class="title">{title}</h3>
+  <div class="textwidget">
+    <p>{description}</p>
+
+    <div
+      class="gf_browser_safari gform_wrapper gform-theme gform-theme--foundation gform-theme--framework gform-theme--orbital subscribe-form_wrapper"
+      data-form-theme="orbital"
+      data-form-index="0"
+      id="gform_wrapper_2"
+    >
+      {/*
+        Markup intentionally mirrors the Gravity Forms widget structure used on the live site,
+        but submits to our lightweight /api/subscribe endpoint (no WP/GF assets required).
+      */}
+      <form class="subscribe-form" id="jsn-subscribe" method="post" action={action} novalidate>
+        <div class="gform-body gform_body">
+          <div class="gform_fields top_label form_sublabel_below description_below validation_below">
+            {/* Honeypot (kept for parity + spam reduction; hidden by theme CSS) */}
+            <div class="gfield gfield--type-honeypot gform_validation_container field_sublabel_below gfield--has-description field_description_below field_validation_below gfield_visibility_visible">
+              <label class="gfield_label gform-field-label" for="jsn_subscribe_hp">Comments</label>
+              <div class="ginput_container">
+                <input name="hp" id="jsn_subscribe_hp" type="text" value="" autocomplete="new-password" />
+              </div>
+              <div class="gfield_description">This field is for validation purposes and should be left unchanged.</div>
+            </div>
+
+            <div class="gfield gfield--type-email gfield--input-type-email gfield--width-full field_sublabel_below gfield--no-description field_description_below hidden_label field_validation_below gfield_visibility_visible">
+              <label class="gfield_label gform-field-label" for="jsn_subscribe_email">Email</label>
+              <div class="ginput_container ginput_container_email">
+                <input name="email" id="jsn_subscribe_email" type="email" class="large" placeholder="yourname@email.com" required />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gform-footer gform_footer top_label">
+          <button type="submit" class="gform_button button gform-button--width-full">SUBSCRIBE</button>
+        </div>
+      </form>
+      <div class="subscribe-msg" aria-live="polite"></div>
+    </div>
+
+    <script is:inline>
+      (function(){
+        const form = document.getElementById('jsn-subscribe');
+        if(!form) return;
+        const msg = form.parentElement?.querySelector('.subscribe-msg');
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          if(msg) msg.textContent = 'Submitting…';
+          const fd = new FormData(form);
+          try{
+            const res = await fetch(form.action, { method: 'POST', body: fd });
+            if(!res.ok) throw new Error('Bad response');
+            if(msg) msg.textContent = "You're subscribed!";
+            form.reset();
+          }catch(err){
+            if(msg) msg.textContent = 'Something went wrong. Please try again.';
+          }
+        });
+      })();
+    </script>
+
+    <p>By Subscribing, you agree our <a href="/terms-and-conditions/">Terms</a></p>
+  </div>
+</div>

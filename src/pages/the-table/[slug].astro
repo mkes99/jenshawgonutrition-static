@@ -1,0 +1,166 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import { getCollection, getEntryBySlug } from "astro:content";
+import { isPostPublished, sortByPublishDateDesc, formatPostDateLong, getReadingTimeMinutes } from "../../utils/blogPublish";
+import { normalizeWpAssetUrl } from "../../utils/assetUrl";
+import { normalizeTagSlug } from "../../utils/tagSlug";
+
+export async function getStaticPaths() {
+  const all = await getCollection("blog");
+  const posts = sortByPublishDateDesc(all).filter(isPostPublished);
+  return posts.map((p) => ({ params: { slug: p.slug } }));
+}
+
+const { slug } = Astro.params;
+const entry = await getEntryBySlug("blog", slug!);
+if (!entry) throw new Error(`Post not found: ${slug}`);
+if (!isPostPublished(entry)) throw new Error(`Post not published: ${slug}`);
+const { Content } = await entry.render();
+
+const all = await getCollection("blog");
+const posts = sortByPublishDateDesc(all).filter(isPostPublished);
+const idx = posts.findIndex((p) => p.slug === entry.slug);
+const prev = idx < posts.length - 1 ? posts[idx + 1] : null;
+const next = idx > 0 ? posts[idx - 1] : null;
+
+const tags: string[] = (entry.data.tags ?? []) as any;
+const related = posts
+  .filter((p) => p.slug !== entry.slug)
+  .map((p) => {
+    const pTags: string[] = (p.data.tags ?? []) as any;
+    const overlap = pTags.filter((t) => tags.includes(t)).length;
+    return { p, overlap };
+  })
+  .filter((x) => x.overlap > 0)
+  .sort((a, b) => b.overlap - a.overlap)
+  .slice(0, 3)
+  .map((x) => x.p);
+
+const dateStr = formatPostDateLong(entry);
+const mins = getReadingTimeMinutes(entry.body ?? "");
+---
+
+<BaseLayout bodyClass="single single-post blog wp-theme-psychare wp-child-theme-psychare-child smooth__links wpb-js-composer js-comp-ver-8.7 vc_responsive">
+  <title slot="head">{entry.data.title} | The Table | Jen Shawgo Nutrition</title>
+  {entry.data.excerpt ? (<meta slot="head" name="description" content={entry.data.excerpt} />) : null}
+  <main class="main__content">
+    <PageHero
+      title={entry.data.title}
+      subtitle={`${dateStr}${mins ? ` • ${mins} min read` : ""}`}
+      image={normalizeWpAssetUrl(entry.data.heroImage) || "/wp-content/uploads/2024/06/blog-header-1-scaled.jpg"}
+      breadcrumbs={[{ label: "Home", href: "/" }, { label: "The Table", href: "/the-table/" }, { label: entry.data.title }]}
+    />
+
+    <div class="container padding_sm">
+      <div class="row">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+          <article class="blog__post blog__post-1">
+            <div class="blog-post-content">
+              <Content />
+            </div>
+
+            <!-- Tags + sharing (matches Psychare markup closely) -->
+            <div class="blog-post-tags">
+              {tags.length ? (
+                <div class="post-tags" style="margin-bottom: 18px;">
+                  <h5 style="display:inline-block;margin-right:10px;">Topics:</h5>
+                  <span>
+                    {tags.map((t, idx) => (
+                      <>
+                        {idx > 0 ? ", " : ""}
+                        <a href={`/the-table/tag/${normalizeTagSlug(t)}/`}>{t}</a>
+                      </>
+                    ))}
+                  </span>
+                </div>
+              ) : null}
+              <div class="social-sharing">
+                <h5>Share:</h5>
+                <ul>
+                  <li><a href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`https://jenshawgonutrition.com/the-table/${entry.slug}/`)}`} title="Share on Facebook"><i class="socicon-facebook"></i></a></li>
+                  <li><a href={`https://twitter.com/share?url=${encodeURIComponent(`https://jenshawgonutrition.com/the-table/${entry.slug}/`)}&text=${encodeURIComponent(entry.data.title)}`} title="Share on Tweet"><i class="socicon-twitter"></i></a></li>
+                  <li><a href={`http://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(`https://jenshawgonutrition.com/the-table/${entry.slug}/`)}`} title="Share on Linkedin"><i class="socicon-linkedin"></i></a></li>
+                  <li><a href={`mailto:?subject=${encodeURIComponent(entry.data.title)}&body=${encodeURIComponent(`https://jenshawgonutrition.com/the-table/${entry.slug}/`)}`} title="Email to someone"><i class="socicon-mail"></i></a></li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Author card -->
+            <div class="blog-author-info">
+              <div class="col-md-10 col-sm-10 col-xs-12">
+                <div class="row">
+                  <div class="author-card">
+                    <div class="author-avatar">
+                      <img class="avatar avatar-96 photo" src={normalizeWpAssetUrl("/wp-content/uploads/2025/08/Jen-with-dachsund-Poppy-Welcome-to-The-Table-300x300.jpeg")} width="96" height="96" alt="Jen Shawgo" loading="lazy" />
+                    </div>
+                    <div class="author-meta">
+                      <h4 class="font-600">Jen Shawgo</h4>
+                      <p>Jen Shawgo, MS, CNS, LDN, CD is a Board-Certified Nutrition Specialist and Licensed Dietitian Nutritionist who blends science-based expertise with real-life understanding. Drawing on both clinical training and personal experience, Jen is passionate about helping others use nutrition and lifestyle strategies to build lasting health and balance—one sustainable step at a time.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Blog Pagination (matches theme class) -->
+            <div class="blog-pagination" style="margin-top:45px;">
+              {prev ? (
+                <a href={`/the-table/${prev.slug}/`} class="page-item prev">
+                  <span>Previous</span>
+                  <span>{prev.data.title}</span>
+                </a>
+              ) : null}
+              {next ? (
+                <a href={`/the-table/${next.slug}/`} class="page-item next">
+                  <span>Next</span>
+                  <span>{next.data.title}</span>
+                </a>
+              ) : null}
+            </div>
+
+            {related.length ? (
+              <section class="related__posts" style="margin-top:50px;">
+                <h3 class="title">Related Posts</h3>
+                <div class="row">
+                  {related.map((p) => {
+                    const hero = normalizeWpAssetUrl(p.data.heroImage) || "/wp-content/uploads/2024/06/blog-header-1-scaled.jpg";
+                    const pTags: string[] = (p.data.tags ?? []) as any;
+                    return (
+                      <div class="col-md-4 col-sm-6 col-xs-12">
+                        <article class="blog__card-01 has-post-thumbnail">
+                          <a
+                            class="featured__image bg-image lazy"
+                            href={`/the-table/${p.slug}/`}
+                            data-bg={`url(${hero})`}
+                            style={`background-image:url(${hero});`}
+                            aria-label={p.data.title}
+                          />
+                          <div class="meta__container">
+                            <div class="post__info">
+                              {pTags.length ? (
+                                <span class="post__category">
+                                  {pTags.slice(0, 2).map((t, idx) => (
+                                    <>
+                                      {idx > 0 ? ", " : ""}
+                                      <a href={`/the-table/tag/${normalizeTagSlug(t)}/`}>{t}</a>
+                                    </>
+                                  ))}
+                                </span>
+                              ) : null}
+                              <div class="post__title"><h3><a href={`/the-table/${p.slug}/`}>{p.data.title}</a></h3></div>
+                            </div>
+                          </div>
+                        </article>
+                      </div>
+                    );
+                  })}
+                </div>
+              </section>
+            ) : null}
+          </article>
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

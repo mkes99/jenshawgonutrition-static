@@ -1,0 +1,35 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { formatPostDateLong } from "../../utils/blogPublish";
+import { normalizeWpAssetUrl } from "../../utils/assetUrl";
+
+type BlogEntry = CollectionEntry<"blog">;
+
+interface Props {
+  posts: BlogEntry[];
+  title?: string;
+}
+
+const { posts, title = "Recent Posts" } = Astro.props as Props;
+const author = "Jen Shawgo, MS, CNS, LDN, CD";
+---
+
+<div class="widget slcr-widget-recent-posts">
+  <h3 class="title">{title}</h3>
+  <ul class="recent-posts">
+    {posts.map((post) => {
+      const hero = normalizeWpAssetUrl(post.data.heroImage) || "/wp-content/uploads/2024/05/logo_horizontal_white_background.png";
+      return (
+        <li>
+          <div class="recent-post-image">
+            <img src={hero} alt={post.data.title} height="75" width="80" loading="lazy" />
+          </div>
+          <div class="recent-post-info">
+            <h4><a href={`/the-table/${post.slug}/`}>{post.data.title}</a></h4>
+            <span class="post-date">{formatPostDateLong(post)} / by {author}</span>
+          </div>
+        </li>
+      );
+    })}
+  </ul>
+</div>

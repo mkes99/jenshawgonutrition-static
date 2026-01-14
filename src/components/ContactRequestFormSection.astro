@@ -1,0 +1,203 @@
+---
+interface Props {
+  heading?: string;
+  subheading?: string;
+  submitText?: string;
+}
+
+const {
+  heading = "Submit a Request",
+  subheading = "All emails will be answered within 24-48 business hours.",
+  submitText = "Submit",
+} = Astro.props;
+
+const siteKey = import.meta.env.PUBLIC_RECAPTCHA_SITEKEY;
+---
+
+<div class="wpb_column vc_column_container content-dark vc_col-sm-7 column-z-index-6961885137e83">
+  <div class="vc_column-inner">
+    <div class="wpb_wrapper">
+      <div class="vc_row wpb_row vc_inner vc_row-fluid">
+        <style is:inline>.slcr_box_image_css_6961885138146 {}</style>
+
+        <div class="wpb_column vc_column_container vc_col-sm-12">
+          <div class="vc_column-inner">
+            <div class="wpb_wrapper">
+              <div class="boxes box-1 bg-default slcr_box_image_css_6961885138146">
+                <div class="inner text-left">
+                  <style is:inline>#slcr_custom_heading_6961885138242 { font-size:24px; text-align:center; }</style>
+                  <h4 id="slcr_custom_heading_6961885138242" class="vc_custom_heading vc_custom_1717798886656 font-700">
+                    {heading}
+                  </h4>
+
+                  <style is:inline>#slcr_custom_heading_69618851382bf { text-align:center; }</style>
+                  <p id="slcr_custom_heading_69618851382bf" class="vc_custom_heading font-italic font-400">
+                    {subheading}
+                  </p>
+
+                  <div class="vc_empty_space" style="height: 32px"><span class="vc_empty_space_inner"></span></div>
+
+                  <div
+                    class="gform_wrapper gform-theme gform-theme--foundation gform-theme--framework gform-theme--orbital contact-form_wrapper"
+                    data-form-theme="orbital"
+                    data-form-index="0"
+                    id="gform_wrapper_1"
+                  >
+                    <form class="contact-form" data-contact-form novalidate>
+                      <!-- Honeypot -->
+                      <div class="gfield gfield--type-honeypot gform_validation_container" style="display:none;">
+                        <label for="contact_hp">Comments</label>
+                        <input id="contact_hp" name="hp_comments" type="text" autocomplete="new-password" tabindex="-1" />
+                      </div>
+
+                      <div class="gform-body gform_body">
+                        <div class="gform_fields top_label form_sublabel_below description_below validation_below">
+
+                          <fieldset class="gfield gfield--type-name gfield--width-full gfield_contains_required">
+                            <legend class="gfield_label gform-field-label gfield_label_before_complex">
+                              Name<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span>
+                            </legend>
+
+                            <div class="ginput_complex ginput_container ginput_container--name gform-grid-row">
+                              <span class="name_first gform-grid-col gform-grid-col--size-auto">
+                                <input type="text" name="firstName" id="contact_firstName" required placeholder="First Name" autocomplete="given-name" />
+                              </span>
+                              <span class="name_last gform-grid-col gform-grid-col--size-auto">
+                                <input type="text" name="lastName" id="contact_lastName" required placeholder="Last Name" autocomplete="family-name" />
+                              </span>
+                            </div>
+                          </fieldset>
+
+                          <div class="gfield gfield--type-email gfield--width-full gfield_contains_required">
+                            <label class="gfield_label gform-field-label" for="contact_email">
+                              Email<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span>
+                            </label>
+                            <div class="ginput_container ginput_container_email">
+                              <input name="email" id="contact_email" type="email" class="large" required autocomplete="email" />
+                            </div>
+                          </div>
+
+                          <div class="gfield gfield--type-text gfield--width-full">
+                            <label class="gfield_label gform-field-label" for="contact_subject">Subject</label>
+                            <div class="ginput_container ginput_container_text">
+                              <input name="subject" id="contact_subject" type="text" class="large" autocomplete="off" />
+                            </div>
+                          </div>
+
+                          <div class="gfield gfield--type-textarea gfield--width-full gfield_contains_required">
+                            <label class="gfield_label gform-field-label" for="contact_message">
+                              Your Message<span class="gfield_required"><span class="gfield_required gfield_required_asterisk">*</span></span>
+                            </label>
+                            <div class="ginput_container ginput_container_textarea">
+                              <textarea name="message" id="contact_message" class="textarea large" rows="10" cols="50" required></textarea>
+                            </div>
+                          </div>
+
+                        </div>
+                      </div>
+
+                      <div class="gform-footer gform_footer top_label">
+                        <input type="submit" class="gform_button button gform-button--width-full" value={submitText} data-submit />
+                      </div>
+
+                      <div class="gform_validation_errors" data-error style="display:none;"></div>
+                      <div class="gform_confirmation_message" data-success style="display:none;"></div>
+                    </form>
+
+                    <script is:inline>
+                      (function () {
+                        const form = document.querySelector("[data-contact-form]");
+                        if (!form) return;
+
+                        const siteKey = {JSON.stringify(siteKey || "")};
+
+                        const hp = form.querySelector("input[name='hp_comments']");
+                        const btn = form.querySelector("[data-submit]");
+                        const errorBox = form.querySelector("[data-error]");
+                        const successBox = form.querySelector("[data-success]");
+
+                        function hide(el){ if(el) el.style.display="none"; }
+                        function show(el){ if(el) el.style.display=""; }
+                        function setError(msg){
+                          errorBox.textContent = msg || "There was a problem. Please try again.";
+                          show(errorBox); hide(successBox);
+                        }
+                        function setSuccess(msg){
+                          successBox.textContent = msg || "Thanks! Your message has been sent.";
+                          show(successBox); hide(errorBox);
+                        }
+
+                        async function getToken(action) {
+                          if (!siteKey) return "";
+                          if (!window.grecaptcha?.execute) throw new Error("reCAPTCHA is not ready. Please try again.");
+                          return await window.grecaptcha.execute(siteKey, { action });
+                        }
+
+                        form.addEventListener("submit", async (e) => {
+                          e.preventDefault();
+                          hide(errorBox); hide(successBox);
+
+                          if (hp && hp.value.trim()) {
+                            setSuccess("Thanks! Your message has been sent.");
+                            form.reset();
+                            return;
+                          }
+
+                          // HTML5 validation
+                          const requiredEls = [
+                            form.querySelector("#contact_firstName"),
+                            form.querySelector("#contact_lastName"),
+                            form.querySelector("#contact_email"),
+                            form.querySelector("#contact_message"),
+                          ].filter(Boolean);
+
+                          for (const el of requiredEls) {
+                            if (!el.checkValidity()) {
+                              el.reportValidity();
+                              return;
+                            }
+                          }
+
+                          const original = btn.value;
+                          btn.value = "Submitting…";
+                          btn.disabled = true;
+
+                          try {
+                            const fd = new FormData(form);
+                            const token = await getToken("contact");
+                            fd.append("recaptchaToken", token);
+
+                            const res = await fetch("/api/contact", {
+                              method: "POST",
+                              headers: { "Accept": "application/json" },
+                              body: fd,
+                            });
+
+                            const data = await res.json().catch(() => ({}));
+                            if (!res.ok || data?.ok !== true) {
+                              throw new Error(data?.message || data?.error || "There was a problem. Please try again.");
+                            }
+
+                            setSuccess(data?.message || "Thanks! Your message has been sent.");
+                            form.reset();
+                          } catch (err) {
+                            setError(err?.message || "There was a problem. Please try again.");
+                          } finally {
+                            btn.value = original;
+                            btn.disabled = false;
+                          }
+                        });
+                      })();
+                    </script>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

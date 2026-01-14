@@ -1,0 +1,52 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { formatPostDateLong } from "../../utils/blogPublish";
+import { normalizeWpAssetUrl } from "../../utils/assetUrl";
+import { normalizeTagSlug } from "../../utils/tagSlug";
+
+type BlogEntry = CollectionEntry<"blog">;
+
+interface Props {
+  post: BlogEntry;
+  href: string;
+  /** Optional class on the outer card element */
+  className?: string;
+}
+
+const { post, href, className = "" } = Astro.props as Props;
+const hero = normalizeWpAssetUrl(post.data.heroImage) || "/wp-content/uploads/2024/06/blog-header-1-scaled.jpg";
+const tags: string[] = (post.data.tags ?? []) as any;
+const dateStr = formatPostDateLong(post);
+const author = "Jen Shawgo, MS, CNS, LDN, CD";
+---
+
+<article class={`blog__card-01 has-post-thumbnail ${className}`.trim()} data-blog-card>
+  <a
+    class="featured__image bg-image lazy"
+    href={href}
+    data-bg={`url(${hero})`}
+    style={`background-image:url(${hero});`}
+    aria-label={post.data.title}
+  />
+
+  <div class="meta__container">
+    <div class="post__info">
+      {tags.length ? (
+        <span class="post__category">
+          {tags.slice(0, 2).map((t, idx) => (
+            <>
+              {idx > 0 ? ", " : ""}
+              <a href={`/the-table/tag/${normalizeTagSlug(t)}/`}>{t}</a>
+            </>
+          ))}
+        </span>
+      ) : null}
+      <div class="post__title">
+        <h3><a href={href}>{post.data.title}</a></h3>
+      </div>
+      <div class="post__date">{dateStr}</div>
+      <div class="post__author">by {author}</div>
+      {post.data.excerpt ? <p class="post__excerpt">{post.data.excerpt}</p> : null}
+    </div>
+  </div>
+</article>

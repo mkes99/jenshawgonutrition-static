@@ -1,81 +1,183 @@
-<footer class="footer__cont slcr-sidebar col__4" data-bg-overlay="0" data-footer-layout="first" data-footer-scheme="dark" data-social-location="default" data-widget-align="left">
-<div class="footer__main">
-<div class="container no-padding">
-<div class="widget__area">
-<div class="widget__wrap">
-<div class="footer__logo">
-<img alt="logo" src="/wp-content/uploads/2024/05/logo_horizontal_white_background.png"/>
-</div> <div class="footer__desc">
-<p>Feel better &amp; live well with personalized, functional nutrition care.            </p>
-</div>
-<ul class="footer__social">
-<li>
-<a href="https://www.facebook.com/jenshawgonutrition/" target="_blank"><i class="socicon-facebook"></i></a>
-</li>
-<li>
-<a href="https://www.instagram.com/jenshawgonutrition" target="_blank"><i class="socicon-instagram"></i></a>
-</li>
-<li>
-<a href="/cdn-cgi/l/email-protection#9ef7f0f8f1def4fbf0edf6ffe9f9f1f0ebeaecf7eaf7f1f0b0fdf1f3"><i class="socicon-mail"></i></a>
-</li>
-</ul>
-</div>
-</div>
-<div class="widget__area">
-<div class="widget__wrap">
-<div class="widget-content widget widget_block" id="block-7"><h3 class="widget-title">Connect</h3>
-<div class="footer__contact call">
-<i class="icon icon_clock"></i>
-<p>
-<span class="font-700">Tues - Fri:</span><br/>
-<span>By appointment only.</span>
-</p>
-</div>
-<!-- <div class="footer__contact call">
-	<a href="mailto:info@jenshawgonutrition.com">
-		<i class="icon icon_mail"></i>
-		<p>
-			<span class="font-700">Mail:</span> 
-			info@jenshawgonutrition.com
-		</p>
-	</a>
-</div> -->
-<div class="footer__contact call">
-<a href="https://us.fullscript.com/welcome/jshawgo" target="_blank">
-<i class="icon icon_documents_alt"></i>
-<p><span class="font-700">Order Supplements:</span> Fullscript</p>
-</a>
-</div></div> </div>
-</div>
-<div class="widget__area">
-<div class="widget__wrap">
-<div class="widget-content widget widget_block" id="block-11"><h3 class="widget-title">Services Offered</h3>
-<ul>
-<li>Personalized Nutrition Planning</li>
-<li>Nutrition Coaching and Counseling</li>
-<li>Ongoing Support &amp; Accountability</li>
-<li>Functional Lab Testing</li>
-<li>Supplement Guidance</li>
-</ul>
-</div> </div>
-</div>
-<div class="widget__area">
-<div class="widget__wrap">
-<div class="widget-content widget widget_block" id="block-9"><h3 class="widget-title">Book Appointment</h3>
-<a class="btn btn--lg font-800 btn--rounded btn--footer" href="https://booking.jenshawgonutrition.com/" target="_blank" title="BOOK NOW"> <span>BOOK NOW</span> </a>
-<p style="font-size: 15px;">If you are a prospective client needing more information or a provider looking to coordinate care for your patient, <a href="/contact-us/">contact us</a> or book your free discovery call above.</p></div> </div>
-</div>
-</div>
-</div>
-<div class="footer__bottom">
-<div class="container">
-<div class="copyright__text">
-<ul class="custom-footer-menu">
-<li><a href="/terms-and-conditions/">Terms &amp; Conditions</a></li>
-<li><a href="/disclaimer/">Disclaimer</a></li>
-<li><a href="/privacy-policy/" rel="privacy-policy">Privacy Policy</a></li>
-</ul>
-<p class="disclaimer"><span>Disclaimer:</span> Information provided on this website is for informational purposes only and is not intended to replace the care provided by trained medical professionals.</p><p> © 2026 - Jen Shawgo Nutrition                    </p></div>
-</div>
-</div>
+---
+// Footer markup kept very close to the live WP theme for CSS parity.
+const BOOKING_URL = "https://booking.jenshawgonutrition.com/";
+const EMAIL_URL = "mailto:info@jenshawgonutrition.com";
+const INSTAGRAM_URL = "https://www.instagram.com/jenshawgonutrition/";  
+const FACEBOOK_URL = "https://www.facebook.com/jenshawgonutrition/";
+const FULLSCRIPT_URL = "https://us.fullscript.com/welcome/jshawgo";
+---
+
+<footer class="footer__cont slcr-sidebar col__4" data-footer-layout="first" data-widget-align="left" data-social-location="default" data-bg-overlay="0" data-footer-scheme="dark">
+  <div class="footer__main">
+    <div class="container no-padding">
+      <div class="widget__area">
+        <div class="widget__wrap">
+          <div class="footer__logo">
+            <img src="/wp-content/uploads/2024/05/logo_horizontal_white_background.png" alt="logo" />
+          </div>
+          <div class="footer__desc">
+            <p>Feel better &amp; live well with personalized, functional nutrition care.</p>
+          </div>
+          <ul class="footer__social">
+            <li>
+              <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer"><i class="socicon-facebook"></i></a>
+            </li>
+            <li>
+              <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer"><i class="socicon-instagram"></i></a>
+            </li>
+            <li>
+              <a href={EMAIL_URL}><i class="socicon-mail"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="widget__area">
+        <div class="widget__wrap">
+          <div id="block-7" class="widget-content widget widget_block">
+            <h3 class="widget-title">Connect</h3>
+            <div class="footer__contact call">
+              <i class="icon icon_clock"></i>
+              <p>
+                <span class="font-700">Tues - Fri:</span><br />
+                <span>By appointment only.</span>
+              </p>
+            </div>
+            <div class="footer__contact call">
+              <a href={FULLSCRIPT_URL} target="_blank" rel="noopener noreferrer">
+                <i class="icon icon_documents_alt"></i>
+                <p><span class="font-700">Order Supplements:</span> Fullscript</p>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget__area">
+        <div class="widget__wrap">
+          <div id="block-11" class="widget-content widget widget_block">
+            <h3 class="widget-title">Services Offered</h3>
+            <ul>
+              <li>Personalized Nutrition Planning</li>
+              <li>Nutrition Coaching and Counseling</li>
+              <li>Ongoing Support &amp; Accountability</li>
+              <li>Functional Lab Testing</li>
+              <li>Supplement Guidance</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="widget__area">
+        <div class="widget__wrap">
+          <div id="block-9" class="widget-content widget widget_block">
+            <h3 class="widget-title">Book Appointment</h3>
+            <a href={BOOKING_URL} title="BOOK NOW" target="_blank" rel="noopener noreferrer" class="btn btn--lg font-800 btn--rounded btn--footer"><span>BOOK NOW</span></a>
+            <p style="font-size: 15px;">
+              If you are a prospective client needing more information or a provider looking to coordinate care for your patient,
+              <a href="/contact-us/">contact us</a> or book your free discovery call above.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container">
+      <div class="copyright__text">
+        <ul class="custom-footer-menu">
+          <li><a href="/terms-and-conditions/">Terms &amp; Conditions</a></li>
+          <li><a href="/disclaimer/">Disclaimer</a></li>
+          <li><a rel="privacy-policy" href="/privacy-policy/">Privacy Policy</a></li>
+        </ul>
+        <p class="disclaimer"><span>Disclaimer:</span> Information provided on this website is for informational purposes only and is not intended to replace the care provided by trained medical professionals.</p>
+        <p>© 2026 - Jen Shawgo Nutrition</p>
+      </div>
+    </div>
+  </div>
 </footer>
+
+<!-- COOKIE / PRIVACY BAR -->
+<div class="privacy__bar">
+  <div class="privacy__wrap">
+    <div class="container">
+      <div class="privacy__text">This website uses cookies to ensure you get the best experience on our website.</div>
+      <div class="privacy__text"><a href="/privacy-policy/"> Privacy Policy</a></div>
+      <div class="privacy__button">
+        <button class="privacy__agree" type="button" id="jsn_privacy_accept">Accept</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function jsnPrivacy(){
+    var bar = document.querySelector('.privacy__bar');
+    var btn = document.getElementById('jsn_privacy_accept');
+    if (!bar || !btn) return;
+
+    function setCookie(name, value, days){
+      try {
+        var d = new Date();
+        d.setTime(d.getTime() + (days*24*60*60*1000));
+        document.cookie = name + '=' + encodeURIComponent(value) + '; expires=' + d.toUTCString() + '; path=/; SameSite=Lax';
+      } catch(e){}
+    }
+
+    function hasConsent(){
+      try { if (localStorage.getItem('slcr_cookie_consent') === '1') return true; } catch(e){}
+      try { return document.cookie.indexOf('slcr_cookie_consent=1') !== -1; } catch(e){ return false; }
+    }
+
+    function hide(){
+      bar.style.display = 'none';
+      bar.setAttribute('aria-hidden','true');
+    }
+
+    if (hasConsent()) hide();
+
+    btn.addEventListener('click', function(e){
+      if (e) { e.preventDefault(); e.stopPropagation(); }
+      try { localStorage.setItem('slcr_cookie_consent','1'); } catch(_){ }
+      setCookie('slcr_cookie_consent','1', 30);
+      hide();
+      return false;
+    });
+  })();
+</script>
+
+<!-- Utility scripts for static build parity -->
+<script src="/js/bg-lazy.js" defer></script>
+<script src="/js/hero-slider.js" defer></script>
+<script src="/js/fix-protocol-relative-assets.js" defer></script>
+<script src="/js/preloader-fix.js" defer></script>
+<script src="/js/vc-fullwidth-reset.js" defer></script>
+
+<!-- FOOTER JAVASCRIPTS (kept close to the wget mirror for parity) -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script type="text/html" id="wpb-modifications"> window.wpbCustomElement = 1; </script>
+<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:700%7CMulish:600%2C900%7CRoboto:400&display=swap" rel="stylesheet" property="stylesheet" media="all" type="text/css" >
+
+<script src="/wp-content/themes/psychare/assets/js/bootstrap.js?ver=6.9" id="bootstrap-js"></script>
+<script is:inline>
+  (function(){
+    if (typeof window.jQuery === 'undefined') return;
+    if (window.jQuery.fn && typeof window.jQuery.fn.isotope === 'function') return;
+    window.jQuery.fn.isotope = function(){ return this; };
+  })();
+</script>
+<script src="/wp-content/themes/psychare/assets/js/wow-min.js?ver=6.9" id="wow-min-js"></script>
+<script src="/wp-content/themes/psychare/assets/js/magnific-popup.js?ver=6.9" id="magnific-popup-js"></script>
+<script src="/wp-content/plugins/js_composer/assets/lib/vendor/dist/isotope-layout/dist/isotope.pkgd.min.js?ver=8.0" id="isotope-js"></script>
+<script src="/wp-content/themes/psychare/assets/js/spectragram-min.js?ver=6.9" id="spectragram-min-js"></script>
+<script src="/wp-content/themes/psychare/assets/js/tilt-jquery.js?ver=6.9" id="tilt-jquery-js"></script>
+<script src="/wp-content/themes/psychare/assets/js/typed-min.js?ver=6.9" id="typed-min-js"></script>
+<script src="/wp-content/themes/psychare/assets/js/slcr-map.js?ver=6.9" id="slcr-map-js"></script>
+<script src="/wp-content/themes/psychare/assets/js/owl-carousel-min.js?ver=6.9" id="owl-carousel-min-js"></script>
+<script src="/wp-content/themes/psychare/assets/js/waypoints.js?ver=6.9" id="waypoints-js"></script>
+<script src="/wp-content/themes/psychare/assets/js/animsition.js?ver=6.9" id="animsition-js"></script>
+<script src="/wp-content/themes/psychare/assets/js/lazyload-min.js?ver=6.9" id="lazyload-min-js"></script>
+<script src="/wp-content/themes/psychare/assets/js/easy-pie-chart.js?ver=6.9" id="easy-pie-chart-js"></script>
+<script src="/wp-content/themes/psychare/assets/js/slcr-ajax.js?ver=6.9" id="slcr-ajax-js"></script>
+<script src="/wp-content/themes/psychare/assets/js/slcr-main.js?ver=6.9" id="slcr-main-js"></script>

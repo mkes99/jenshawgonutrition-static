@@ -1150,11 +1150,21 @@ jQuery(function($) {
 	    // SC Portfolio masonry and others
 
 	    function slcrPortfolio() {
+		    // Isotope is optional in the static Astro build.
+		    // The live WP site includes it via WPBakery/RevSlider stacks, but our
+		    // build intentionally omits heavy plugin JS. Guard all usage.
+		    if (!$.fn || !$.fn.isotope) {
+		        $('.full-screen').css({
+		            'height': $(window).height()
+		        });
+		        return;
+		    }
+
 		    var $testimonials = $('.testimonials-container');
 		    var $grid = $('.grid');
 		    var $blog_grid = $('.blog__wrap');
 
-		    $testimonials.isotope({
+		    if ($testimonials && $testimonials.length) $testimonials.isotope({
 		        filter: '*',
 		        itemSelector: '.grid-item-masonry',
 		        originLeft: true,
@@ -1169,14 +1179,20 @@ jQuery(function($) {
 		        }
 		    });
 
-		    $blog_grid.isotope({
-		        itemSelector: '.blog__item',
-		        percentPosition: true,
-		        masonry: {
-		            columnWidth: '.blog-grid-size',
-		            horizontalOrder: true
-		        }
-		    });
+		    // Only initialize the blog Isotope grid if the expected WP markup exists.
+		    // Our Astro blog cards intentionally match the theme styling but not the
+		    // plugin-driven masonry structure. Initializing Isotope without the
+		    // expected `.blog__item` elements causes absolute positioning artifacts.
+		    if ($blog_grid && $blog_grid.length && $blog_grid.find('.blog__item').length) {
+		        $blog_grid.isotope({
+		            itemSelector: '.blog__item',
+		            percentPosition: true,
+		            masonry: {
+		                columnWidth: '.blog-grid-size',
+		                horizontalOrder: true
+		            }
+		        });
+		    }
 
 
 		    $('.full-screen').css({

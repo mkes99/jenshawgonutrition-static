@@ -151,7 +151,7 @@ rs-slide a:active{
 }
 
 .image-after-image .vc_single_image-wrapper:after {
-    background: url('//jenshawgonutrition2024.sfo3.digitaloceanspaces.com/wp-content/uploads/2024/05/22143518/5.jpg') !important;
+    background: url('/wp-content/uploads/2024/05/5.jpg') !important;
 	opacity: .5;
 }
 
@@ -347,7 +347,7 @@ form span.wpcf7-not-valid-tip{
 }
 
 div .dotted-overlay:before {
-    background-image: url(https://jenshawgonutrition2024.sfo3.digitaloceanspaces.com/wp-content/uploads/2024/06/13085104/dotted-pattern-large.png);
+    background-image: url(/wp-content/uploads/2024/06/dotted-pattern-large.png);
 }
 
 .wpcf7 textarea {
@@ -399,6 +399,7 @@ form.submitting .wpcf7-spinner {
 div.gform-theme input,
 div.gform-theme textarea {
     outline: none !important;
+	padding: 0 12px;
 }
 
 div.gform-theme input[type="text"], 

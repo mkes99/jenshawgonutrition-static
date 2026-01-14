@@ -1,120 +1,39 @@
 ---
-import Header from "@/components/Header.astro";
-import Footer from "@/components/Footer.astro";
+import CommonHead from "../components/CommonHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const props = Astro.props ?? {};
+const bodyClass =
+  props.bodyClass ??
+  "wp-theme-psychare wp-child-theme-psychare-child smooth__links wpb-js-composer js-comp-ver-8.7 vc_responsive";
+// Keep a WP-compatible ajax URL available for theme scripts.
+// We serve a local stub at /wp-admin/admin-ajax.php so dev/prod don't hard-depend on WordPress.
+const ajaxUrl = props.ajaxUrl ?? "/wp-admin/admin-ajax.php";
+
+const recaptchaKey = import.meta.env.PUBLIC_RECAPTCHA_SITEKEY;
 ---
-
 <!doctype html>
-<html dir="ltr" lang="en-US" prefix="og: https://ogp.me/ns#">
+<html data-recaptcha-sitekey={import.meta.env.PUBLIC_RECAPTCHA_SITEKEY ?? ""}>
   <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <title>Jen Shawgo Board Certified Clinical Nutritionist</title>
-    <meta
-      name="description"
-      content="Providing integrative nutrition counseling for sustainable change with a focus on investing in your lifelong health and wellness."
-    />
-    <meta name="robots" content="max-image-preview:large" />
-    <meta name="google-site-verification" content="uGVr5xNQKYDAqRalHvin6FQ4XY27ru66TmvGpteuFEw" />
-    <link rel="canonical" href="/" />
-
-    <meta property="og:locale" content="en_US" />
-    <meta
-      property="og:site_name"
-      content="Jen Shawgo Nutrition | Clinical nutritionist providing integrative nutrition counseling for sustainable change with a focus on investing in your lifelong health and wellness."
-    />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Jen Shawgo Board Certified Clinical Nutritionist" />
-    <meta
-      property="og:description"
-      content="Providing integrative nutrition counseling for sustainable change with a focus on investing in your lifelong health and wellness."
-    />
-    <meta property="og:url" content="/" />
-    <!-- Fix malformed URL: keep root-relative so it works in any environment -->
-    <meta property="og:image" content="/wp-content/uploads/2024/05/logo_horizontal_white_background.png" />
-    <meta
-      property="og:image:secure_url"
-      content="/wp-content/uploads/2024/05/logo_horizontal_white_background.png"
-    />
-
-    <meta property="article:published_time" content="2020-10-25T04:53:08+00:00" />
-    <meta property="article:modified_time" content="2025-10-16T16:45:57+00:00" />
-    <meta property="article:publisher" content="https://www.facebook.com/profile.php?id=61560900804081" />
-
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Jen Shawgo Board Certified Clinical Nutritionist" />
-    <meta
-      name="twitter:description"
-      content="Providing integrative nutrition counseling for sustainable change with a focus on investing in your lifelong health and wellness."
-    />
-    <meta name="twitter:image" content="/wp-content/uploads/2024/01/logo_horizontal_transparent_background.png" />
-
-    <link rel="dns-prefetch" href="//www.google.com" />
-    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-
-    <!-- Theme CSS (order matters) -->
-    <link rel="stylesheet" id="bootstrap-css" href="/wp-content/themes/psychare/assets/css/bootstrap-min.css" media="all" />
-    <!-- ✅ Missing on your current build; required by many Psychare skins -->
-    <link rel="stylesheet" id="slcr-base-style-css" href="/wp-content/themes/psychare/assets/css/slcr-base-style.css" media="all" />
-    <link rel="stylesheet" id="slcr-style-css" href="/wp-content/themes/psychare/assets/css/slcr-style.css" media="all" />
-    <link rel="stylesheet" id="slcr-app-css" href="/wp-content/themes/psychare/assets/css/slcr-app.css" media="all" />
-    <link rel="stylesheet" id="slcr-style-main-css" href="/wp-content/themes/psychare/style.css" media="all" />
-
-    <!-- Fonts -->
-    <link
-      rel="stylesheet"
-      id="slcr-fonts-main-css"
-      href="https://fonts.googleapis.com/css2?family=Mulish%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C800%3B1%2C400%3B1%2C600%3B1%2C800&amp;display=swap&amp;ver=6.9"
-      media="all"
-    />
-    <link
-      rel="stylesheet"
-      id="slcr-font-h-css"
-      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville%3Aital%2Cwght%400%2C400%3B0%2C700%3B1%2C400&amp;display=swap&amp;ver=6.9"
-      media="all"
-    />
-
-    <!-- WPBakery -->
-    <link rel="stylesheet" id="js_composer_front-css" href="/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=8.7" media="all" />
-    <link rel="stylesheet" id="vc_material-css" href="/wp-content/plugins/js_composer/assets/css/lib/vc-material/vc_material.min.css?ver=8.7" media="all" />
-
-    <!-- Gravity Forms (styles only) -->
-    <link rel="stylesheet" id="gravity_forms_theme_reset-css" href="/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-reset.min.css" media="all" />
-    <link rel="stylesheet" id="gravity_forms_theme_foundation-css" href="/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-foundation.min.css" media="all" />
-    <link rel="stylesheet" id="gravity_forms_theme_framework-css" href="/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-framework.min.css" media="all" />
-    <link rel="stylesheet" id="gravity_forms_orbital_theme-css" href="/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-orbital-theme.min.css" media="all" />
-
-    <!-- Child theme overrides -->
-    <link rel="stylesheet" id="psychare-child-style-css" href="/wp-content/themes/psychare-child/style.css" media="all" />
-
-    <!-- ✅ Source-of-truth inline.css (per your note) -->
-    <link rel="stylesheet" href="/assets/css/inline.css" />
-
-    <!-- Font Awesome (WPBakery bundled) -->
-    <link rel="stylesheet" href="/wp-content/plugins/js_composer/assets/lib/vendor/dist/@fortawesome/fontawesome-free/css/all.min.css" />
-    <link rel="stylesheet" href="/wp-content/plugins/js_composer/assets/lib/vendor/dist/@fortawesome/fontawesome-free/css/v4-shims.min.css" />
-
-    <!-- Favicons -->
-    <link rel="icon" href="/wp-content/uploads/2024/05/cropped-white-rings-color-background-32x32.png" sizes="32x32" />
-    <link rel="icon" href="/wp-content/uploads/2024/05/cropped-white-rings-color-background-192x192.png" sizes="192x192" />
-    <link rel="apple-touch-icon" href="/wp-content/uploads/2024/05/cropped-white-rings-color-background-180x180.png" />
-    <meta name="msapplication-TileImage" content="/wp-content/uploads/2024/05/cropped-white-rings-color-background-270x270.png" />
-
-    <!-- jQuery (served from public/; keep emitted as-is) -->
-    <script is:inline id="jquery-core-js" src="/wp-includes/js/jquery/jquery.min.js"></script>
-    <script is:inline id="jquery-migrate-js" src="/wp-includes/js/jquery/jquery-migrate.min.js"></script>
-
-    <!-- NOTE: Remove this when we fully remove RevSlider -->
-    <!-- <link rel="stylesheet" id="rs-plugin-settings-css" href="/wp-content/plugins/revslider/sr6/assets/css/rs6.css" media="all" /> -->
+    <slot name="head" />
+    <CommonHead />
+     {recaptchaKey && (
+      <script
+        is:inline
+        src={`https://www.google.com/recaptcha/api.js?render=${recaptchaKey}`}
+      ></script>
+    )}
   </head>
+  <body class={bodyClass} data-ajax-url={ajaxUrl}>
+    <!-- WP theme preloader (expected by theme JS) -->
+    <div class="load__wrapper" data-preloader-position="center">
+      <img src="/wp-content/uploads/2024/05/white-rings-color-background.png" class="preloader__image" alt="preloader" />
+    </div>
 
-  <body
-    class="home wp-singular page-template-default page page-id-7 wp-theme-psychare wp-child-theme-psychare-child smooth__links wpb-js-composer js-comp-ver-8.7 vc_responsive"
-    data-ajax-url="/wp-admin/admin-ajax.php"
-  >
     <Header />
     <slot />
     <Footer />
+    <!-- Keep Astro-side runtime last. Theme scripts are included in Footer. -->
   </body>
 </html>

@@ -1,0 +1,61 @@
+---
+// Common <head> payload copied from the working wget mirror.
+// Goal: keep WP theme + VC + Gravity Forms resources loading in the same order.
+// NOTE: Page-specific <title> and SEO tags can still be overridden via <slot name="head" />.
+
+const recaptchaKey = import.meta.env.PUBLIC_RECAPTCHA_SITEKEY ?? "";
+---
+
+<!-- META -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="UTF-8" />
+
+<!-- Gravity Forms bootstrap (kept for parity) -->
+<script is:inline type="text/javascript">
+/* <![CDATA[ */
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),document.addEventListener("gform/theme/scripts_loaded",function(){gform.themeScriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,themeScriptsLoaded:!1,isFormEditor:()=>"function"==typeof InitializeEditor,callIfLoaded:function(o){return!(!gform.domLoaded||!gform.scriptsLoaded||!gform.themeScriptsLoaded&&!gform.isFormEditor()||(gform.isFormEditor()&&console.warn("The use of gform.initializeOnLoaded() is deprecated in the form editor context and will be removed in Gravity Forms 3.1."),o(),0))},initializeOnLoaded:function(o){gform.callIfLoaded(o)||(document.addEventListener("gform_main_scripts_loaded",()=>{gform.scriptsLoaded=!0,gform.callIfLoaded(o)}),document.addEventListener("gform/theme/scripts_loaded",()=>{gform.themeScriptsLoaded=!0,gform.callIfLoaded(o)}),window.addEventListener("DOMContentLoaded",()=>{gform.domLoaded=!0,gform.callIfLoaded(o)}))},hooks:{action:{},filter:{}},addAction:function(o,r,e,t){gform.addHook("action",o,r,e,t)},addFilter:function(o,r,e,t){gform.addHook("filter",o,r,e,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,r){gform.removeHook("action",o,r)},removeFilter:function(o,r,e){gform.removeHook("filter",o,r,e)},addHook:function(o,r,e,t,n){null==gform.hooks[o][r]&&(gform.hooks[o][r]=[]);var d=gform.hooks[o][r];null==n&&(n=r+"_"+d.length),gform.hooks[o][r].push({tag:n,callable:e,priority:t=null==t?10:t})},doHook:function(r,o,e){var t;if(e=Array.prototype.slice.call(e,1),null!=gform.hooks[r][o]&&((o=gform.hooks[r][o]).sort(function(o,r){return o.priority-r.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==r?t.apply(null,e):e[0]=t.apply(null,e)})) ,"filter"==r)return e[0]},removeHook:function(o,r,t,n){var e;null!=gform.hooks[o][r]&&(e=(e=gform.hooks[o][r]).filter(function(o){return!!(null!=n&&n!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][r]=e)}});
+/* ]]> */
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- META ENDS -->
+
+<!-- Icons (stable CDN to avoid missing bundled vendor paths in static build) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" media="all" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/v4-shims.min.css" media="all" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons+Outlined" />
+
+<!-- Theme + VC + Gravity Forms CSS (critical for layout parity) -->
+<link rel='stylesheet' id='bootstrap-css' href='/wp-content/themes/psychare/assets/css/bootstrap-min.css' media='all' />
+<link rel='stylesheet' id='slcr-style-css' href='/wp-content/themes/psychare/assets/css/slcr-style.css' media='all' />
+<link rel='stylesheet' id='slcr-app-css' href='/wp-content/themes/psychare/assets/css/slcr-app.css' media='all' />
+<link rel='stylesheet' id='slcr-style-main-css' href='/wp-content/themes/psychare/style.css' media='all' />
+<link rel='stylesheet' id='slcr-fonts-main-css' href='https://fonts.googleapis.com/css2?family=Mulish%3Aital%2Cwght%400%2C400%3B0%2C600%3B0%2C800%3B1%2C400%3B1%2C600%3B1%2C800&display=swap&ver=6.9' media='all' />
+<link rel='stylesheet' id='slcr-font-h-css' href='https://fonts.googleapis.com/css2?family=Libre+Baskerville%3Aital%2Cwght%400%2C400%3B0%2C700%3B1%2C400&display=swap&ver=6.9' media='all' />
+<link rel='stylesheet' id='js_composer_front-css' href='/wp-content/plugins/js_composer/assets/css/js_composer.min.css?ver=8.7' media='all' />
+<link rel='stylesheet' id='js_composer_custom_css-css' href='/wp-content/uploads/js_composer/custom.css' media='all' />
+<link rel='stylesheet' id='gravity_forms_theme_reset-css' href='/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-reset.min.css?ver=2.9.25' media='all' />
+<link rel='stylesheet' id='gravity_forms_theme_foundation-css' href='/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-foundation.min.css?ver=2.9.25' media='all' />
+<link rel='stylesheet' id='gravity_forms_theme_framework-css' href='/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-theme-framework.min.css?ver=2.9.25' media='all' />
+<link rel='stylesheet' id='gravity_forms_orbital_theme-css' href='/wp-content/plugins/gravityforms/assets/css/dist/gravity-forms-orbital-theme.min.css?ver=2.9.25' media='all' />
+<link rel='stylesheet' id='psychare-child-style-css' href='/wp-content/themes/psychare-child/style.css' media='all' />
+<link rel="stylesheet" href="/wp-content/plugins/js_composer/assets/css/lib/vc-material/vc_material.min.css">
+
+<!-- Site overrides (safe last) -->
+<link rel="stylesheet" href="/css/overrides.css" />
+<link rel="stylesheet" href="/css/vc-fullwidth.css" />
+<link rel="stylesheet" href="/css/container-restrict.css" />
+  <link rel="stylesheet" href="/css/subscribe-email-only.css" />
+
+<!-- jQuery (required by theme JS + plugins; use public CDN to avoid CORS/permission issues) -->
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" id="jquery-core-js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.4.1/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+
+<!-- Gravity Forms core JS (kept for parity; remaining scripts are in Footer) -->
+<script defer='defer' src="/wp-content/plugins/gravityforms/js/jquery.json.min.js?ver=2.9.25" id="gform_json-js"></script>
+
+<!-- Optional: load v3 if key provided (keeps local dev safe) -->
+{recaptchaKey ? (
+  <script is:inline src={`https://www.google.com/recaptcha/api.js?render=${recaptchaKey}`}></script>
+) : null}

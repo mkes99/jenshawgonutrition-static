@@ -1,0 +1,184 @@
+---
+interface Props {
+  backgroundClass?: string;
+  backgroundColor?: string;
+
+  borderTopWidth?: number;     // px
+  borderBottomWidth?: number;  // px
+  borderStyle?: "solid" | "dashed" | "dotted" | "double" | "none";
+  borderColor?: string;
+}
+
+const {
+  backgroundClass = "content-dark",
+  backgroundColor,
+
+  borderTopWidth = 0,
+  borderBottomWidth = 0,
+  borderStyle = "double",
+  borderColor,
+} = Astro.props;
+
+// Build inline style safely
+const styleParts: string[] = [];
+
+if (backgroundColor) {
+  styleParts.push(`background-color: ${backgroundColor}`);
+}
+
+const resolvedBorderColor = borderColor ?? "currentColor";
+
+if (borderTopWidth > 0 && borderStyle !== "none") {
+  styleParts.push(
+    `border-top: ${borderTopWidth}px ${borderStyle} ${resolvedBorderColor}`
+  );
+}
+
+if (borderBottomWidth > 0 && borderStyle !== "none") {
+  styleParts.push(
+    `border-bottom: ${borderBottomWidth}px ${borderStyle} ${resolvedBorderColor}`
+  );
+}
+
+const inlineStyle = styleParts.length ? styleParts.join("; ") : undefined;
+
+const BOOKING_URL = "https://booking.jenshawgonutrition.com/";
+const EMAIL_URL = "mailto:info@jenshawgonutrition.com"
+---
+
+<div
+  data-vc-full-width="true"
+  data-vc-full-width-init="false"
+  class={`vc_row wpb_row vc_row-fluid ofvs ${backgroundClass} data-bg-color-6961884e5b3a6 vc_custom_1717102327004 vc_row-has-fill row-z-index-6961884e5b3a6`}
+  style={inlineStyle}
+>
+  <div class={`wpb_column vc_column_container ${backgroundClass} vc_col-sm-12 column-z-index-6961884e5b48f`}>
+    <div class="vc_column-inner">
+      <div class="wpb_wrapper">
+        <div class="vc_row wpb_row vc_inner vc_row-fluid lets-talk-mobile-padding vc_custom_1718349109825">
+
+          <!-- LEFT: LET'S TALK -->
+          <style is:inline>
+            #slcr_icon_text_last6961884e5b7ac.main__icon {
+              display: block;
+              text-align: center;
+              color: #574142 !important;
+              border-radius: 50%;
+              background: #ffffff !important;
+              height: 40px;
+              width: 40px;
+              line-height: 40px;
+              font-size: 40px;
+              transition: all ease 0.3s;
+            }
+            [data-hover-target="box"]:hover #slcr_icon_text_last6961884e5b7ac.main__icon,
+            [data-hover-target="icon"] #slcr_icon_text_last6961884e5b7ac.main__icon:hover {
+              color: #a80226 !important;
+            }
+          </style>
+
+          <div class="counter-border even wpb_column vc_column_container vc_col-sm-6">
+            <div class="vc_column-inner vc_custom_1605635702081">
+              <div class="wpb_wrapper">
+                <div
+                  class="icons__text icon-text-custom"
+                  data-icon-align="left"
+                  data-hover-target="box"
+                  data-vertical-align="top"
+                >
+                  <div class="icons_wrap">
+                    <div class="icon__container">
+                      <i
+                        class="main__icon far fa-comment"
+                        id="slcr_icon_text_last6961884e5b7ac"
+                      ></i>
+                    </div>
+                  </div>
+
+                  <div class="text__content">
+                    <h4 style="font-size:21px;font-weight:bold;margin-top:0">
+                      Let&#8217;s Talk
+                    </h4>
+                    <p>
+                      <strong>Email:</strong>
+                      <a href={EMAIL_URL}>
+                        info@jenshawgonutrition.com
+                      </a>
+                    </p>
+                    <p>
+                      <a
+                        style="font-weight:bold;text-decoration:underline"
+                        href={BOOKING_URL}
+                        target="_blank"
+                        rel="noopener"
+                      >
+                        Book a Discovery Session
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="vc_empty_space visible-xs" style="height:32px">
+                  <span class="vc_empty_space_inner"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT: HOURS -->
+          <style is:inline>
+            #slcr_icon_text_last6961884e5baaf.main__icon {
+              display: block;
+              text-align: center;
+              color: #574142 !important;
+              border-radius: 50%;
+              background: #ffffff !important;
+              height: 40px;
+              width: 40px;
+              line-height: 40px;
+              font-size: 40px;
+              transition: all ease 0.3s;
+            }
+            [data-hover-target="box"]:hover #slcr_icon_text_last6961884e5baaf.main__icon,
+            [data-hover-target="icon"] #slcr_icon_text_last6961884e5baaf.main__icon:hover {
+              color: #a80226 !important;
+            }
+          </style>
+
+          <div class="counter-border even wpb_column vc_column_container vc_col-sm-6">
+            <div class="vc_column-inner vc_custom_1605635711922">
+              <div class="wpb_wrapper">
+                <div
+                  class="icons__text icon-text-custom"
+                  data-icon-align="left"
+                  data-hover-target="box"
+                  data-vertical-align="top"
+                >
+                  <div class="icons_wrap">
+                    <div class="icon__container">
+                      <i
+                        class="main__icon far fa-clock"
+                        id="slcr_icon_text_last6961884e5baaf"
+                      ></i>
+                    </div>
+                  </div>
+
+                  <div class="text__content">
+                    <h4 style="font-size:21px;font-weight:bold;margin-top:0">
+                      My Hours
+                    </h4>
+                    <p>
+                      <strong>Tues. – Fri.</strong><br />
+                      By Appointment Only
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

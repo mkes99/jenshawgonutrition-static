@@ -1,0 +1,102 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import BlogCard from "../../components/blog/BlogCard.astro";
+import RecentPosts from "../../components/blog/RecentPosts.astro";
+import SubscribeWidget from "../../components/blog/SubscribeWidget.astro";
+import { getCollection } from "astro:content";
+import { isPostPublished, sortByPublishDateDesc } from "../../utils/blogPublish";
+
+const all = await getCollection("blog");
+const posts = sortByPublishDateDesc(all).filter(isPostPublished);
+
+const pageSize = 10;
+const page = 1;
+const totalPages = Math.max(1, Math.ceil(posts.length / pageSize));
+const currentPage = Math.min(Math.max(page, 1), totalPages);
+const start = (currentPage - 1) * pageSize;
+const slice = posts.slice(start, start + pageSize);
+
+const recent = posts.slice(0,5);
+---
+
+<BaseLayout bodyClass="blog archive post-type-archive post-type-archive-post wp-theme-psychare wp-child-theme-psychare-child smooth__links wpb-js-composer js-comp-ver-8.7 vc_responsive">
+  <title slot="head">The Table | Jen Shawgo Nutrition</title>
+  <meta slot="head" name="description" content="Evidence-based, trustworthy nutrition information that makes sense for real life." />
+
+  <PageHero
+    title="The Table"
+    subtitle="Pull Up a Chair: Insights, Ideas, and Inspiration."
+    image="/wp-content/uploads/2024/06/blog-header-1-scaled.jpg"
+  />
+
+  <main class="main__content">
+    <div class="container padding_sm">
+      <div class="row">
+        <div class="col-md-8 col-sm-12 col-xs-12">
+          <div class="blog__wrap">
+            <!-- Masonry grid (Isotope) so variable-height cards don't leave gaps -->
+            <div class="jsn-masonry" data-jsn-masonry>
+              <div class="jsn-masonry__sizer" aria-hidden="true"></div>
+              {slice.map((post) => (
+                <div class="jsn-masonry__item">
+                  <BlogCard post={post} href={`/the-table/${post.slug}/`} />
+                </div>
+              ))}
+            </div>
+
+            <script src="/wp-content/plugins/js_composer/assets/lib/vendor/dist/isotope-layout/dist/isotope.pkgd.min.js" defer></script>
+            <script src="/js/blog-masonry.js" defer></script>
+
+            <style>
+              /* Masonry layout to match the live site's two-column card grid. */
+              .jsn-masonry{position:relative;}
+              .jsn-masonry__sizer{width:50%;}
+              .jsn-masonry__item{width:50%;}
+              @media (max-width:991px){
+                .jsn-masonry__sizer,.jsn-masonry__item{width:100%;}
+              }
+              /* Isotope uses absolute positioning; preserve gutter via padding */
+              .jsn-masonry__item{padding:0 15px 30px;box-sizing:border-box;}
+              .jsn-masonry__item > [data-blog-card]{height:100%;}
+            </style>
+
+            <!-- Pagination -->
+            <div class="pagination__blog">
+              <nav class="pagination__links" aria-label="Pagination">
+                {currentPage > 1 ? (<a class="prev page-numbers" href={currentPage - 1 === 1 ? `/the-table/` : `/the-table/page/${currentPage-1}/`}>Prev</a>) : null}
+                {Array.from({length: totalPages}).map((_, i) => {
+                  const p = i+1;
+                  return p === currentPage
+                    ? <span class="page-numbers current" aria-current="page">{p}</span>
+                    : <a class="page-numbers" href={p === 1 ? `/the-table/` : `/the-table/page/${p}/`}>{p}</a>;
+                })}
+                {currentPage < totalPages ? (<a class="next page-numbers" href={`/the-table/page/${currentPage+1}/`}>Next</a>) : null}
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <!-- SIDEBAR -->
+        <div class="col-md-4 col-sm-12 col-xs-12">
+          <aside class="slcr-sidebar col__4">
+            <div class="widget widget_fw_specific_post_widget">
+              <div class="pinned_blog">
+                <h3 class="title">Welcome to the Table</h3>
+                <img width="200" height="200" src="/wp-content/uploads/2025/08/Jen-with-dachsund-Poppy-Welcome-to-The-Table-300x300.jpeg" alt="Jen Shawgo with Poppy" loading="lazy" />
+                <p class="excerpt">If you’ve ever felt overwhelmed by the overabundance of conflicting health and wellness advice out there—one day a food is “super,” and the next it’s “toxic” and to be avoided at all costs—you’re not alone. My goal with this blog is to help you cut through the noise and get back to the basics: evidence-based, trustworthy nutrition information that actually makes sense for real life.</p>
+                <div class="vc_btn3-container vc_btn3-inline">
+                  <a class="read-more btn btn--lg font-800 btn--rounded btn--primary" href="/welcome-to-the-table/">Read More</a>
+                </div>
+              </div>
+            </div>
+
+            <RecentPosts posts={recent} />
+
+            <SubscribeWidget />
+          </aside>
+        </div>
+      </div>
+    </div>
+  </main>
+</BaseLayout>

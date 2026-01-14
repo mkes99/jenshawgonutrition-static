@@ -1,0 +1,201 @@
+---
+interface Props {
+  buttonText?: string;
+}
+
+const { buttonText = "SUBSCRIBE" } = Astro.props;
+const siteKey = import.meta.env.PUBLIC_RECAPTCHA_SITEKEY;
+---
+
+<style is:inline>
+  [data-bg-color-6961884e5bc62]:before { content:""; position:absolute; background-color:#151110; height:100%; width:100%; top:0; left:0; z-index:1; }
+  .data-bg-color-6961884e5bc62.vc_row.vc_row-flex::after, .vc_row.vc_row-flex::before { display: inherit; }
+  .data-bg-color-6961884e5bc62.vc_row:after, .vc_row:before { content:" "; display: inherit; }
+</style>
+
+<div
+  data-vc-full-width="true"
+  data-vc-full-width-init="false"
+  class="vc_row wpb_row vc_row-fluid content-dark data-bg-color-6961884e5bc62 vc_custom_1715985333682 vc_row-has-fill row-z-index-6961884e5bc62"
+  data-bg-overlay="8"
+  data-bg-color-6961884e5bc62="8"
+>
+  <div class="wpb_column vc_column_container content-dark vc_col-sm-12 column-z-index-6961884e5bdee">
+    <div class="vc_column-inner">
+      <div class="wpb_wrapper">
+        <div class="vc_row wpb_row vc_inner vc_row-fluid vc_row-o-equal-height vc_row-o-content-middle vc_row-flex">
+
+          <style is:inline>
+            #slcr_icon_text_last6961884e5c08e.main__icon {
+              display:block; text-align:center; color:#ffffff !important;
+              border-radius:50%; border-color:rgba(0,0,0,0.01) !important;
+              background:rgba(255,255,255,0.01) !important;
+              height:48px; width:48px; line-height:48px; font-size:48px; transition:all ease 0.3s;
+            }
+          </style>
+
+          <div class="wpb_column vc_column_container vc_col-sm-6">
+            <div class="vc_column-inner">
+              <div class="wpb_wrapper">
+                <div class="icons__text" data-hover-target="box" data-icon-align="left">
+                  <div class="icons_wrap">
+                    <div class="icon__container">
+                      <i class="main__icon fas fa-envelope-open-text" id="slcr_icon_text_last6961884e5c08e"></i>
+                    </div>
+                  </div>
+                  <div class="text__content">
+                    <h3 style="font-size:27px;line-height:37px;font-weight:bold;color:#fff;margin-top:0">Pull up a Chair!</h3>
+                    <h5 class="text-dimmer font-italic" style="color:#fff">
+                      Join our email community and receive Table Talk, our monthly newsletter with practice updates, wellness insights, and exclusive content.
+                    </h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="wpb_column vc_column_container vc_col-sm-1">
+            <div class="vc_column-inner"><div class="wpb_wrapper"></div></div>
+          </div>
+
+          <div class="wpb_column vc_column_container vc_col-sm-5">
+            <div class="vc_column-inner">
+              <div class="wpb_wrapper">
+
+                <div class="vc_empty_space visible-xs" style="height:32px"><span class="vc_empty_space_inner"></span></div>
+
+                <div class="gform_wrapper gform-theme subscribe-form_wrapper" data-subscribe-wrapper>
+                  <form class="subscribe-form" data-subscribe-form novalidate>
+
+                    <!-- Honeypot -->
+                    <div class="gfield gfield--type-honeypot gform_validation_container" style="display:none;">
+                      <label for="subscribe_hp">Name</label>
+                      <input id="subscribe_hp" name="hp_name" type="text" autocomplete="new-password" tabindex="-1" />
+                    </div>
+
+                    <div class="gform-body gform_body">
+                      <div class="gform_fields">
+                        <div class="gfield gfield--type-email gfield--width-full">
+                          <label class="gfield_label gform-field-label" for="subscribe_email" style="visibility: hidden; height: 0;">Email</label>
+                          <div class="ginput_container ginput_container_email">
+                            <input
+                              id="subscribe_email"
+                              name="email"
+                              type="email"
+                              class="large"
+                              placeholder="yourname@email.com"
+                              required
+                              autocomplete="email"
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="gform-footer gform_footer top_label">
+                      <input type="submit" class="gform_button button gform-button--width-full" value={buttonText} data-submit />
+                    </div>
+
+                    <div class="gform_validation_errors" data-error style="display:none;"></div>
+                    <div class="gform_confirmation_message" data-success style="display:none;"></div>
+                  </form>
+                </div>
+
+                <div class="wpb_text_column wpb_content_element vc_custom_1717956560006">
+                  <div class="wpb_wrapper">
+                    <p class="text-dimmer" style="color:#fff;font-size:14px;margin-top:6px;">
+                      Read our
+                      <a href="/terms-and-conditions/" style="color:#fff;text-decoration:underline;font-weight:bold;">
+                        Terms &amp; Conditions
+                      </a>
+                      before signing up.
+                    </p>
+                  </div>
+                </div>
+
+                <script is:inline>
+                  (function () {
+                    const form = document.querySelector("[data-subscribe-form]");
+                    if (!form) return;
+
+                    const siteKey = {JSON.stringify(siteKey || "")};
+
+                    const email = form.querySelector("input[name='email']");
+                    const hp = form.querySelector("input[name='hp_name']");
+                    const btn = form.querySelector("[data-submit]");
+                    const errorBox = form.querySelector("[data-error]");
+                    const successBox = form.querySelector("[data-success]");
+
+                    function hide(el){ if(el) el.style.display="none"; }
+                    function show(el){ if(el) el.style.display=""; }
+                    function setError(msg){
+                      errorBox.textContent = msg || "There was a problem. Please try again.";
+                      show(errorBox); hide(successBox);
+                    }
+                    function setSuccess(msg){
+                      successBox.textContent = msg || "Thanks! You’re subscribed.";
+                      show(successBox); hide(errorBox);
+                    }
+
+                    async function getToken(action) {
+                      if (!siteKey) return "";
+                      if (!window.grecaptcha?.execute) throw new Error("reCAPTCHA is not ready. Please try again.");
+                      return await window.grecaptcha.execute(siteKey, { action });
+                    }
+
+                    form.addEventListener("submit", async (e) => {
+                      e.preventDefault();
+                      hide(errorBox); hide(successBox);
+
+                      if (hp && hp.value.trim()) {
+                        setSuccess("Thanks! You’re subscribed.");
+                        form.reset();
+                        return;
+                      }
+
+                      if (!email.checkValidity()) {
+                        email.reportValidity();
+                        return;
+                      }
+
+                      const original = btn.value;
+                      btn.value = "Submitting…";
+                      btn.disabled = true;
+
+                      try {
+                        const fd = new FormData(form);
+                        const token = await getToken("subscribe");
+                        fd.append("recaptchaToken", token);
+
+                        const res = await fetch("/api/subscribe", {
+                          method: "POST",
+                          headers: { "Accept": "application/json" },
+                          body: fd,
+                        });
+
+                        const data = await res.json().catch(() => ({}));
+                        if (!res.ok || data?.ok !== true) {
+                          throw new Error(data?.message || data?.error || "There was a problem. Please try again.");
+                        }
+
+                        setSuccess(data?.message || "Thanks! You’re subscribed.");
+                        form.reset();
+                      } catch (err) {
+                        setError(err?.message || "There was a problem. Please try again.");
+                      } finally {
+                        btn.value = original;
+                        btn.disabled = false;
+                      }
+                    });
+                  })();
+                </script>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

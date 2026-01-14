@@ -1,0 +1,54 @@
+---
+type Crumb = { label: string; href?: string };
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  /** Background image url (absolute-from-root) */
+  image?: string;
+  /** Overlay intensity used by Psychare (0-9). Default 8 matches most interior heroes. */
+  overlay?: number;
+  /** Fixed height in px (Psychare pages are typically 300px). */
+  height?: number;
+  breadcrumbs?: Crumb[];
+}
+
+const {
+  title,
+  subtitle,
+  image = "/wp-content/uploads/2024/06/blog-header-1-scaled.jpg",
+  overlay = 8,
+  height = 300,
+  breadcrumbs,
+} = Astro.props as Props;
+---
+
+<section class="col-md-12 col-sm-12 col-xs-12">
+  <div class="row">
+    <div
+      class="page__header content-light"
+      data-header-vertical-align="middle"
+      data-header-content-align="center"
+      data-bg-overlay={overlay}
+      style={`background-image: url(${image}); height: ${height}px;`}
+    >
+      <div class="content">
+        <div class="container">
+          <div class="inner">
+            <h1>{title}</h1>
+            {subtitle ? <p>{subtitle}</p> : null}
+            {breadcrumbs?.length ? (
+              <ul class="breadcrumbs">
+                {breadcrumbs.map((c) => (
+                  <li>
+                    {c.href ? <a href={c.href}>{c.label}</a> : <span>{c.label}</span>}
+                  </li>
+                ))}
+              </ul>
+            ) : null}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

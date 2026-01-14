@@ -1,0 +1,9 @@
+/* Subscribe form: email-only (hide name/phone/etc fields) */
+.subscribe-form .gfield{display:none !important;}
+.subscribe-form .gfield--type-email,
+.subscribe-form .gfield--type-submit,
+.subscribe-form .gform_footer,
+.subscribe-form .gform_ajax_spinner,
+.subscribe-form .ginput_recaptchav3{display:grid !important;}
+/* hide honeypot explicitly */
+.subscribe-form .gfield--type-honeypot{display:none !important;}

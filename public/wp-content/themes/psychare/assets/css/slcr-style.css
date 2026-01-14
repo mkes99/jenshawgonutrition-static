@@ -1014,7 +1014,7 @@ Backgrounds and Row Shapes
 
 .dotted-pattern-1:after {
     content: "";
-    background-image: url(/wp-content/themes/psychare/assets/images/dots-1.svg);
+    background-image: url(../images/dots-1.svg);
     background-size: cover;
     position: absolute;
     top: 0;
@@ -1024,7 +1024,7 @@ Backgrounds and Row Shapes
 
 .dotted-pattern-2:after {
     content: "";
-    background-image: url(/wp-content/themes/psychare/assets/images/dots-2.svg);
+    background-image: url(../images/dots-2.svg);
     background-size: cover;
     position: absolute;
     top: 0;
@@ -4552,7 +4552,7 @@ Blog
     height: 60px;
     width: 60px;
     margin: 0 auto;
-    background-image: url(/wp-content/themes/psychare/assets/images/icons/play.png);
+    background-image: url(../images/icons/play.png);
     background-size: 55px;
     background-repeat: no-repeat;
     position: absolute;
@@ -4571,7 +4571,7 @@ Blog
     height: 30px;
     width: 30px;
     margin-bottom: 15px;
-    background-image: url(/wp-content/themes/psychare/assets/images/icons/link.png);
+    background-image: url(../images/icons/link.png);
     background-repeat: no-repeat;
     background-size: 30px;
 }
@@ -4580,7 +4580,7 @@ Blog
     height: 30px;
     width: 30px;
     margin-bottom: 15px;
-    background-image: url(/wp-content/themes/psychare/assets/images/icons/audio.png);
+    background-image: url(../images/icons/audio.png);
     background-repeat: no-repeat;
     background-size: 30px;
 }
@@ -4758,7 +4758,7 @@ Blog
     height: 60px;
     width: 60px;
     margin: 0 auto;
-    background-image: url(/wp-content/themes/psychare/assets/images/icons/play.png);
+    background-image: url(../images/icons/play.png);
     background-size: 55px;
     background-repeat: no-repeat;
     position: absolute;
@@ -4796,7 +4796,7 @@ Blog
 .blog__card-02 .post__type_link {
     height: 30px;
     width: 30px;
-    background-image: url(/wp-content/themes/psychare/assets/images/icons/link.png);
+    background-image: url(../images/icons/link.png);
     background-repeat: no-repeat;
     background-size: 30px;
 }
@@ -4804,7 +4804,7 @@ Blog
 .blog__card-02 .post__type_audio {
     height: 30px;
     width: 30px;
-    background-image: url(/wp-content/themes/psychare/assets/images/icons/audio.png);
+    background-image: url(../images/icons/audio.png);
     background-repeat: no-repeat;
     background-size: 30px;
 }
@@ -7781,7 +7781,7 @@ Features
 .feature-icons .step-1 .wpb_wrapper:after,
 .feature-icons .step-2 .wpb_wrapper:after {
     content: "";
-    background-image: url(/wp-content/themes/psychare/assets/images/feature-arrow.svg);
+    background-image: url(../images/feature-arrow.svg);
     background-size: cover;
     position: absolute;
     top: 10px;
@@ -9991,7 +9991,7 @@ Tabbed Content
 .cover_shortcode {
     -webkit-background: linear-gradient( 135deg, #0e133d 10%, #0D25B9 100%);
     background: linear-gradient( 135deg, #0e133d 10%, #0D25B9 100%);
-    background-image: url(/wp-content/themes/psychare/assets/images/others/mount.jpg);
+    background-image: url(//wp-content/themes/psychare/assets/images/others/mount.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -11390,7 +11390,7 @@ div.pp_default .pp_content {
 }
 
 div.pp_default .pp_close {
-    background: url(/wp-content/themes/psychare/assets/images/icons/pp-close.svg) !important;
+    background: url(../images/icons/pp-close.svg) !important;
     background-size: 20px !important;
     height: 20px !important;
     width: 20px !important;
@@ -11399,7 +11399,7 @@ div.pp_default .pp_close {
 
 div.pp_default a.pp_arrow_next,
 div.pp_default a.pp_arrow_previous {
-    background: url(/wp-content/themes/psychare/assets/images/icons/pp-play.svg) !important;
+    background: url(../images/icons/pp-play.svg) !important;
     background-size: 20px !important;
     margin: 4px 4px 0 0 !important;
 }
@@ -11409,12 +11409,12 @@ div.pp_default a.pp_arrow_previous {
 }
 
 div.pp_default .pp_nav .pp_play {
-    background: url(/wp-content/themes/psychare/assets/images/icons/pp-play.svg) !important;
+    background: url(../images/icons/pp-play.svg) !important;
     background-size: 30px !important;
 }
 
 div.pp_default .pp_nav .pp_pause {
-    background: url(/wp-content/themes/psychare/assets/images/icons/pp-pause.svg) !important;
+    background: url(../images/icons/pp-pause.svg) !important;
     background-size: 30px !important;
     background-repeat: no-repeat;
 }
@@ -11484,7 +11484,7 @@ div.pp_overlay {
     margin: 0;
 }
 .sc-insta-icon {
-    background-image: url(/wp-content/themes/psychare/assets/images/icons/instagram-icon.svg);
+    background-image: url(../images/icons/instagram-icon.svg);
     background-size: contain;
     height: 20px;
     width: 20px;
@@ -11591,7 +11591,7 @@ div.pp_overlay {
     height: 100%;
     top: 30px;
     right: -15px;
-    background: url('/wp-content/themes/psychare/assets/images/icons/process-bg.jpg');
+    background: url('../images/icons/process-bg.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     z-index: -1;
@@ -11646,7 +11646,7 @@ div.pp_overlay {
     display: block;
     top: 16px;
     left: 14px;
-    background-image: url(/wp-content/themes/psychare/assets/images/icons/call-header.svg);
+    background-image: url(../images/icons/call-header.svg);
 }
 
 /** Timeline **/
@@ -11763,7 +11763,7 @@ div.pp_overlay {
     display: block;
     top: 14px;
     left: 11px;
-    background-image: url(/wp-content/themes/psychare/assets/images/icons/call-footer.svg);
+    background-image: url(../images/icons/call-footer.svg);
 }
 
 .footer-call-cta .text {
@@ -11839,7 +11839,7 @@ aside.slcr-sidebar .menu li a:before {
     opacity: .7;
 }
 .dotted-overlay:before {
-    background-image: url('/wp-content/themes/psychare/assets/images/icons/dotted-pattern-large.png');
+    background-image: url('../images/icons/dotted-pattern-large.png');
     background-size: cover;
     background-repeat: no-repeat;
 }

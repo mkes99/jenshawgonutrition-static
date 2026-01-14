@@ -1,0 +1,25 @@
+/* Container sizing parity with the WP theme / Bootstrap-like breakpoints */
+/*
+  The Psychare theme (and its custom.css) expects Bootstrap-like containers.
+  In WP, some rules set `.container{ width:1170px !important; }` at >=1200px.
+  Use `width` (not only max-width) so we win against theme overrides.
+*/
+
+body .container{
+  width:100%;
+  padding-left:15px;
+  padding-right:15px;
+  margin-left:auto;
+  margin-right:auto;
+  box-sizing:border-box;
+}
+
+.container.no-padding{
+  padding-left:0;
+  padding-right:0;
+}
+
+@media (min-width:576px){body .container{width:540px !important;} footer .footer__main .container{width:auto !important;}}}
+@media (min-width:768px){body .container{width:720px !important;} footer .footer__main .container{width:auto !important;}}
+@media (min-width:992px){body .container,footer .footer__main .container{width:960px !important;}}
+@media (min-width:1200px){body .container,footer .footer__main .container{width:1170px !important;}}

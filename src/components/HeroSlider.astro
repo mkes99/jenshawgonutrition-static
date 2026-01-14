@@ -1,190 +1,276 @@
 ---
-import { getEntry } from "astro:content";
+// RevSlider-like hero that matches the live site's arrows + bullets, but runs with a tiny script.
+// No external plugin JS required.
 
-const entry = await getEntry("hero-slider", "slides");
-const slides = entry?.data ?? [];
+type SlideButton = { href: string; label: string; external?: boolean };
+type Slide = {
+  image: string;
+  alt?: string;
+  subHeading?: string;
+  title?: string;
+  subtitle?: string;
+  primary?: SlideButton;
+  secondary?: SlideButton;
+};
+
+interface Props {
+  slides?: Slide[];
+  autoplay?: boolean;
+  intervalMs?: number;
+  pauseOnHover?: boolean;
+  showArrows?: boolean;
+  showDots?: boolean;
+  fullWidth?: boolean;
+  heightPx?: number;
+}
+
+const defaultSlides: Slide[] = [
+  {
+    image: "/wp-content/uploads/2024/06/home-page-banner-2-scaled.jpg",
+    alt: "Woman taking a lunch break hiking",
+    subHeading: "Discover Holistic Nutrition Care",
+    title: "Find the root cause, feel better, and live more life.",
+    subtitle: "Feel heard and learn what works best for you and your body.",
+    primary: { href: "https://booking.jenshawgonutrition.com", label: "BOOK NOW", external: true },
+    secondary: { href: "/about/", label: "About me" },
+  },
+  {
+    image: "/wp-content/uploads/2024/06/homepage-new-scaled.jpg",
+    alt: "Young woman talking on a video call",
+    subHeading: "Nutrition Focused On You",
+    title: "Explore a more personal approach to nutrition.",
+    subtitle: "Transform your health with custom plans made just for you.",
+    primary: { href: "https://booking.jenshawgonutrition.com", label: "BOOK NOW", external: true },
+    secondary: { href: "/about/", label: "About me" },
+  },
+];
+
+const {
+  slides = defaultSlides,
+  autoplay = true,
+  intervalMs = 6000,
+  pauseOnHover = true,
+  showArrows = true,
+  showDots = true,
+  fullWidth = true,
+  heightPx = 800,
+} = Astro.props as Props;
 ---
 
-<section class="rev-hero" data-hero-slider>
-  <div class="rev-hero__viewport">
-    <ul class="rev-hero__track" data-hero-slider-track>
-      {slides.map((s, idx) => (
-        <li
-          class="rev-hero__slide"
-          data-hero-slide
-          aria-hidden={idx === 0 ? "false" : "true"}
-        >
-          <div class="rev-hero__bg">
-            <img
-              src={s.image}
-              alt={s.imageAlt}
-              decoding="async"
-              fetchpriority={idx === 0 ? "high" : "auto"}
-              loading={idx === 0 ? "eager" : "lazy"}
-            />
-            <div class="rev-hero__overlay" aria-hidden="true"></div>
-          </div>
+<section
+  class={`jsn-rev-hero${fullWidth ? " is-fullwidth" : ""}`}
+  aria-label="Homepage hero"
+  data-autoplay={autoplay ? "true" : "false"}
+  data-interval={intervalMs}
+  data-pause-hover={pauseOnHover ? "true" : "false"}
+>
+  <div class="jsn-rev-wrap" style={`--jsn-rev-h:${heightPx}px;`}>
+    <div class="jsn-rev" role="region" aria-roledescription="carousel">
+      {showArrows ? (
+        <a class="tp-leftarrow tparrows zeus" href="#" aria-label="Previous slide">
+        <span class="tp-title-wrap"><span class="tp-arr-imgholder" /></span>
+        </a>
+      ) : null}
+      {showArrows ? (
+        <a class="tp-rightarrow tparrows zeus" href="#" aria-label="Next slide">
+        <span class="tp-title-wrap"><span class="tp-arr-imgholder" /></span>
+        </a>
+      ) : null}
 
-          <div class="rev-hero__content">
-            <p class="rs-layer sub-heading single white font-800 rev-hero__kicker">
-              {s.subheading}
-            </p>
+      {showDots ? (
+        <div class="tp-bullets uranus horizontal nav-pos-hor-center nav-pos-ver-bottom nav-dir-horizontal" role="tablist" aria-label="Slide navigation">
+          {slides.map((_, i) => (
+            <button
+              class={`tp-bullet${i === 0 ? " selected" : ""}`}
+              type="button"
+              data-index={i}
+              role="tab"
+              aria-selected={i === 0 ? "true" : "false"}
+            >
+              <span class="tp-bullet-inner" />
+            </button>
+          ))}
+        </div>
+      ) : null}
 
-            <h1 class="rs-layer font-headings rev-hero__title">
-              {s.heading}
-            </h1>
-
-            <p class="rs-layer rev-hero__body" style="font-family:'Mulish';">
-              {s.body}
-            </p>
-
-            <div class="rev-hero__ctas">
-            <div class="vc_btn3-container vc_btn3-inline">
-              <a
-                class="btn btn--lg font-700 btn--rounded btn--primary"
-                href={s.primaryCta.href}
-                target={s.primaryCta.target}
-                rel={s.primaryCta.target === "_blank" ? "noopener" : undefined}
-              >
-                {s.primaryCta.label}
-              </a>
-              </div>
-              <div class="vc_btn3-container vc_btn3-inline">
-                <a
-                    class=" btn btn--lg font-700 btn--rounded btn--secondary btn--ghost"
-                    href={s.secondaryCta.href}
-                    target={s.secondaryCta.target}
-                >
-                    {s.secondaryCta.label}
-                </a>
-              </div>  
+      <div class="jsn-rev-slides">
+        {slides.map((s, i) => (
+          <article
+            class={`jsn-rev-slide${i === 0 ? " is-active" : ""}`}
+            data-index={i}
+            aria-hidden={i === 0 ? "false" : "true"}
+          >
+            <img class="jsn-rev-bg" src={s.image} alt="" loading={i === 0 ? "eager" : "lazy"} decoding="async" />
+            <div class="jsn-rev-overlay" aria-hidden="true" />
+            <div class="container">
+              {s.subHeading ? <p class="sub-heading single white font-800">{s.subHeading}</p> : null}
+              {s.title ? <h1 class="font-headings">{s.title}</h1> : null}
+              {s.subtitle ? <p class="jsn-rev-sub">{s.subtitle}</p> : null}
+              {(s.primary || s.secondary) ? (
+                <div class="jsn-rev-ctas">
+                  {s.primary ? (
+                    <a
+                      class="rev-btn"
+                      href={s.primary.href}
+                      target={s.primary.external ? "_blank" : "_self"}
+                      rel={s.primary.external ? "noopener" : undefined}
+                      data-variant="primary"
+                    >
+                      {s.primary.label}
+                    </a>
+                  ) : null}
+                  {s.secondary ? (
+                    <a class="rev-btn" href={s.secondary.href} data-variant="secondary">{s.secondary.label}</a>
+                  ) : null}
+                </div>
+              ) : null}
             </div>
-          </div>
-        </li>
-      ))}
-    </ul>
-
-    <button class="rev-hero__nav rev-hero__nav--prev" type="button" aria-label="Previous slide" data-hero-prev> </button>
-    <button class="rev-hero__nav rev-hero__nav--next" type="button" aria-label="Next slide" data-hero-next></button>
-
-    <!-- <div class="rev-hero__dots" aria-label="Slide navigation" data-hero-dots></div> -->
+          </article>
+        ))}
+      </div>
+    </div>
   </div>
+
+  <script is:inline>
+    (function(){
+      const root = document.querySelector('.jsn-rev-hero');
+      if(!root) return;
+      const interval = Number(root.getAttribute('data-interval') || '7000');
+      let autoplay = (root.getAttribute('data-autoplay') !== 'false');
+      let pauseOnHover = (root.getAttribute('data-pause-hover') !== 'false');
+      const slides = Array.from(root.querySelectorAll('.jsn-rev-slide'));
+      const bullets = Array.from(root.querySelectorAll('.tp-bullet'));
+      const prevBtn = root.querySelector('.tp-leftarrow');
+      const nextBtn = root.querySelector('.tp-rightarrow');
+      const leftImg = root.querySelector('.tp-leftarrow .tp-arr-imgholder');
+      const rightImg = root.querySelector('.tp-rightarrow .tp-arr-imgholder');
+      if(!slides.length) return;
+
+      let idx = 0;
+      let t;
+
+      function setArrowPreviews(i){
+        const prev = (i - 1 + slides.length) % slides.length;
+        const next = (i + 1) % slides.length;
+        const prevImg = slides[prev].querySelector('img')?.getAttribute('src');
+        const nextImg = slides[next].querySelector('img')?.getAttribute('src');
+        if(leftImg && prevImg) leftImg.style.backgroundImage = `url(${prevImg})`;
+        if(rightImg && nextImg) rightImg.style.backgroundImage = `url(${nextImg})`;
+      }
+
+      function go(i){
+        idx = (i + slides.length) % slides.length;
+        slides.forEach((s, n) => {
+          const active = n === idx;
+          s.classList.toggle('is-active', active);
+          s.setAttribute('aria-hidden', active ? 'false' : 'true');
+        });
+        bullets.forEach((b, n) => {
+          const active = n === idx;
+          b.classList.toggle('selected', active);
+          b.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        setArrowPreviews(idx);
+        if(t) clearTimeout(t);
+        t = null;
+        if(autoplay) {
+          t = window.setTimeout(() => go(idx + 1), interval);
+        }
+      }
+
+      bullets.forEach((b) => {
+        b.addEventListener('click', () => go(Number(b.getAttribute('data-index') || '0')));
+      });
+      prevBtn && prevBtn.addEventListener('click', () => go(idx - 1));
+      nextBtn && nextBtn.addEventListener('click', () => go(idx + 1));
+
+      // Pause on hover (desktop)
+      root.addEventListener('mouseenter', () => {
+        if(!pauseOnHover) return;
+        if(t) clearTimeout(t);
+        t = null;
+      });
+      root.addEventListener('mouseleave', () => {
+        if(!pauseOnHover) return;
+        if(!t && autoplay) t = window.setTimeout(() => go(idx + 1), interval);
+      });
+
+      // Start
+      setArrowPreviews(0);
+      if(autoplay) t = window.setTimeout(() => go(1), interval);
+
+      // Expose a tiny API for toggling options globally if needed.
+      window.JSN_HERO_SLIDER = {
+        next: () => go(idx + 1),
+        prev: () => go(idx - 1),
+        goTo: (n) => go(Number(n || 0)),
+        start: () => { autoplay = true; if(!t) t = window.setTimeout(() => go(idx + 1), interval); },
+        stop: () => { autoplay = false; if(t) clearTimeout(t); t = null; },
+        setOptions: (opts) => {
+          if(!opts) return;
+          if(typeof opts.autoplay === 'boolean') autoplay = opts.autoplay;
+          if(typeof opts.pauseOnHover === 'boolean') pauseOnHover = opts.pauseOnHover;
+          if(!autoplay && t) { clearTimeout(t); t = null; }
+          if(autoplay && !t) t = window.setTimeout(() => go(idx + 1), interval);
+        },
+      };
+    })();
+  </script>
+
+  <style>
+    /* Full-bleed like RevSlider fullwidth */
+    .jsn-rev-hero.is-fullwidth{width:100vw;margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);} 
+    .jsn-rev-wrap{position:relative;height:var(--jsn-rev-h);min-height:var(--jsn-rev-h);overflow:hidden;}
+    @media (max-width:1024px){.jsn-rev-wrap{height:768px;min-height:768px;}}
+    @media (max-width:778px){.jsn-rev-wrap{height:708px;min-height:708px;} .tparrows{display: none;} .jsn-rev-slide .container{margin-top:80px}}
+    /* @media (max-width:480px){.jsn-rev-wrap{height:720px;min-height:720px;}} */
+
+    .jsn-rev{position:relative;height:100%;}
+    .jsn-rev-slides{position:absolute;inset:0;}
+    .jsn-rev-slide{position:absolute;inset:0;opacity:0;transition:opacity 700ms ease;}
+    .jsn-rev-slide.is-active{opacity:1;}
+    .jsn-rev-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+    .jsn-rev-overlay{position:absolute;inset:0;background:linear-gradient(90deg, rgb(21,17,16) 0%, rgba(21,17,16,0.4) 100%);}
+    .jsn-rev-slide .container{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;margin-top: 123px;}
+    .jsn-rev-slide h1{color:#fff;margin:14px 0 14px;max-width:520px;}
+    .jsn-rev-sub{color:rgba(255,255,255,0.75);font-weight:600;max-width:520px;line-height:25px;margin:0 0 22px;}
+    /* .sub-heading.single.white{color:#fff;text-transform:uppercase;letter-spacing:1px;font-weight:800;padding-left:88px;position:relative;}
+    .sub-heading.single.white:before{content:"";position:absolute;left:0;top:50%;width:70px;height:2px;background:#fff;transform:translateY(-50%);opacity:.85;} */
+    .jsn-rev-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+
+    /* Buttons mimic RevSlider styles */
+    .rev-btn{display:inline-block;text-transform:uppercase;letter-spacing:1px;font-weight:900;font-size:14px;line-height:55px;padding:3px 50px 4px;border-radius:4px;text-decoration:none;}
+    .rev-btn[data-variant="primary"]{background:#574142;color:#fff;}
+    .rev-btn[data-variant="primary"]:hover{background:#a80226;}
+    .rev-btn[data-variant="secondary"]{background:#fff;color:#574142;}
+    .rev-btn[data-variant="secondary"]:hover{background:#574142;color:#fff;}
+
+    /* Arrows + bullet navigation (class names match RevSlider so existing theme CSS can apply too) */
+    .tparrows{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:50px;height:50px;border:0;background:transparent;cursor:pointer;opacity:1;}
+    .tp-leftarrow{left:20px;}
+    .tp-rightarrow{right:20px;}
+    .tp-title-wrap{width:100%;height:100%;border-radius:50%;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(2px);}
+    .tp-arr-imgholder{width:50px;height:50px;border-radius:50%;background:rgba(0,0,0,0.1);background-size:cover;background-position:center;opacity:0;}
+    .tp-leftarrow:hover .tp-arr-imgholder,
+    .tp-rightarrow:hover .tp-arr-imgholder{opacity:1;}
+    .tp-leftarrow:after,.tp-rightarrow:after{content:"";position:absolute;inset:0;margin:auto;width:10px;height:10px;border-right:2px solid #fff;border-bottom:2px solid #fff;}
+    .tp-leftarrow:after{transform:translate(1px,-1px) rotate(135deg);} 
+    .tp-rightarrow:after{transform:translate(-1px,-1px) rotate(-45deg);} 
+
+    .tp-bullets{position:absolute;left: 18%;bottom: 181px;transform:translateX(-50%);z-index:6;display:flex;gap:10px;}
+    .tp-bullet{width:15px;height:15px;border:0;background:transparent;cursor:pointer;padding:0;}
+    .tp-bullet-inner{display:block;width:100%;height:100%;border-radius:999px;border:2px solid #655f5c;background-color: #655f5c;}
+
+    .tp-bullet.selected{
+      box-shadow: 0 0 0 2px rgba(255,255,255,1);
+      border: none;
+      border-radius: 50%;
+      background: transparent;
+    }
+    .tp-bullet.selected .tp-bullet-inner{
+      transform: scale(0.4);
+      -webkit-transform: scale(0.4);
+      background-color: rgba(255,255,255,1);
+    }
+  </style>
 </section>
-
-<script is:inline src="/assets/hero-slider.js"></script>
-
-<style is:inline>
-  /* Minimal layout CSS – leaves your theme typography/button styles intact */
-  .rev-hero { position: relative; }
-  .rev-hero__viewport { position: relative; overflow: hidden; }
-  .rev-hero__track {
-    display: flex;
-    padding: 0; margin: 0;
-    list-style: none;
-    transition: transform 600ms ease;
-    will-change: transform;
-  }
-  .rev-hero__slide {
-    position: relative;
-    min-width: 100%;
-    height: clamp(420px, 56vw, 720px);
-  }
-  .rev-hero__bg { position:absolute; inset:0; }
-  .rev-hero__bg img { width:100%; height:100%; object-fit:cover; display:block; }
-  .rev-hero__overlay {
-    position:absolute; inset:0;
-    background: linear-gradient(90deg, rgba(21,17,16,1) 0%, rgba(21,17,16,0.4) 100%);
-  }
-  .rev-hero__content {
-    position: relative;
-    z-index: 2;
-    padding: 120px 16px 40px;
-    max-width: 600px;
-    left: 17%
-  }
-   .rev-hero__content p, .rev-hero__content h1 {
-     color: #fff;
-     text-shadow: 0 2px 6px rgba(0,0,0,0.5);
-   }
-  .rev-hero__kicker { margin: 0 0 8px; font-size: 18px; }
-  .rev-hero__title { margin: 12px 0 16px; }
-  .rev-hero__ctas { display:flex; gap: 70px; margin-top: 18px; flex-wrap: wrap; }
-
-    .rev-hero__ctas .btn--primary {
-        background: #574142!important;
-        color: #ffffff!important;
-        border-color: #574142!important;
-    }
-   
-    .rev-hero__ctas .btn--primary:hover {
-        background: #A80226!important;
-    }
-
-
-    .rev-hero__ctas .btn--secondary {   
-        border-color: #574142!important;
-        background: #fffcf1!important;
-        color: #574142!important;
-    }
-  .rev-hero__ctas .btn--secondary:hover {
-    background: #ea8c98!important;
-    color: #000000!important;
-    border-color: #ea8c98!important;
-  }
-
-  .rev-hero__nav {
-    position:absolute; top:50%;
-    transform: translateY(-50%);
-    z-index: 5;
-    border: 0;
-    background: transparent;
-
-  }
-  .rev-hero__nav--prev { left: 12px; }
-  .rev-hero__nav--next { right: 12px; }
-
-.rev-hero__nav--prev:before{
-    content:"\f104";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 400;
-    font-size: 30px;
-    color: #ffffff;
-    display: block;
-    line-height: 50px;
-    text-align: center;
-    z-index: 2;
-    position: relative;
-}
-
-
-.rev-hero__nav--next:before{
-    content:"\f105";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 400;
-    font-size: 30px;
-    color: #ffffff;
-    display: block;
-    line-height: 50px;
-    text-align: center;
-    z-index: 2;
-    position: relative;
-}
-
-  .rev-hero__dots {
-    position:absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: 14px;
-    display:flex;
-    gap: 10px;
-    z-index: 6;
-  }
-  .rev-hero__dot {
-    width: 10px; height: 10px;
-    border-radius: 999px;
-    border: 0;
-    background: rgba(255,255,255,0.6);
-    cursor: pointer;
-  }
-  .rev-hero__dot[aria-current="true"] { background: rgba(255,255,255,1); }
-</style>
