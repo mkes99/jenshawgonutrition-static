@@ -1,6 +1,5 @@
 ---
-title: Is Your Gut Asking for a Reset? 10 Signs You Shouldn’t Ignore | Jen Shawgo
-  Nutrition
+title: Is Your Gut Asking for a Reset? 10 Signs You Shouldn’t Ignore
 date: '2025-09-15'
 author: Jen Shawgo
 tags:

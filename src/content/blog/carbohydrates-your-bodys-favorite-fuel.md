@@ -1,5 +1,5 @@
 ---
-title: 'Carbohydrates: Your Body’s Favorite Fuel | Jen Shawgo Nutrition'
+title: 'Carbohydrates: Your Body’s Favorite Fuel'
 date: '2025-10-24'
 author: Jen Shawgo
 tags:

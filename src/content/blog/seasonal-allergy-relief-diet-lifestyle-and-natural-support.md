@@ -1,6 +1,5 @@
 ---
-title: 'Seasonal Allergy Relief: Diet, Lifestyle, and Natural Support | Jen Shawgo
-  Nutrition'
+title: 'Seasonal Allergy Relief: Diet, Lifestyle, and Natural Support'
 date: '2025-10-11'
 author: Jen Shawgo
 tags:

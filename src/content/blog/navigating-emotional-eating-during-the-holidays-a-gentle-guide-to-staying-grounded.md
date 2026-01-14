@@ -1,6 +1,6 @@
 ---
 title: 'Navigating Emotional Eating During the Holidays: A Gentle Guide to Staying
-  Grounded | Jen Shawgo Nutrition'
+  Grounded'
 date: '2025-11-25'
 author: Jen Shawgo
 tags:

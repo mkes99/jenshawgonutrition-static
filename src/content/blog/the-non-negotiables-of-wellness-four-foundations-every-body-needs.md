@@ -1,6 +1,5 @@
 ---
-title: 'The Non-Negotiables of Wellness: Four Foundations Every Body Needs | Jen Shawgo
-  Nutrition'
+title: 'The Non-Negotiables of Wellness: Four Foundations Every Body Needs'
 date: '2025-11-12'
 author: Jen Shawgo
 tags:

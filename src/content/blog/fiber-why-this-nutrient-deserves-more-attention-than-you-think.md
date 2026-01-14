@@ -1,5 +1,5 @@
 ---
-title: 'Fiber: Why This Nutrient Deserves More Attention Than You Think | Jen Shawgo
+title: 'Fiber: Why This Nutrient Deserves More Attention Than You Think
   Nutrition'
 date: '2025-11-12'
 author: Jen Shawgo

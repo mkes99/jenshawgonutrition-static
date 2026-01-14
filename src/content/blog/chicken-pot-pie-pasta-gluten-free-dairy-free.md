@@ -1,5 +1,5 @@
 ---
-title: Chicken Pot Pie Pasta (Gluten-Free &amp; Dairy-Free) | Jen Shawgo Nutrition
+title: Chicken Pot Pie Pasta (Gluten-Free &amp; Dairy-Free)
 date: '2025-10-18'
 author: Jen Shawgo
 tags:

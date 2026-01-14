@@ -1,6 +1,5 @@
 ---
-title: 'Boost Your Immunity This Fall: Why Gut Health Is the Secret to Staying Well
-  | Jen Shawgo Nutrition'
+title: 'Boost Your Immunity This Fall: Why Gut Health Is the Secret to Staying Well'
 date: '2025-09-04'
 author: Jen Shawgo
 tags:

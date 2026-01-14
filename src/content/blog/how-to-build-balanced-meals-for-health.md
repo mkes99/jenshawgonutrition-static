@@ -1,5 +1,5 @@
 ---
-title: How to Build Balanced Meals for Health | Jen Shawgo Nutrition
+title: How to Build Balanced Meals for Health
 date: '2025-08-26'
 author: Jen Shawgo
 tags:

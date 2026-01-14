@@ -1,5 +1,5 @@
 ---
-title: Peanut Butter Overnight Oats (Gluten-Free &amp; Dairy-Free) | Jen Shawgo Nutrition
+title: Peanut Butter Overnight Oats (Gluten-Free &amp; Dairy-Free)
 date: '2025-10-20'
 author: Jen Shawgo
 tags:
