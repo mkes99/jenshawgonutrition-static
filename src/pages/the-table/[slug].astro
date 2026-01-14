@@ -49,7 +49,6 @@ const mins = getReadingTimeMinutes(entry.body ?? "");
       title={entry.data.title}
       subtitle={`${dateStr}${mins ? ` • ${mins} min read` : ""}`}
       image={normalizeWpAssetUrl(entry.data.heroImage) || "/wp-content/uploads/2024/06/blog-header-1-scaled.jpg"}
-      breadcrumbs={[{ label: "Home", href: "/" }, { label: "The Table", href: "/the-table/" }, { label: entry.data.title }]}
     />
 
     <div class="container padding_sm">
@@ -59,7 +58,7 @@ const mins = getReadingTimeMinutes(entry.body ?? "");
             <div class="blog-post-content">
               <Content />
               <p>Health &amp; Hugs, Jen</p>
-              <img decoding="async" class="alignnone size-medium wp-image-1833" src="wp-content/uploads/2025/08/Jen-signature.png" alt="" />
+              <img decoding="async" class="alignnone size-medium wp-image-1833" src="/wp-content/uploads/2025/08/Jen-signature.png" alt="" />
             </div>
 
             <!-- Tags + sharing (matches Psychare markup closely) -->
